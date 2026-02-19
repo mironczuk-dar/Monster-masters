@@ -1,0 +1,13 @@
+NEXT THINGS TO ADD TO THE GAME
+- Actually make the FUCKING GAME!!!
+
+
+
+15.02.2026r.
+
+
+14.02.2026r.
+- Created save file logic
+- Singplayer menu has a save file wizzard
+- Rebuilt the audio manager
+- Built file, menu, state, manager system
