@@ -1,0 +1,11 @@
+# Ignoruj ustawienia lokalne użytkownika
+"Monster masters/data/window_data.json"
+"Monster masters/data/audio_data.json"
+"Monster masters/data/controlls_data.json"
+
+# Ignoruj cały folder z zapisami gier
+"Monster masters/data/saves/"
+
+# Standardowe pliki tymczasowe Pythona
+__pycache__/
+*.pyc
