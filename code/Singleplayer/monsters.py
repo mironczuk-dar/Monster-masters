@@ -1,6 +1,9 @@
 #IMPORTING FILES
 from Manifest.monster_manifest import *
 
+#IMPORINT DATA
+from Manifest.abilities_manifest import ABILITIES_DATA
+
 class Monster:
     def __init__(s, name, level, exp, health, energy):
 
@@ -22,6 +25,14 @@ class Monster:
         s.health = health
         s.energy = energy
 
+        #BATTLE READYNESS/INITATIVE | WHO ATTACKS FIRST 
+        s.initiative = 0
+        s.paused = False
+        
+
+    def __repr__(s):
+        return f'monster : {s.name}, lvl: {s.level}'
+
     def get_stat(s, stat):
         return s.base_stats[stat] * s.level
     
@@ -35,5 +46,22 @@ class Monster:
             'Recovery' : s.get_stat('recovery'),
         }
     
-    def get_abilities(s):
-        return [ability for lvl, ability in s.abilities.items() if s.level >= lvl]
+    def get_abilities(s, all = True):
+        if all:
+            return [ability for lvl, ability in s.abilities.items() if s.level >= lvl]
+        else:
+            return [ability for lvl, ability in s.abilities.items() if s.level >= lvl and ABILITIES_DATA[ability]['cost'] < s.energy]
+
+    def get_info(s):
+        return (
+            (s.health, s.get_stat('max_health')),
+            (s.energy, s.get_stat('max_energy')),
+            (s.initiative, 100)
+        )
+    
+    def update(s, delta_time):
+        s.update_initative(delta_time)
+    
+    def update_initative(s, delta_time):
+        if not s.paused:
+            s.initiative += s.get_stat('speed') * delta_time

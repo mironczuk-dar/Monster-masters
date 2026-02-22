@@ -13,7 +13,7 @@ class Sprite(pygame.sprite.Sprite):
 
 class PortalSprite(Sprite):
     def __init__(s, groups, pos, size, target):
-        surface = pygame.Surface(size)
+        surface = pygame.Surface(size, pygame.SRCALPHA)
         super().__init__(groups, pos, surface)
         s.target = target
 
@@ -86,4 +86,3 @@ class AnimatedSprite(Sprite):
     def update(s, delta_time):
         s.frame_index += ANIMATION_SPEED * delta_time
         s.image = s.frames[int(s.frame_index % len(s.frames))]
-

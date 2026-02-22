@@ -6,6 +6,7 @@ from settings import *
 from States.generic_state import BaseState
 from Singleplayer.world import World
 from Singleplayer.monster_index import MonsterIndex
+from Singleplayer.battle import Battle
 
 #IMPORTING DATA
 from Tools.data_loading_tools import load_data, save_data
@@ -26,6 +27,7 @@ class Singleplayer(BaseState):
 
         #SINGLEPLAYER GAME FLAGS
         s.monster_index_active = False
+        s.currently_in_battle = True
 
         #SETTING UP SINGLEPLAYER GAME ELEMENTS
         s.tint_setup()
@@ -33,6 +35,10 @@ class Singleplayer(BaseState):
 
         #MONSTER INDEX - MONSTERDEX
         s.monster_index = MonsterIndex(s.game, s, s.player_party, s.game.monster_index_fonts)
+
+        #BATTLE SYSTEM ATTRIBUTES
+        s.dummy_monsters = s.player_party.copy()
+        s.battle = Battle(s.game, s, s.player_party, s.dummy_monsters, game.bg_frames['forest'], game.battle_fonts, 'triples')
 
     def save(s):
         from os.path import join
@@ -115,6 +121,14 @@ class Singleplayer(BaseState):
 
     def update(s, delta_time):
 
+        if s.monster_index_active:
+            s.monster_index.update(delta_time)
+            return
+
+        if s.currently_in_battle:
+            s.battle.update(delta_time)
+            return
+
         if s.world.portal_destination and s.tint_mode == 'idle':
             s.tint_mode = 'tint'
 
@@ -123,22 +137,27 @@ class Singleplayer(BaseState):
         if s.tint_mode == 'idle':
             s.world.update(delta_time)
 
-        if s.monster_index_active:
-            s.monster_index.update(delta_time)
-
     def draw(s, window):
         window.fill((50, 50, 50))
-        s.world.draw(window)
-        window.blit(s.tint_surface, s.tint_rect)
 
         if s.monster_index_active:
             s.monster_index.draw(window)
+        elif s.currently_in_battle:
+            s.battle.draw(window)
+        else:
+           s.world.draw(window)
+
+        window.blit(s.tint_surface, s.tint_rect)
 
     def handling_events(s, events):
 
         if s.monster_index_active:
             s.monster_index.handling_events(events)
             s.world.player.direction = vector(0,0)
+
+        elif s.currently_in_battle:
+            s.battle.handling_events(events)
+
         else:
             s.world.handling_events(events)
 

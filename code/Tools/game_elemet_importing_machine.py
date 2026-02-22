@@ -4,7 +4,7 @@ from pytmx.util_pygame import load_pygame
 
 #IMPORTING FILES
 from Tools.asset_importing_tool import *
-from Tools.asset_scaling_tools import scale_asset
+from Tools.asset_scaling_tools import scale_asset, outline_creator
 from settings import BASE_DIR
 from settings import WINDOW_WIDTH, WINDOW_HEIGHT
 
@@ -49,9 +49,15 @@ def load_assets(game):
 
     game.monster_assets = monster_asset_importer(4, 2, BASE_DIR, 'assets', 'monsters')
     game.monster_assets = scale_asset(game.monster_assets, SCALE_FACTOR)
+    game.monster_outlines = outline_creator(game.monster_assets, 8)
 
     game.stat_icons = import_folder_dict(BASE_DIR, 'assets', 'ui')
+    game.battle_icons = scale_asset(game.stat_icons, SCALE_FACTOR)
+    game.battle_icons_outline = outline_creator(game.battle_icons, 6)
     game.stat_icons = scale_asset(game.stat_icons, 2)
+
+    game.bg_frames = import_folder_dict(BASE_DIR, 'assets', 'backgrounds')
+    game.bg_frames = scale_asset(game.bg_frames, SCALE_FACTOR)
 
 
 
@@ -66,4 +72,11 @@ def load_game_fonts(game):
         'regular' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 33),
         'small' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 29),
         'bold' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'dogicapixelbold.otf'), 39),
+    }
+
+    game.battle_fonts = {
+        'regular' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 33),
+        'small' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 25),
+        'bold' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'dogicapixelbold.otf'), 39),
+        'stats' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 20),
     }

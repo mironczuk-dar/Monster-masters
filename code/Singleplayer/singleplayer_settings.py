@@ -19,7 +19,8 @@ COLORS = {
 	'red': '#f03131',
 	'blue': '#66d7ee',
 	'normal': '#ffffff',
-	'dark white': '#f0f0f0'
+	'dark white': '#f0f0f0',
+    'green' : (0, 180, 0)
 }
 
 WORLD_LAYERS = {
@@ -31,8 +32,18 @@ WORLD_LAYERS = {
 }
 
 BATTLE_POSITIONS = {
-	'left': {'top': (360, 260), 'center': (190, 400), 'bottom': (410, 520)},
-	'right': {'top': (900, 260), 'center': (1110, 390), 'bottom': (900, 550)}
+    'single': {
+        'player': [(305, 600)],
+        'opponent': [(1630, 585)]
+    },
+    'doubles': {
+        'player': [(305, 600), (655, 780)],
+        'opponent': [(1630, 585), (1275, 800)]
+    },
+    'triples': {
+        'player': [(305, 600), (655, 780), (570, 390)],
+        'opponent': [(1630, 585), (1275, 800), (1330, 390)]
+    }
 }
 
 BATTLE_LAYERS =  {
@@ -44,14 +55,14 @@ BATTLE_LAYERS =  {
 }
 
 BATTLE_CHOICES = {
-	'full': {
-		'fight':  {'pos' : vector(30, -60), 'icon': 'sword'},
-		'defend': {'pos' : vector(40, -20), 'icon': 'shield'},
-		'switch': {'pos' : vector(40, 20), 'icon': 'arrows'},
-		'catch':  {'pos' : vector(30, 60), 'icon': 'hand'}},
-	
-	'limited': {
-		'fight':  {'pos' : vector(30, -40), 'icon': 'sword'},
-		'defend': {'pos' : vector(40, 0), 'icon': 'shield'},
-		'switch': {'pos' : vector(30, 40), 'icon': 'arrows'}}
+    'full': {
+        'fight':  {'pos' : vector(45, -90), 'icon': 'sword'},
+        'defend': {'pos' : vector(60, -30), 'icon': 'shield'},
+        'switch': {'pos' : vector(60, 30), 'icon': 'arrows'},
+        'catch':  {'pos' : vector(45, 90), 'icon': 'hand'}},
+    
+    'limited': {
+        'fight':  {'pos' : vector(45, -60), 'icon': 'sword'},
+        'defend': {'pos' : vector(60, 0), 'icon': 'shield'},
+        'switch': {'pos' : vector(45, 60), 'icon': 'arrows'}}
 }

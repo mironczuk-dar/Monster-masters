@@ -11,7 +11,7 @@ from Singleplayer.player import Player
 from Singleplayer.non_player_characters import NonPlayerCharacter
 
 #IMPORTING SPRITES
-from Singleplayer.sprites import Sprite, MapWall, TreeSprite, SmallTreeSprite, HouseSprite, GrassPatchSprite, AnimatedSprite, PortalSprite
+from Singleplayer.overworld_sprites import Sprite, MapWall, TreeSprite, SmallTreeSprite, HouseSprite, GrassPatchSprite, AnimatedSprite, PortalSprite
 from Singleplayer.dialog_tree import DialogTree
 
 #IMPORTING DATA
@@ -37,7 +37,7 @@ class World:
     #METHOD FOR DRAWING THE WORLD
     def draw(s, window):
         window.fill("#44C6C1")
-        s.all_sprite_groups['all'].draw(window, s.player,)
+        s.all_sprite_groups['all'].draw(window, s.player)
 
     #METHOD FOR UPDATING THE WORLD
     def update(s, delta_time):
@@ -129,7 +129,6 @@ class World:
             print(current_map)
 
             s.portal_destination = portal.target[0]      #MAP THAT WILL BE LOADED
-            print(portal.target[0])
             s.player_start_position = current_map        #MAP FROM WHICH THE PLAYER CAME FROM
             s.singleplayer_state.tint_mode = 'tint'
 

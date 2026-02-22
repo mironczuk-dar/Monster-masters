@@ -1,0 +1,33 @@
+{
+    "slots": [
+        {
+            "name": "Sparchu",
+            "level": 5,
+            "exp": 0,
+            "health": 100,
+            "energy": 100
+        },
+        {
+            "name": "Friolera",
+            "level": 50,
+            "exp": 0,
+            "health": 100,
+            "energy": 100
+        },
+        {
+            "name": "Friolera",
+            "level": 22,
+            "exp": 0,
+            "health": 100,
+            "energy": 100
+        },
+        {
+            "name": "Friolera",
+            "level": 50,
+            "exp": 0,
+            "health": 100,
+            "energy": 100
+        },
+        null
+    ]
+}

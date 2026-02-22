@@ -41,7 +41,7 @@ def import_tilemap(cols, rows, *path):
 	for col in range(cols):
 		for row in range(rows):
 			cutout_rect = pygame.Rect(col * cell_width, row * cell_height,cell_width,cell_height)
-			cutout_surf = pygame.Surface((cell_width, cell_height))
+			cutout_surf = pygame.Surface((cell_width, cell_height), pygame.SRCALPHA)
 			cutout_surf.fill('green')
 			cutout_surf.set_colorkey('green')
 			cutout_surf.blit(surf, (0,0), cutout_rect)
