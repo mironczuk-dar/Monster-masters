@@ -4,28 +4,28 @@
             "name": "Sparchu",
             "level": 5,
             "exp": 0,
-            "health": 100,
-            "energy": 100
+            "health": 34.79999999999995,
+            "energy": 70
         },
         {
             "name": "Friolera",
             "level": 50,
             "exp": 0,
-            "health": 100,
-            "energy": 100
+            "health": 225.76,
+            "energy": 315
         },
         {
             "name": "Friolera",
             "level": 22,
             "exp": 0,
-            "health": 100,
-            "energy": 100
+            "health": 147.2,
+            "energy": 45
         },
         {
             "name": "Friolera",
             "level": 50,
             "exp": 0,
-            "health": 100,
+            "health": 68.0,
             "energy": 100
         },
         null

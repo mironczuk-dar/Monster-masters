@@ -9,8 +9,33 @@ from Tools.timer import Timer
 #IMPORTING UI ELEMENTS
 from UI_elements.bar import draw_bar
 
+class AttackSprite(pygame.sprite.Sprite):
+    def __init__(s, groups, pos, frames, level_depth = BATTLE_LAYERS['overlay']):
+
+        super().__init__(groups)
+
+        s.frames = frames
+        s.frame_index = 0
+        s.z = level_depth
+
+        s.image = s.frames[s.frame_index]
+        s.rect = s.image.get_frect(topleft = pos)
+        s.level_depth = level_depth
+        s.hitbox = s.rect.copy()
+        s.rect.center = pos
+
+    def update(s, delta_time):
+        s.animate(delta_time)
+
+    def animate(s, delta_time):
+        s.frame_index += ANIMATION_SPEED * delta_time
+        if s.frame_index < len(s.frames):
+            s.image = s.frames[int(s.frame_index)]
+        else:
+            s.kill()
+
 class MonsterSprite(pygame.sprite.Sprite):
-    def __init__(s, groups, pos, frames, monster, index, entity):
+    def __init__(s, groups, pos, frames, monster, index, entity, apply_attack, create_monster):
         super().__init__(groups)
 
         #MONSTER SPRITE ATTRIBUETS
@@ -22,6 +47,12 @@ class MonsterSprite(pygame.sprite.Sprite):
 
         #HIGHLIGHT ATTRIBUTES
         s.highlight = False
+
+        #ATTACKING ATTRIBUTES
+        s.target_sprite = None
+        s.current_attack = None
+        s.apply_attack = apply_attack
+        s.create_monster = create_monster
 
         #ANIMATION ATTRIBUTES
         s.frame_index = 0
@@ -35,14 +66,39 @@ class MonsterSprite(pygame.sprite.Sprite):
 
         #TIMERS
         s.timers = {
-            'remove_highlight' : Timer(100, False, function= lambda: s.set_highlight(False))
+            'remove_highlight' : Timer(100, False, function= lambda: s.set_highlight(False)),
+            'kill' : Timer(600, False, s.destroy)
         }
 
+    def activate_attack(s, target_sprite, attack):
+        s.state = 'attack'
+        s.frame_index = 0
+        s.target_sprite = target_sprite
+        s.current_attack = attack
+        s.monster.reduce_energy(attack)
+
+    def delayed_kill(s, new_monster):
+        if not s.timers['kill'].active:
+            s.next_monster_data = new_monster
+            s.timers['kill'].activate()
+
+    def destroy(s):
+        if s.next_monster_data:
+            monster, index, pos, entity = s.next_monster_data
+            s.create_monster(monster, index, entity)
+        s.kill()
 
     def animate(s, delta_time):
         s.frame_index += s.animation_speed * delta_time
-        s.adjusted_frame_index = int(s.frame_index % len(s.frames[s.state]))
-        s.image = s.frames[s.state][s.adjusted_frame_index]
+        
+        if s.state == 'attack' and s.frame_index >= len(s.frames['attack']):
+            s.state = 'idle'
+            s.frame_index = 0
+            s.apply_attack(s.target_sprite, s.current_attack, s.monster.get_base_damage(s.current_attack))
+        
+        current_frames = s.frames[s.state]
+        s.adjusted_frame_index = int(s.frame_index % len(current_frames))
+        s.image = current_frames[s.adjusted_frame_index]
 
         if s.highlight:
             white_surface = pygame.mask.from_surface(s.image).to_surface()
@@ -75,6 +131,9 @@ class MonsterOutlineSprite(pygame.sprite.Sprite):
         s.image = s.frames[s.monster_sprite.state][s.monster_sprite.adjusted_frame_index]
         s.rect.center = s.monster_sprite.rect.center
 
+        if not s.monster_sprite.groups():
+            s.kill()
+
 class MonsterNameSprite(pygame.sprite.Sprite):
     def __init__(s, groups, pos, monster_sprite, font):
 
@@ -89,6 +148,10 @@ class MonsterNameSprite(pygame.sprite.Sprite):
         s.image.fill(COLORS['white'])
         s.image.blit(text_surface, (padding, padding))
         s.rect = s.image.get_frect(midtop = pos)
+
+    def update(s, delta_time):
+        if not s.monster_sprite.groups():
+            s.kill()
 
 class MonsterLevelSprite(pygame.sprite.Sprite):
     def __init__(s, groups, entity, pos, monster_sprite, font):
@@ -110,6 +173,9 @@ class MonsterLevelSprite(pygame.sprite.Sprite):
         s.image.blit(text_surface, text_rect)
 
         draw_bar(s.image, s.exp_rect, s.monster_sprite.monster.exp, s.monster_sprite.monster.level_up, COLORS['blue'], COLORS['black'], 0)
+
+        if not s.monster_sprite.groups():
+            s.kill()
 
 class MonsterStatsSprite(pygame.sprite.Sprite):
     def __init__(s, groups, pos, monster_sprite, size, font):
@@ -140,3 +206,6 @@ class MonsterStatsSprite(pygame.sprite.Sprite):
                 bar_height = 6
                 init_rect = pygame.FRect((0, s.image.get_height() - bar_height), (s.image.get_width(), bar_height))
                 draw_bar(s.image, init_rect, value, max_value, colour, COLORS['white'], 0)
+
+        if not s.monster_sprite.groups():
+            s.kill()

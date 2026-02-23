@@ -37,7 +37,13 @@ class Singleplayer(BaseState):
         s.monster_index = MonsterIndex(s.game, s, s.player_party, s.game.monster_index_fonts)
 
         #BATTLE SYSTEM ATTRIBUTES
-        s.dummy_monsters = s.player_party.copy()
+        s.dummy_monsters = {
+            0: Monster("Sparchu", 5, 0, 120, 70),
+            1: Monster("Friolera", 2, 0, 300, 490),
+            2: Monster("Friolera", 2, 0, 180, 65),
+            3: Monster("Friolera", 2, 0, 250, 100),
+            4: None
+        }
         s.battle = Battle(s.game, s, s.player_party, s.dummy_monsters, game.bg_frames['forest'], game.battle_fonts, 'triples')
 
     def save(s):

@@ -3,12 +3,13 @@ import pygame
 
 #IMPORTING FILES
 from Singleplayer.singleplayer_settings import *
-from Singleplayer.battle_sprites import MonsterSprite, MonsterNameSprite, MonsterLevelSprite, MonsterStatsSprite, MonsterOutlineSprite
+from Singleplayer.battle_sprites import MonsterSprite, MonsterNameSprite, MonsterLevelSprite, MonsterStatsSprite, MonsterOutlineSprite, AttackSprite
 from Singleplayer.battle_camera import BattleSprites
 from UI_elements.bar import draw_bar
 
 #IMPORTING DATA 
 from Manifest.abilities_manifest import ABILITIES_DATA
+from Manifest.elements_manifest import ELEMENT_RELATIONS
 
 class Battle:
     def __init__(s, game, singleplayer_state, players_monsters, opponents_monsters, bg_surface, fonts, battle_type = 'single'):
@@ -42,6 +43,7 @@ class Battle:
         s.current_monster = None
         s.selection_mode = None
         s.selection_side = 'player'
+        s.selected_attack = None
         s.indexes = {
             'general' : 0,
             'monster' : 0,
@@ -166,6 +168,49 @@ class Battle:
                 draw_bar(window, health_rect, monster.health, monster.get_stat('max_health'), COLORS['green'], COLORS['black'])
                 draw_bar(window, energy_rect, monster.energy, monster.get_stat('max_energy'), COLORS['blue'], COLORS['black'])
 
+    def apply_attack(s, target_sprite, attack, damage_ammount):
+        animation_name = ABILITIES_DATA[attack]['animation']
+        frames = s.game.attack_frames[animation_name]
+        AttackSprite(s.battle_sprites, target_sprite.rect.center, frames)
+
+        attack_element = ABILITIES_DATA[attack]['element']
+        target_element = target_sprite.monster.element
+
+
+        multiplier = ELEMENT_RELATIONS.get(attack_element, {}).get(target_element, 1.0)
+        final_damage = damage_ammount * multiplier
+
+        if animation_name != 'green': #ATTACKS MADE FOR HEALING
+            target_defence = 1 - target_sprite.monster.get_stat('defense') / 1000
+            target_defence = max(0, min(1, target_defence))
+            target_sprite.monster.health -= damage_ammount * target_defence
+        else:
+            target_sprite.monster.health -= damage_ammount
+
+        s.update_all_monsters('resume')
+
+    def check_death(s):
+        for monster_sprite in s.opponent_sprites.sprites() + s.player_sprites.sprites():
+            if monster_sprite.monster.health <= 0:
+
+                new_monster_data = None  # <-- ZAWSZE definiujemy
+
+                if s.player_sprites in monster_sprite.groups():
+                    # tutaj możesz dodać logikę dla gracza
+                    pass
+                else:
+                    if s.opponents_monsters:
+                        new_monster = list(s.opponents_monsters.values())[0]
+                        new_monster_data = (
+                            new_monster,
+                            monster_sprite.index,
+                            monster_sprite.pos,
+                            'opponent'
+                        )
+                        del s.opponents_monsters[min(s.opponents_monsters)]
+
+                monster_sprite.delayed_kill(new_monster_data)
+
 
     #GENERAL METHODS
     def setup(s):
@@ -173,6 +218,9 @@ class Battle:
             for index, monster in monsters.items():
                 if index < s.max_monsters and monster is not None:
                     s.create_monster(monster, index, entity)
+
+            for i in range(len(s.opponent_sprites)):
+                del s.opponents_monsters[i]
 
     def create_monster(s, monster, index, entity):
         frames = s.game.monster_assets[monster.name]
@@ -189,7 +237,7 @@ class Battle:
         else:
             groups.append(s.opponent_sprites)
 
-        monster_sprite = MonsterSprite(groups, pos, frames, monster, index, entity)
+        monster_sprite = MonsterSprite(groups, pos, frames, monster, index, entity, s.apply_attack, s.create_monster)
         MonsterOutlineSprite(monster_sprite, s.battle_sprites, outline_frames)
 
         #UI ELEMENTS
@@ -202,33 +250,43 @@ class Battle:
     def update(s, delta_time):
         s.battle_sprites.update(delta_time)
         s.check_active()
+        s.check_death()
 
     def draw(s, window):
         window.blit(s.bg_surface, (0,0))
         
-        s.battle_sprites.draw(window, s.current_monster)
-
+        s.battle_sprites.draw(window, s.current_monster, s.selection_side, s.selection_mode, s.indexes['target'], s.player_sprites, s.opponent_sprites)
         s.draw_ui(window)
 
     def handling_events(s, events):
         controlls = s.game.controlls_data
 
-        if s.selection_mode and s.current_monster:
+        if (
+            s.selection_mode 
+            and s.current_monster 
+            and s.current_monster in s.player_sprites
+        ):
             keys = pygame.key.get_just_pressed()
 
+            # 1. Dynamiczne ustalanie limitera
+            limiter = 0
             if s.selection_mode == 'general':
                 limiter = len(BATTLE_CHOICES['full'])
             elif s.selection_mode == 'attacks':
-                limiter = len(s.current_monster.monster.get_abilities(all = False))
+                limiter = len(s.current_monster.monster.get_abilities(all=False))
             elif s.selection_mode == 'switch':
+                # Pobieramy aktualne potwory w walce
                 active_indices = [ms.index for ms in s.player_sprites]
                 s.available_monsters = {
                     index: monster for index, monster in s.monster_data['player'].items() 
                     if monster is not None and index not in active_indices and monster.health > 0
                 }
                 limiter = len(s.available_monsters)
+            elif s.selection_mode == 'target':
+                sprite_group = s.opponent_sprites if s.selection_side == 'opponent' else s.player_sprites
+                limiter = len(sprite_group.sprites())
 
-
+            # 2. Nawigacja góra/dół
             if limiter > 0:
                 if keys[controlls['up']]:
                     s.indexes[s.selection_mode] = (s.indexes[s.selection_mode] - 1) % limiter
@@ -237,22 +295,63 @@ class Battle:
             else:
                 s.indexes[s.selection_mode] = 0
 
+            # 3. Potwierdzenie (Action A)
             if keys[controlls['action_a']]:
-                if s.selection_mode == 'general':
-                    if s.indexes['general'] == 0:
-                        s.selection_mode = 'attacks'
+                
+                if s.selection_mode == 'target':
+                    sprite_group = s.opponent_sprites if s.selection_side == 'opponent' else s.player_sprites
+                    sprites_list = sprite_group.sprites()
+                    if sprites_list:
+                        target_sprite = sprites_list[s.indexes['target']]
 
-                    elif s.indexes['general'] == 1:
+                        if s.selected_attack:
+                            s.current_monster.activate_attack(target_sprite, s.selected_attack)
+                            s.selected_attack = None
+                            s.current_monster = None
+                            s.selection_mode = None
+                        else:
+                            pass
+
+                        
+                elif s.selection_mode == 'attacks':
+                    abilities = s.current_monster.monster.get_abilities(all = False)
+                    s.selected_attack = abilities[s.indexes['attacks']]
+                    s.selection_side = ABILITIES_DATA[s.selected_attack]['target']
+                    sprite_group = s.opponent_sprites if s.selection_side == 'opponent' else s.player_sprites
+                    sprites_list = sprite_group.sprites()
+
+                    if len(sprites_list) == 1:
+                        target_sprite = sprites_list[0]
+                        s.current_monster.activate_attack(target_sprite, s.selected_attack)
+                        
+                        s.selected_attack = None
+                        s.current_monster.set_highlight(False)
                         s.update_all_monsters('resume')
                         s.current_monster = None
                         s.selection_mode = None
-                        s.indexes['general'] = 0
+                    else:
+                        s.selection_mode = 'target'
+                        s.indexes['target'] = 0
 
-                    elif s.indexes['general'] == 2:
+                elif s.selection_mode == 'general':
+                    if s.indexes['general'] == 0: # Fight
+                        s.selection_mode = 'attacks'
+                        s.indexes['attacks'] = 0
+                    elif s.indexes['general'] == 1: # Defend / Wait
+                        s.update_all_monsters('resume')
+                        s.current_monster.set_highlight(False)
+                        s.current_monster = None
+                        s.selection_mode = None
+                    elif s.indexes['general'] == 2: # Switch
                         s.selection_mode = 'switch'
-                    elif s.indexes['general'] == 3:
-                        s.selection_mode = 'catch'
+                        s.indexes['switch'] = 0
+                    elif s.indexes['general'] == 3: # Catch
+                        print("Próba złapania!")
 
+            # 4. Powrót (Action B)
             if keys[controlls['action_b']]:
                 if s.selection_mode in ('attacks', 'switch', 'target'):
                     s.selection_mode = 'general'
+                    s.selection_side = None
+                    s.selected_attack = None
+                    s.indexes['target'] = 0

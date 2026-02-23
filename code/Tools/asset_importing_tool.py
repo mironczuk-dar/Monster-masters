@@ -48,6 +48,14 @@ def import_tilemap(cols, rows, *path):
 			frames[(col, row)] = cutout_surf
 	return frames
 
+def attack_importer(*path):
+    attack_dict = {}
+    for folder_path, _, image_names in walk(join(*path)): 
+        for image in image_names:
+            image_name = image.split('.')[0]
+            attack_dict[image_name] = list(import_tilemap(4, 1, folder_path, image_name).values())
+    return attack_dict
+
 def monster_asset_importer(columns, rows, *path):
 	monster_dict = {}
 

@@ -56,6 +56,8 @@ def load_assets(game):
     game.battle_icons_outline = outline_creator(game.battle_icons, 6)
     game.stat_icons = scale_asset(game.stat_icons, 2)
 
+    game.attack_frames = attack_importer(BASE_DIR, 'assets', 'attacks')
+
     game.bg_frames = import_folder_dict(BASE_DIR, 'assets', 'backgrounds')
     game.bg_frames = scale_asset(game.bg_frames, SCALE_FACTOR)
 

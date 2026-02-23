@@ -36,6 +36,12 @@ class Monster:
     def get_stat(s, stat):
         return s.base_stats[stat] * s.level
     
+    def reduce_energy(s, attack):
+        s.energy -= ABILITIES_DATA[attack]['cost']
+
+    def get_base_damage(s, attack):
+        return s.get_stat('attack') * ABILITIES_DATA[attack]['amount']
+    
     def get_stats(s):
         return {
             'Health' : s.get_stat('max_health'),
