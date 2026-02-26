@@ -9,6 +9,19 @@ from Tools.timer import Timer
 #IMPORTING UI ELEMENTS
 from UI_elements.bar import draw_bar
 
+class TimedSprite(pygame.sprite.Sprite):
+    def __init__(s, groups, pos, surface, duration):
+        super().__init__(groups)
+
+        s.image = surface
+        s.rect = s.image.get_frect(center = pos)
+        s.z = BATTLE_LAYERS['overlay']
+        s.death_timer = Timer(duration, True, s.kill)
+
+    def update(s, update):
+        s.death_timer.update()
+        
+
 class AttackSprite(pygame.sprite.Sprite):
     def __init__(s, groups, pos, frames, level_depth = BATTLE_LAYERS['overlay']):
 
@@ -83,9 +96,9 @@ class MonsterSprite(pygame.sprite.Sprite):
             s.timers['kill'].activate()
 
     def destroy(s):
-        if s.next_monster_data:
-            monster, index, pos, entity = s.next_monster_data
-            s.create_monster(monster, index, entity)
+        if s.next_monster_data and s.next_monster_data[0] is not None:
+            monster, index, entity = s.next_monster_data
+            s.create_monster(monster, index, entity, s.pos)
         s.kill()
 
     def animate(s, delta_time):

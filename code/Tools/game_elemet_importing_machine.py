@@ -61,6 +61,8 @@ def load_assets(game):
     game.bg_frames = import_folder_dict(BASE_DIR, 'assets', 'backgrounds')
     game.bg_frames = scale_asset(game.bg_frames, SCALE_FACTOR)
 
+    game.death_screens = import_folder(BASE_DIR, 'assets', 'death_screens')
+    game.death_screens = [pygame.transform.scale(surface, (WINDOW_WIDTH, WINDOW_HEIGHT)) for surface in game.death_screens]
 
 
 #LOADING GAME FONTS

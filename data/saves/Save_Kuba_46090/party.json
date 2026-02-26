@@ -1,32 +1,32 @@
 {
     "slots": [
         {
-            "name": "Sparchu",
+            "name": "Charmadillo",
             "level": 5,
-            "exp": 0,
-            "health": 34.79999999999995,
-            "energy": 70
+            "exp": 3200.0,
+            "health": 60.08,
+            "energy": 12000
+        },
+        {
+            "name": "Sparchu",
+            "level": 1,
+            "exp": 1000.0,
+            "health": 10,
+            "energy": 50
         },
         {
             "name": "Friolera",
-            "level": 50,
-            "exp": 0,
-            "health": 225.76,
-            "energy": 315
+            "level": 2,
+            "exp": 550.0,
+            "health": 10,
+            "energy": 295
         },
         {
             "name": "Friolera",
-            "level": 22,
-            "exp": 0,
-            "health": 147.2,
+            "level": 2,
+            "exp": 500.0,
+            "health": 10,
             "energy": 45
-        },
-        {
-            "name": "Friolera",
-            "level": 50,
-            "exp": 0,
-            "health": 68.0,
-            "energy": 100
         },
         null
     ]

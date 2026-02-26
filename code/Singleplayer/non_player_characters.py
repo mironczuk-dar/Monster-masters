@@ -12,7 +12,7 @@ from Tools.timer import Timer
 from Manifest.npc_manifest import CHARACTER_DATA
 
 class NonPlayerCharacter(pygame.sprite.Sprite):
-    def __init__(s, game, world, groups, pos, frames, facing_direction, range, character_name, defeated_characters):
+    def __init__(s, game, world, groups, pos, frames, facing_direction, range, character_name, defeated_characters, character_id):
         super().__init__(groups)
 
         #PASSING IN GAME AS AN ATTRIBUTE
@@ -27,6 +27,7 @@ class NonPlayerCharacter(pygame.sprite.Sprite):
         s.character_name = character_name
         s.character_data = CHARACTER_DATA[character_name]
         s.defeated = True if s.character_name in defeated_characters else False
+        s.character_id = character_id
 
         #ANIMATION ATTRIBUTES
         s.frames = frames

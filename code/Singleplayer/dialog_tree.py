@@ -3,9 +3,12 @@ import pygame
 
 #IMPORTING FILES
 from Singleplayer.singleplayer_settings import *
+from Singleplayer.battle import Battle
+from Singleplayer.monsters import OpponentMonster
 
 #IMPORTING DATA
 from Manifest.npc_manifest import *
+from Manifest.monster_manifest import *
 
 
 class DialogTree:
@@ -41,8 +44,19 @@ class DialogTree:
                 s.end_dialog()
 
     def end_dialog(s):
-        s.player.freeze_unfreeze()
         s.world.active_dialog = None
+        char_id = s.character.character_id
+        state = s.world.singleplayer_state
+
+        if char_id == 'Nurse':
+            state.nurse_heal()
+        
+        elif char_id in CHARACTER_DATA and char_id not in state.save_data['flags_data']['characters_defeated']:
+            state.create_battle(char_id)
+        
+        else:
+            s.player.freeze_unfreeze()
+
 
 class DialogSprite(pygame.sprite.Sprite):
     def __init__(s, groups, character, message, font):

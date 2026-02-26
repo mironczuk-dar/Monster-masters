@@ -52,6 +52,7 @@ class World:
         #CHECKING PORTAL TRANSITIONS
         s.portal_check()
 
+    #METHOD FOR ALL THE INPUTS
     def handling_events(s, events):
 
         key = pygame.key.get_just_pressed()
@@ -254,7 +255,8 @@ class World:
                                    object.properties['direction'],
                                    object.properties['range'],
                                    object.name,
-                                   s.singleplayer_state.save_data['flags_data']['characters_defeated'])
+                                   s.singleplayer_state.save_data['flags_data']['characters_defeated'],
+                                   character_id = object.name)
 
         #CREATING GRASS PATCHES
         if 'Grass' in [layer.name for layer in current_map.layers]:

@@ -1,9 +1,13 @@
 NEXT THINGS TO ADD TO THE GAME
 - Actually make the FUCKING GAME!!!
 
+- Change death screen to it's own state.
+- Add controller keyboard to Singleplayer menu
+- Add controlls options menu and Atomic launcher controlls
+- Clean up how the files are stored in singleplayer folder. Singleplayer/Battle and Singleplayer/Overworld
 
 
-15.02.2026r.
+
 
 
 14.02.2026r.

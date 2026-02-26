@@ -17,8 +17,8 @@ DEFAULT_TRAINER = {
 
 DEFAULT_PARTY = {
     "slots": [
-        {"name": "Sparchu", "level": 5, "exp": 0, "health": 100, "energy": 100},
-        {"name": "Pluma", "level": 5, "exp": 0, "health": 100, "energy": 100},
+        {"name": "Charmadillo", "level": 75, "exp": 0, "health": 1000, "energy": 2000},
+        {"name": "Pluma", "level": 3, "exp": 0, "health": 100, "energy": 100},
         None, 
         None, 
         None

@@ -1,5 +1,6 @@
 #IMPORTING FILES
 from pygame.math import Vector2 as vector
+from random import choice
 
 #IMPORTING FILES
 from settings import *
@@ -7,6 +8,7 @@ from States.generic_state import BaseState
 from Singleplayer.world import World
 from Singleplayer.monster_index import MonsterIndex
 from Singleplayer.battle import Battle
+from Singleplayer.death_screen import DeathScreen
 
 #IMPORTING DATA
 from Tools.data_loading_tools import load_data, save_data
@@ -24,10 +26,12 @@ class Singleplayer(BaseState):
 
         #SINGLEPLAYER GAME ELEMENTS
         s.world = World(s.game, s)
+        s.death_screen = None
 
         #SINGLEPLAYER GAME FLAGS
         s.monster_index_active = False
-        s.currently_in_battle = True
+        s.currently_in_battle = False
+        s.pending_death_screen = False
 
         #SETTING UP SINGLEPLAYER GAME ELEMENTS
         s.tint_setup()
@@ -38,13 +42,13 @@ class Singleplayer(BaseState):
 
         #BATTLE SYSTEM ATTRIBUTES
         s.dummy_monsters = {
-            0: Monster("Sparchu", 5, 0, 120, 70),
-            1: Monster("Friolera", 2, 0, 300, 490),
-            2: Monster("Friolera", 2, 0, 180, 65),
-            3: Monster("Friolera", 2, 0, 250, 100),
+            0: Monster("Sparchu", 15, 0, 120, 70),
+            1: Monster("Friolera", 12, 0, 120, 490),
+            2: Monster("Friolera", 12, 0, 120, 65),
+            3: Monster("Friolera", 2, 0, 120, 100),
             4: None
         }
-        s.battle = Battle(s.game, s, s.player_party, s.dummy_monsters, game.bg_frames['forest'], game.battle_fonts, 'triples')
+        s.battle = None
 
     def save(s):
         from os.path import join
@@ -126,21 +130,23 @@ class Singleplayer(BaseState):
         s.load_player_monsters()
 
     def update(s, delta_time):
-
         if s.monster_index_active:
             s.monster_index.update(delta_time)
             return
 
         if s.currently_in_battle:
             s.battle.update(delta_time)
-            return
-
+            
+            if s.battle.finished and s.tint_mode == 'idle':
+                s.tint_mode = 'tint' 
+            
+        
         if s.world.portal_destination and s.tint_mode == 'idle':
             s.tint_mode = 'tint'
 
         s.tint_window(delta_time)
 
-        if s.tint_mode == 'idle':
+        if s.tint_mode == 'idle' and not s.currently_in_battle and not s.monster_index_active:
             s.world.update(delta_time)
 
     def draw(s, window):
@@ -150,6 +156,8 @@ class Singleplayer(BaseState):
             s.monster_index.draw(window)
         elif s.currently_in_battle:
             s.battle.draw(window)
+        elif s.death_screen:
+            s.death_screen.draw(window)
         else:
            s.world.draw(window)
 
@@ -164,8 +172,42 @@ class Singleplayer(BaseState):
         elif s.currently_in_battle:
             s.battle.handling_events(events)
 
+        elif s.death_screen:
+            s.death_screen.handling_events(events)
+
         else:
             s.world.handling_events(events)
+
+    def create_battle(s, character_id):
+        from Manifest.npc_manifest import CHARACTER_DATA
+        from Singleplayer.monsters import OpponentMonster
+        
+        npc_data = CHARACTER_DATA.get(character_id)
+        if not npc_data: return
+
+        opponent_monsters = {}
+        for slot, data in npc_data['monsters'].items():
+            if data:
+                name, level = data
+                opponent_monsters[slot] = OpponentMonster(name, level)
+            else:
+                opponent_monsters[slot] = None
+
+        s.pending_battle_data = {
+            'opponents': opponent_monsters,
+            'bg': npc_data.get('biome', 'forest'),
+            'character_id': character_id
+        }
+
+        s.tint_mode = 'tint'
+
+    def nurse_heal(s):
+        for monster in s.player_party.values():
+            if monster is not None:
+                monster.health = monster.get_stat('max_health')
+                monster.energy = monster.get_stat('max_energy')
+        print("Party healed!")
+        s.world.player.freeze_unfreeze()
 
     def tint_window(s, delta_time):
         speed = s.tint_speed * delta_time
@@ -177,9 +219,40 @@ class Singleplayer(BaseState):
                 s.tint_mode = 'load'
 
         elif s.tint_mode == 'load':
-            if s.world.portal_destination:
+            # 1. Kończenie walki (już masz)
+            if s.currently_in_battle and s.battle.finished:
+                if s.battle.result == 'lose':
+                    s.death_screen = DeathScreen(s.game, s, choice(s.game.death_screens), s.save_path)
+                
+                # Oznaczamy NPC jako pokonanego w save_data (jeśli wygraliśmy)
+                if s.battle.result == 'win' and hasattr(s, 'active_battle_char_id'):
+                    if s.active_battle_char_id not in s.save_data['flags_data']['characters_defeated']:
+                        s.save_data['flags_data']['characters_defeated'].append(s.active_battle_char_id)
+
+                s.currently_in_battle = False
+                
+            # 2. Rozpoczynanie nowej walki
+            elif hasattr(s, 'pending_battle_data') and s.pending_battle_data:
+                data = s.pending_battle_data
+                s.active_battle_char_id = data['character_id'] # Zapamiętujemy kogo bijemy
+                
+                s.battle = Battle(
+                    s.game, s, s.player_party, 
+                    data['opponents'], 
+                    s.game.bg_frames[data['bg']], 
+                    s.game.battle_fonts, 'single'
+                )
+                
+                s.currently_in_battle = True
+                s.pending_battle_data = None # Czyścimy poczekalnię
+
+            # 3. Portale (już masz)
+            elif s.world.portal_destination:
                 s.world.setup(map_name=s.world.portal_destination)
                 s.world.portal_destination = None
+                
+            s.tint_mode = 'untint'
+                
             s.tint_mode = 'untint'
 
         elif s.tint_mode == 'untint':
@@ -194,3 +267,25 @@ class Singleplayer(BaseState):
         s.tint_rect = s.tint_surface.get_frect(topleft=(0, -WINDOW_HEIGHT))
         s.tint_mode = 'untint'
         s.tint_speed = 1800
+
+    def delete_save_file(s):
+        import shutil
+        import os
+
+        if not os.path.isdir(s.save_path):
+            print("Invalid save path.")
+            return
+
+        # Bezpiecznik
+        if "saves" not in s.save_path.lower():
+            print("Unsafe path. Abort.")
+            return
+
+        try:
+            shutil.rmtree(s.save_path)
+            print(f"Deleted: {s.save_path}")
+        except Exception as e:
+            print(f"Error deleting save: {e}")
+            return
+
+        s.game.state_manager.change_state("Start menu")

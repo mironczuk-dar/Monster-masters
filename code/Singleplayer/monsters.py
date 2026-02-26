@@ -24,6 +24,7 @@ class Monster:
         #MONSTER HEALTH AND ENERGY
         s.health = health
         s.energy = energy
+        s.defending = False
 
         #BATTLE READYNESS/INITATIVE | WHO ATTACKS FIRST 
         s.initiative = 0
@@ -65,9 +66,35 @@ class Monster:
             (s.initiative, 100)
         )
     
+    def update_exp(s, amount):
+        if s.level_up - s.exp > amount:       
+            s.exp += amount
+        else:
+            s.level += 1
+            s.exp = amount - (s.level_up - s.exp)
+            s.level_up = s.level * 150
+    
     def update(s, delta_time):
         s.update_initative(delta_time)
+
+    def stat_limiter(s):
+        s.health = max(0, min(s.health, s.get_stat('max_health')))
+        s.energy = max(0, min(s.energy, s.get_stat('max_energy')))
     
     def update_initative(s, delta_time):
         if not s.paused:
             s.initiative += s.get_stat('speed') * delta_time
+
+        s.stat_limiter()
+
+class OpponentMonster(Monster):
+    def __init__(s, name, level):
+        s.name = name
+        s.level = level
+        s.base_stats = MONSTER_DATA[s.name]['stats']
+        
+        max_health = s.get_stat('max_health')
+        max_energy = s.get_stat('max_energy')
+        
+        super().__init__(name, level, 0, max_health, max_energy)
+

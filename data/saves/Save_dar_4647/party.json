@@ -1,0 +1,21 @@
+{
+    "slots": [
+        {
+            "name": "Sparchu",
+            "level": 70,
+            "exp": 0,
+            "health": -10.591999999999985,
+            "energy": 100
+        },
+        {
+            "name": "Pluma",
+            "level": 5,
+            "exp": 0,
+            "health": -3.775999999999989,
+            "energy": 80
+        },
+        null,
+        null,
+        null
+    ]
+}
