@@ -1,0 +1,21 @@
+{
+    "slots": [
+        {
+            "name": "Charmadillo",
+            "level": 75,
+            "exp": 0,
+            "health": 1000,
+            "energy": 860
+        },
+        {
+            "name": "Pluma",
+            "level": 3,
+            "exp": 0,
+            "health": 69,
+            "energy": 78
+        },
+        null,
+        null,
+        null
+    ]
+}

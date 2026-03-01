@@ -227,17 +227,14 @@ class Singleplayer(BaseState):
                 if s.battle.result == 'win' and hasattr(s, 'active_battle_char_id'):
                     char_id = s.active_battle_char_id
                     
-                    # 1. Flagowanie w save_data
                     if char_id not in s.save_data['flags_data']['characters_defeated']:
                         s.save_data['flags_data']['characters_defeated'].append(char_id)
                     
-                    # 2. Aktualizacja obiektu NPC i ODpalenie dialogu
                     from Manifest.npc_manifest import CHARACTER_DATA
                     for npc in s.world.all_sprite_groups['characters']:
                         if isinstance(npc, NonPlayerCharacter) and npc.character_id == char_id:
                             npc.defeated = True
                             
-                            # Wywołujemy system dialogów w świecie (zakładając, że masz taką metodę)
                             s.world.create_dialog(npc)
                             break
 
@@ -245,10 +242,9 @@ class Singleplayer(BaseState):
                 s.world.player.freeze_unfreeze()
                 
                 
-            # 2. Rozpoczynanie nowej walki
             elif hasattr(s, 'pending_battle_data') and s.pending_battle_data:
                 data = s.pending_battle_data
-                s.active_battle_char_id = data['character_id'] # Zapamiętujemy kogo bijemy
+                s.active_battle_char_id = data['character_id']
                 
                 s.battle = Battle(
                     s.game, s, s.player_party, 
@@ -258,9 +254,8 @@ class Singleplayer(BaseState):
                 )
                 
                 s.currently_in_battle = True
-                s.pending_battle_data = None # Czyścimy poczekalnię
+                s.pending_battle_data = None
 
-            # 3. Portale (już masz)
             elif s.world.portal_destination:
                 s.world.setup(map_name=s.world.portal_destination)
                 s.world.portal_destination = None
