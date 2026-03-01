@@ -9,6 +9,7 @@ from Singleplayer.world import World
 from Singleplayer.monster_index import MonsterIndex
 from Singleplayer.battle import Battle
 from Singleplayer.death_screen import DeathScreen
+from Singleplayer.non_player_characters import NonPlayerCharacter
 
 #IMPORTING DATA
 from Tools.data_loading_tools import load_data, save_data
@@ -219,17 +220,30 @@ class Singleplayer(BaseState):
                 s.tint_mode = 'load'
 
         elif s.tint_mode == 'load':
-            # 1. Kończenie walki (już masz)
             if s.currently_in_battle and s.battle.finished:
                 if s.battle.result == 'lose':
                     s.death_screen = DeathScreen(s.game, s, choice(s.game.death_screens), s.save_path)
                 
-                # Oznaczamy NPC jako pokonanego w save_data (jeśli wygraliśmy)
                 if s.battle.result == 'win' and hasattr(s, 'active_battle_char_id'):
-                    if s.active_battle_char_id not in s.save_data['flags_data']['characters_defeated']:
-                        s.save_data['flags_data']['characters_defeated'].append(s.active_battle_char_id)
+                    char_id = s.active_battle_char_id
+                    
+                    # 1. Flagowanie w save_data
+                    if char_id not in s.save_data['flags_data']['characters_defeated']:
+                        s.save_data['flags_data']['characters_defeated'].append(char_id)
+                    
+                    # 2. Aktualizacja obiektu NPC i ODpalenie dialogu
+                    from Manifest.npc_manifest import CHARACTER_DATA
+                    for npc in s.world.all_sprite_groups['characters']:
+                        if isinstance(npc, NonPlayerCharacter) and npc.character_id == char_id:
+                            npc.defeated = True
+                            
+                            # Wywołujemy system dialogów w świecie (zakładając, że masz taką metodę)
+                            s.world.create_dialog(npc)
+                            break
 
                 s.currently_in_battle = False
+                s.world.player.freeze_unfreeze()
+                
                 
             # 2. Rozpoczynanie nowej walki
             elif hasattr(s, 'pending_battle_data') and s.pending_battle_data:
@@ -240,7 +254,7 @@ class Singleplayer(BaseState):
                     s.game, s, s.player_party, 
                     data['opponents'], 
                     s.game.bg_frames[data['bg']], 
-                    s.game.battle_fonts, 'single'
+                    s.game.battle_fonts, 'triples'
                 )
                 
                 s.currently_in_battle = True
