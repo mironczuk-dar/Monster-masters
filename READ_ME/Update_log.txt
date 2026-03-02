@@ -5,10 +5,13 @@ NEXT THINGS TO ADD TO THE GAME
 - Add controller keyboard to Singleplayer menu
 - Add controlls options menu and Atomic launcher controlls
 - Clean up how the files are stored in singleplayer folder. Singleplayer/Battle and Singleplayer/Overworld
+- Add SaveFileLog sprite in singleplayer menu
+- 
 
 
-
-
+02.03.2026r.
+- Added keyboard to NewSaveFileWizard
+- Created universal Keyboard for using controlls
 
 14.02.2026r.
 - Created save file logic

@@ -12,8 +12,6 @@ from Tools.data_loading_tools import save_data
 from States.singleplayer import Singleplayer
 
 
-
-
 class SingleplayerMenu(BaseState):
     def __init__(s, game):
         super().__init__(game)
@@ -149,3 +147,17 @@ class SingleplayerMenu(BaseState):
             
         # Optional: Title text
         # s.game.draw_text("Select Save File", size=32, pos=(WINDOW_WIDTH//2, 100))
+
+
+class SaveFileLog(pygame.sprite.Sprite):
+    def __init__(s, game, pos, gender):
+        super().__init__()
+
+        #PASSING IN GAME AS AN ATTRIBUTE
+        s.game = game
+
+        #SPRITE ATTRIBUTES
+        s.image = pygame.Surface((WINDOW_WIDTH * 0.8, 200))
+        s.rect = s.image.get_frect(center = pos)
+
+        #
