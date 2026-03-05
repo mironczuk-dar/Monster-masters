@@ -4,8 +4,8 @@ from random import choice
 
 #IMPORTING FILES
 from Singleplayer.singleplayer_settings import *
-from Singleplayer.battle_sprites import MonsterSprite, MonsterNameSprite, MonsterLevelSprite, MonsterStatsSprite, MonsterOutlineSprite, AttackSprite, TimedSprite
-from Singleplayer.battle_camera import BattleSprites
+from Singleplayer.Battle.battle_sprites import MonsterSprite, MonsterNameSprite, MonsterLevelSprite, MonsterStatsSprite, MonsterOutlineSprite, AttackSprite, TimedSprite
+from Singleplayer.Battle.battle_camera import BattleSprites
 from UI_elements.bar import draw_bar
 from Tools.timer import Timer
 from settings import WINDOW_WIDTH, WINDOW_HEIGHT
@@ -56,7 +56,7 @@ class Battle:
         }
 
         #UNIWERSAL CATCH RATE
-        s.catch_rate = 1
+        s.catch_rate = 2
 
         #BATTLE RESULTS
         s.finished = False

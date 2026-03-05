@@ -29,6 +29,7 @@ def load_maps(game):
         'house' : load_pygame(join(BASE_DIR, 'data', 'maps', 'house.tmx')),
         'world' : load_pygame(join(BASE_DIR, 'data', 'maps', 'world.tmx')),
         'hospital' : load_pygame(join(BASE_DIR, 'data', 'maps', 'hospital.tmx')),
+        'Stag Island' : load_pygame(join(BASE_DIR, 'data', 'maps', 'stag_island.tmx')),
     }
 
 #LOADING LEVEL ASSETS
@@ -83,4 +84,10 @@ def load_game_fonts(game):
         'small' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 25),
         'bold' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'dogicapixelbold.otf'), 39),
         'stats' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 20),
+    }
+
+    game.save_file_log_fonts = {
+        'big' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 42),
+        'medium' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 32),
+        'small' :   pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 28)
     }

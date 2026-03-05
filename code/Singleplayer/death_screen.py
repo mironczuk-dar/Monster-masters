@@ -2,7 +2,7 @@
 import pygame
 
 #IMPORTING ELEMENTS
-from Singleplayer.battle_sprites import TimedSprite
+from Singleplayer.Battle.battle_sprites import TimedSprite
 
 #IMPORTING FILES
 from settings import WINDOW_WIDTH, WINDOW_HEIGHT

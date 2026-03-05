@@ -7,7 +7,7 @@ from settings import *
 from States.generic_state import BaseState
 from Singleplayer.world import World
 from Singleplayer.monster_index import MonsterIndex
-from Singleplayer.battle import Battle
+from Singleplayer.Battle.battle import Battle
 from Singleplayer.death_screen import DeathScreen
 from Singleplayer.non_player_characters import NonPlayerCharacter
 

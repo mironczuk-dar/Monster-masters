@@ -3,7 +3,7 @@ import pygame
 
 #IMPORTING FILES
 from Singleplayer.singleplayer_settings import *
-from Singleplayer.battle import Battle
+from Singleplayer.Battle.battle import Battle
 from Singleplayer.monsters import OpponentMonster
 
 #IMPORTING DATA

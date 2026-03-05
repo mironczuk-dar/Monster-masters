@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="181">
+ <tileset firstgid="1" source="../tilesets/world.tsx"/>
+ <tileset firstgid="211" source="../tilesets/objects.tsx"/>
+ <layer id="1" name="Terrain" width="40" height="40">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,5,5,5,5,5,5,6,15,15,15,
+0,0,0,0,0,15,15,4,5,5,5,5,5,5,5,6,15,15,0,0,0,0,0,0,0,15,15,15,14,15,15,15,15,15,15,15,15,5,6,15,
+0,0,0,0,0,4,5,29,15,15,15,15,15,15,15,27,28,5,6,0,0,0,0,0,0,15,4,5,15,15,15,15,15,15,15,15,15,15,16,15,
+0,0,0,0,18,14,15,15,15,15,15,15,15,15,15,15,15,15,17,0,0,0,0,0,0,4,29,15,15,15,15,15,15,15,15,15,15,15,16,15,
+0,0,0,4,5,29,15,15,15,15,15,15,15,15,15,15,15,15,17,15,4,5,6,15,15,14,15,15,15,15,15,15,15,15,15,15,15,15,16,15,
+0,0,0,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,27,28,29,15,27,28,28,29,15,15,15,15,15,15,15,15,15,15,15,15,16,15,
+0,0,0,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,
+0,0,0,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,
+0,0,0,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,
+0,0,0,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,7,25,26,15,
+0,0,0,24,9,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,
+0,0,0,0,19,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,18,16,15,15,15,
+0,0,0,0,19,15,15,15,15,15,15,15,15,15,15,15,15,7,8,8,9,18,18,15,15,15,15,15,15,15,15,15,15,15,18,18,16,15,15,15,
+0,0,0,0,24,25,9,15,15,15,15,15,15,15,15,15,7,26,15,15,19,18,15,15,15,15,15,15,15,15,15,15,15,18,18,18,16,15,15,15,
+0,0,0,0,0,0,24,25,25,25,25,25,25,25,25,25,26,15,15,15,19,18,15,15,15,15,15,15,15,15,15,15,15,18,18,18,16,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,24,9,18,18,18,15,15,15,15,15,15,18,15,18,18,7,26,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,24,9,18,15,15,15,15,15,15,15,18,18,18,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,24,25,25,25,9,15,18,18,18,18,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,24,25,25,9,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,15,15,15,14,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,15,15,15,24,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,15,15,15,60,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,15,15,15,60,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,15,15,15,15,4,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,14,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,14,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,0,0,15,4,5,6,5,6,6,6,15,15,15,15,15,15,15,4,5,5,5,5,29,15,15,15,15,15,16,15,15,15,15,
+0,0,0,0,0,0,0,4,5,6,6,6,6,5,6,16,16,6,6,6,5,6,5,6,6,15,15,15,15,15,15,15,15,15,15,15,5,6,15,15,
+0,0,0,0,0,0,4,5,6,16,16,16,16,15,16,26,26,16,16,16,15,16,15,16,6,15,15,15,15,15,15,15,15,15,15,15,4,4,4,5,
+0,0,0,0,0,4,5,6,6,26,26,26,26,25,26,24,25,26,26,26,25,26,25,26,16,26,26,15,15,14,15,16,15,24,24,14,14,14,14,15,
+0,0,0,4,5,6,5,6,16,15,15,15,15,15,15,15,15,15,15,15,15,14,15,16,26,15,15,15,15,24,25,26,15,24,25,24,24,24,24,25,
+0,0,0,4,5,6,15,16,26,15,15,15,15,15,15,15,15,15,15,15,15,24,25,26,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+0,0,0,4,5,6,25,26,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+4,5,6,6,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+4,5,6,16,25,26,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+4,5,6,26,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+14,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+24,25,26,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15
+</data>
+ </layer>
+ <objectgroup id="2" name="Player">
+  <object id="60" x="740" y="766.667">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="Walls">
+  <object id="1" x="512" y="192" width="448" height="10"/>
+  <object id="3" x="448" y="192" width="64" height="64"/>
+  <object id="5" x="320" y="256" width="64" height="128"/>
+  <object id="6" x="256" y="384" width="128" height="10"/>
+  <object id="8" x="256" y="768" width="64" height="256"/>
+  <object id="9" x="320" y="960" width="128" height="64"/>
+  <object id="10" x="384" y="1024" width="704" height="64"/>
+  <object id="11" x="1024" y="960" width="128" height="64"/>
+  <object id="12" x="1088" y="896" width="256" height="64"/>
+  <object id="13" x="1280" y="960" width="64" height="192"/>
+  <object id="14" x="1344" y="1088" width="64" height="128"/>
+  <object id="15" x="1408" y="1152" width="64" height="128"/>
+  <object id="16" x="1472" y="1216" width="256" height="64"/>
+  <object id="17" x="960" y="192" width="64" height="64"/>
+  <object id="18" x="1024" y="256" width="128" height="10"/>
+  <object id="19" x="1152" y="256" width="64" height="192"/>
+  <object id="20" x="1216" y="448" width="128" height="10"/>
+  <object id="24" x="1472" y="448" width="192" height="10"/>
+  <object id="25" x="1600" y="320" width="64" height="128"/>
+  <object id="26" x="1664" y="256" width="64" height="64"/>
+  <object id="140" x="1728" y="256" width="64" height="10"/>
+  <object id="141" x="1792" y="128" width="64" height="128"/>
+  <object id="142" x="1856" y="128" width="448" height="10"/>
+  <object id="143" x="2304" y="128" width="64" height="64"/>
+  <object id="144" x="2368" y="192" width="64" height="10"/>
+  <object id="145" x="2432" y="192" width="64" height="576"/>
+  <object id="146" x="2304" y="704" width="128" height="64"/>
+  <object id="147" x="2304" y="768" width="64" height="384"/>
+  <object id="153" x="2240" y="1088" width="64" height="768"/>
+  <object id="154" x="1664" y="1280" width="256" height="64"/>
+  <object id="155" x="1856" y="1344" width="64" height="128"/>
+  <object id="156" x="1856" y="1600" width="64" height="192"/>
+  <object id="165" x="192" y="384" width="64" height="448"/>
+ </objectgroup>
+ <objectgroup id="10" name="Trees_small">
+  <object id="40" gid="228" x="512" y="832" width="64" height="128"/>
+  <object id="41" gid="228" x="576" y="832" width="64" height="128"/>
+  <object id="42" gid="228" x="832" y="832" width="64" height="128"/>
+  <object id="43" gid="228" x="896" y="832" width="64" height="128"/>
+  <object id="44" gid="228" x="256" y="576" width="64" height="128"/>
+  <object id="45" gid="228" x="256" y="640" width="64" height="128"/>
+  <object id="46" gid="228" x="256" y="704" width="64" height="128"/>
+ </objectgroup>
+ <objectgroup id="11" name="Coast">
+  <object id="68" x="128" y="384" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="69" x="128" y="448" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="70" x="128" y="512" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="71" x="128" y="576" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="72" x="128" y="640" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="73" x="128" y="704" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="74" x="128" y="768" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="75" x="192" y="832" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="76" x="128" y="832" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="77" x="128" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="78" x="192" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="82" x="192" y="256" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="83" x="256" y="256" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="84" x="256" y="192" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="86" x="256" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="87" x="320" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="88" x="384" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="89" x="448" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="90" x="512" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="91" x="576" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="92" x="640" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="93" x="704" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="94" x="768" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="95" x="832" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="96" x="896" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="97" x="960" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="98" x="1024" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="99" x="1088" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="103" x="1216" y="256" width="64" height="64">
+   <properties>
+    <property name="side" value="left"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="104" x="1216" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="105" x="1280" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="106" x="1344" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="107" x="1408" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="108" x="1472" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="109" x="1536" y="320" width="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="110" x="1536" y="256" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="111" x="1536" y="192" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="112" x="1536" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="113" x="1600" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="114" x="1664" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="115" x="1728" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="123" x="1152" y="128" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="124" x="1152" y="192" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="125" x="1216" y="192" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="129" x="1728" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="130" x="1792" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="131" x="1856" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="132" x="1920" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="133" x="1984" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="134" x="2048" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="135" x="2112" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="137" x="2176" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="138" x="2240" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="139" x="2304" y="64" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="166" x="192" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="168" x="192" y="960" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="169" x="192" y="1024" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="170" x="256" y="1024" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="171" x="320" y="1024" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="172" x="320" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="174" x="384" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="175" x="448" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="176" x="512" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="177" x="576" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="178" x="640" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="12" name="Buildings">
+  <object id="28" gid="231" x="512" y="640" width="448" height="448"/>
+  <object id="179" gid="230" x="1856" y="448" width="448" height="448"/>
+ </objectgroup>
+ <objectgroup id="9" name="Trees">
+  <object id="29" gid="227" x="512" y="256" width="128" height="192"/>
+  <object id="30" gid="227" x="704" y="256" width="128" height="192"/>
+  <object id="31" gid="227" x="832" y="256" width="128" height="192"/>
+  <object id="32" gid="227" x="1024" y="320" width="128" height="192"/>
+  <object id="33" gid="227" x="256" y="448" width="128" height="192"/>
+  <object id="34" gid="227" x="1152" y="512" width="128" height="192"/>
+  <object id="35" gid="227" x="1088" y="896" width="128" height="192"/>
+  <object id="36" gid="227" x="1280" y="896" width="128" height="192"/>
+  <object id="37" gid="227" x="1344" y="512" width="128" height="192"/>
+  <object id="38" gid="227" x="1536" y="512" width="128" height="192"/>
+  <object id="39" gid="227" x="320" y="960" width="128" height="192"/>
+ </objectgroup>
+ <objectgroup id="4" name="Objects">
+  <object id="47" gid="236" x="768" y="960" width="60" height="60"/>
+  <object id="48" gid="236" x="1408" y="640" width="60" height="60"/>
+  <object id="49" gid="237" x="384" y="320" width="56" height="60"/>
+ </objectgroup>
+ <objectgroup id="5" name="Grass"/>
+ <objectgroup id="6" name="Portals"/>
+ <objectgroup id="7" name="Characters"/>
+ <objectgroup id="8" name="Water">
+  <object id="116" x="0" y="0" width="192" height="320"/>
+  <object id="117" x="192" y="0" width="64" height="256"/>
+  <object id="119" x="1280" y="0" width="256" height="320"/>
+  <object id="121" x="0" y="320" width="128" height="576"/>
+  <object id="127" x="256" y="0" width="960" height="128"/>
+  <object id="128" x="1216" y="0" width="64" height="192"/>
+  <object id="157" x="1536" y="0" width="192" height="128"/>
+  <object id="158" x="1728" y="0" width="704" height="64"/>
+  <object id="161" x="0" y="1344" width="960" height="256"/>
+ </objectgroup>
+</map>

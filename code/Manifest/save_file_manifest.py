@@ -3,7 +3,6 @@ DEFAULT_SAVE_FILE_MANIFEST = {
     "save_version": 1,
     "playtime": 0,
     "badges": 0,
-    "location": "starter_town",
     "last_played": None
 }
 
