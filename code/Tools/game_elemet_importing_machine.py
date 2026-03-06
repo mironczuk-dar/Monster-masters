@@ -43,7 +43,8 @@ def load_assets(game):
         'shadow' : import_image(BASE_DIR, 'assets', 'other', 'shadow'),
         'notice_mark' : import_image(BASE_DIR, 'assets', 'ui', 'notice')
     }
-    game.tint_surface = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
+    game.transition_surface = import_image(BASE_DIR, 'assets', 'transition_screens', 'transition_screen_1')
+    game.transition_surface = pygame.transform.scale(game.transition_surface, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     game.monster_icons = import_folder_dict(BASE_DIR, 'assets', 'icons')
     game.monster_icons = scale_asset(game.monster_icons, SCALE_FACTOR)

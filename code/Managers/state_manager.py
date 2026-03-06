@@ -8,22 +8,25 @@ class StateManager:
         s.current_state = None
         s.last_state = None
 
-        # --- TRANSITION ATTRIBUTES ---
+        #TRANSITION ATTRIBUTES
         s.transitioning = False
         s.transition_alpha = 0
         s.transition_speed = 1500
         s.next_state = None
         s.fading_out = True
-        s.transition_color = (0, 0, 0)
+        
+        #SURFACE FOR TRANSITION
+        s.fade_surface = pygame.Surface((s.game.window.get_width(), s.game.window.get_height()))
+        s.fade_surface.fill((0, 0, 0))
+        s.fade_surface.set_alpha(0)
 
-        # --- POPUP GROUPS ---
+        #POPUP GROUPS
         s.music_popups = pygame.sprite.Group()
 
     def add_state(s, name, state_object):
         s.states[name] = state_object
 
     def set_state(s, name):
-        """Standard jump to state without transition."""
         if name in s.states:
             s.current_state = name
             s.game.audio_manager.play_for_state(name)
@@ -33,7 +36,6 @@ class StateManager:
                 state_obj.on_enter()
 
     def change_state(s, name):
-        """RPG-style transition (Fade out -> Switch -> Fade in)."""
         if name in s.states and name != s.current_state:
             s.transitioning = True
             s.fading_out = True
@@ -41,7 +43,7 @@ class StateManager:
             s.next_state = name
 
     def handling_events(s, events):
-        if s.transitioning and s.transition_alpha > 128:
+        if s.transitioning and s.transition_alpha > 200:
             return
             
         if s.current_state:
@@ -60,11 +62,9 @@ class StateManager:
         if s.current_state:
             s.states[s.current_state].draw(window)
 
-        if s.transitioning or s.transition_alpha > 0:
-            overlay = pygame.Surface(window.get_size())
-            overlay.fill(s.transition_color)
-            overlay.set_alpha(int(s.transition_alpha))
-            window.blit(overlay, (0, 0))
+        if s.transition_alpha > 0:
+            s.fade_surface.set_alpha(int(s.transition_alpha))
+            window.blit(s.fade_surface, (0, 0))
 
         for popup in s.music_popups:
             popup.draw(window)

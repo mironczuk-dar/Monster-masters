@@ -9,11 +9,13 @@ NEXT THINGS TO ADD TO THE GAME
 - Make a proper map
 - Finish making the main game mechanics
 - Add battle type data to the characters manifest
-- Start menu graphics
+- Start menu button graphics
 
 
-04.03.2026r.
-- 
+05.03.2026r.
+- Added new game icon made by KittyGang (Evans boyfriend)
+- Added transition screen between worlds
+- Added start menu animated monster and backgrounds
 
 03.03.3036r.
 - Added SaveFileLog sprite in singleplayer menu

@@ -3,16 +3,16 @@ import pygame
 
 #IMPORTING FILES
 from Singleplayer.singleplayer_settings import *
-from Singleplayer.camera import Camera
+from Singleplayer.Overworld.camera import Camera
 from Singleplayer.Support.overworld_support_functions import check_connection
 
 #IMPORTING ENTITIES
-from Singleplayer.player import Player
-from Singleplayer.non_player_characters import NonPlayerCharacter
+from Singleplayer.Overworld.player import Player
+from Singleplayer.Overworld.non_player_characters import NonPlayerCharacter
 
 #IMPORTING SPRITES
 from Singleplayer.overworld_sprites import Sprite, MapWall, TreeSprite, SmallTreeSprite, HouseSprite, GrassPatchSprite, AnimatedSprite, PortalSprite
-from Singleplayer.dialog_tree import DialogTree
+from Singleplayer.Overworld.dialog_tree import DialogTree
 
 #IMPORTING DATA
 from Manifest.npc_manifest import *

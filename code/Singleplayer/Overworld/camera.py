@@ -2,8 +2,8 @@
 from settings import *
 from pygame.math import Vector2 as vector
 import pygame
-from Singleplayer.non_player_characters import NonPlayerCharacter
-from Singleplayer.player import Player
+from Singleplayer.Overworld.non_player_characters import NonPlayerCharacter
+from Singleplayer.Overworld.player import Player
 
 
 # CAMERA CLASS

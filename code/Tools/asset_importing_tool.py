@@ -56,17 +56,24 @@ def attack_importer(*path):
             attack_dict[image_name] = list(import_tilemap(4, 1, folder_path, image_name).values())
     return attack_dict
 
-def monster_asset_importer(columns, rows, *path):
-	monster_dict = {}
+def monster_asset_importer(columns, rows, *path, target_monster=None):
+    monster_dict = {}
+    base_path = join(*path)
 
-	for folder_path, sub_folders, image_names in walk(join(*path)):
-		for image in image_names:
-			image_name = image.split('.')[0]
-			monster_dict[image_name] = {}
-			frame_dict = import_tilemap(columns, rows, *path, image_name)
-			for row, key in enumerate(('idle', 'attack')):
-				monster_dict[image_name][key] = [frame_dict[(column, row)] for column in range(columns)]
-	return monster_dict
+    for folder_path, sub_folders, image_names in walk(base_path):
+        for image in image_names:
+            image_name = image.split('.')[0]
+            
+            if target_monster and image_name != target_monster:
+                continue
+
+            monster_dict[image_name] = {}
+            frame_dict = import_tilemap(columns, rows, base_path, image_name)
+            
+            for row, key in enumerate(('idle', 'attack')):
+                monster_dict[image_name][key] = [frame_dict[(column, row)] for column in range(columns)]
+                
+    return monster_dict
 
 def character_importer(cols, rows, *path):
 	frame_dict = import_tilemap(cols, rows, *path)

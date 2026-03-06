@@ -5,11 +5,11 @@ from random import choice
 #IMPORTING FILES
 from settings import *
 from States.generic_state import BaseState
-from Singleplayer.world import World
+from Singleplayer.Overworld.world import World
 from Singleplayer.monster_index import MonsterIndex
 from Singleplayer.Battle.battle import Battle
 from Singleplayer.death_screen import DeathScreen
-from Singleplayer.non_player_characters import NonPlayerCharacter
+from Singleplayer.Overworld.non_player_characters import NonPlayerCharacter
 
 #IMPORTING DATA
 from Tools.data_loading_tools import load_data, save_data
@@ -271,8 +271,7 @@ class Singleplayer(BaseState):
                 s.tint_mode = 'idle'
 
     def tint_setup(s):
-        s.tint_surface = s.game.tint_surface
-        s.tint_surface.fill((0,0,0))
+        s.tint_surface = s.game.transition_surface
         s.tint_rect = s.tint_surface.get_frect(topleft=(0, -WINDOW_HEIGHT))
         s.tint_mode = 'untint'
         s.tint_speed = 1800
