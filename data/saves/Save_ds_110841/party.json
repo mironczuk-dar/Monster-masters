@@ -5,14 +5,14 @@
             "level": 75,
             "exp": 0,
             "health": 1000,
-            "energy": 2000
+            "energy": 880
         },
         {
             "name": "Pluma",
             "level": 3,
             "exp": 0,
-            "health": 100,
-            "energy": 100
+            "health": 69,
+            "energy": 78
         },
         null,
         null,

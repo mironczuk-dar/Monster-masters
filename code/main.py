@@ -51,6 +51,7 @@ class Game:
         s.display = pygame.display.set_mode((s.window_data['width'], s.window_data['height']), s.flags)
         s.window = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
         pygame.display.set_caption('[MONSTER MASTERS]')
+        pygame.display.set_icon(pygame.image.load(join(BASE_DIR, 'assets', 'icon.png')))
 
         #INITALIZING CLOCK
         s.clock = pygame.time.Clock()

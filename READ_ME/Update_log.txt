@@ -9,6 +9,7 @@ NEXT THINGS TO ADD TO THE GAME
 - Make a proper map
 - Finish making the main game mechanics
 - Add battle type data to the characters manifest
+- Start menu graphics
 
 
 04.03.2026r.
