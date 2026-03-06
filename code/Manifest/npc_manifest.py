@@ -7,7 +7,7 @@ CHARACTER_DATA = {
 		'directions': ['down'],
 		'look_around': True,
 		'defeated': False,
-		'biome': 'forest'
+		'biome': 'forest',
 		},
 	'o2': {
 		'monsters': {0: ('Atrox', 14), 1: ('Pouch', 15), 2: ('Draem', 13), 3: ('Cindrill', 13)},
@@ -17,7 +17,8 @@ CHARACTER_DATA = {
 		'directions': ['left', 'down'],
 		'look_around': False,
 		'defeated': False,
-		'biome': 'sand'
+		'biome': 'sand',
+        'music': 'Options menu tune'
 		},
 	'o3': {
 		'monsters': {0: ('Atrox', 14), 1: ('Pouch', 15), 2: ('Draem', 13), 3: ('Cindrill', 13)},

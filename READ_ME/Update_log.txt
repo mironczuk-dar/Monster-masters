@@ -16,6 +16,8 @@ NEXT THINGS TO ADD TO THE GAME
 - Added new game icon made by KittyGang (Evans boyfriend)
 - Added transition screen between worlds
 - Added start menu animated monster and backgrounds
+- Added title screen music
+- Added overworld music
 
 03.03.3036r.
 - Added SaveFileLog sprite in singleplayer menu

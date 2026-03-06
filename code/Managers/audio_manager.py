@@ -6,6 +6,9 @@ from UI_elements.pop_ups import MusicPopUp
 from pygame import mixer
 from Tools.timer import Timer
 
+#IMPORTING DATA
+from Manifest.music_track_manifest import STATE_MUSIC_TRACKS
+
 #AUDIO MANAGER CLASS
 class AudioManager:
 
@@ -14,11 +17,7 @@ class AudioManager:
         s.game = game
 
         # ----- MUSIC -----
-        s.state_music = {
-            'Start menu' : 'Options menu tune',
-            'Options menu' : 'Options menu tune',
-            'Singleplayer menu' : 'Options menu tune',
-        }
+        s.state_music = STATE_MUSIC_TRACKS
 
         # ----- MUSIC EFFECTS -----
         s.current_track = None

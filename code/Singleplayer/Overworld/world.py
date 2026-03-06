@@ -16,6 +16,7 @@ from Singleplayer.Overworld.dialog_tree import DialogTree
 
 #IMPORTING DATA
 from Manifest.npc_manifest import *
+from Manifest.music_track_manifest import *
 
 #WORLD CLASS
 class World:
@@ -66,7 +67,7 @@ class World:
         if key[controlls['action_a']]:
             for character in s.all_sprite_groups['characters']:
                 if check_connection(80, s.player, character):
-                    s.player.freeze_unfreeze()
+                    s.player.freeze()
                     character.change_facing_direction(s.player.rect.center)
                     s.create_dialog(character)
                     character.can_rotate = False
@@ -205,7 +206,10 @@ class World:
         #CREATING TRANSITION PORTALS
         if 'Portals' in [layer.name for layer in current_map.layers]:
             for object in current_map.get_layer_by_name('Portals'):
-                PortalSprite(s.all_sprite_groups['portals'], (object.x, object.y), (object.width, object.height), (object.name, object.properties['place']))
+                if 'music' in object.properties:
+                    PortalSprite(s.all_sprite_groups['portals'], (object.x, object.y), (object.width, object.height), (object.name, object.properties['place']), object.properties['music'])
+                else:
+                    PortalSprite(s.all_sprite_groups['portals'], (object.x, object.y), (object.width, object.height), (object.name, object.properties['place']))
 
         #CREATING OBJECTS
         if 'Objects' in [layer.name for layer in current_map.layers]:
@@ -265,3 +269,6 @@ class World:
 
         #UNTINTING THE TINT WINDOW
         s.singleplayer_state.tint_mode = 'untint'
+
+        #PLAYING THE MAP MUSIC
+        s.game.audio_manager.play_music(OVERWORLD_MUSIC_TRACKS[s.current_map_name])

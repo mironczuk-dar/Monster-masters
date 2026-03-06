@@ -12,10 +12,11 @@ class Sprite(pygame.sprite.Sprite):
         s.hitbox = s.rect.copy()
 
 class PortalSprite(Sprite):
-    def __init__(s, groups, pos, size, target):
+    def __init__(s, groups, pos, size, target, music = None):
         surface = pygame.Surface(size, pygame.SRCALPHA)
         super().__init__(groups, pos, surface)
         s.target = target
+        s.music = music
 
 class TreeSprite(Sprite):
     def __init__(s, groups, pos, surface, level_depth = WORLD_LAYERS['main']):

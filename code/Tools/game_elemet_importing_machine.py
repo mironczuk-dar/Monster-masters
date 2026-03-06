@@ -16,10 +16,15 @@ def load_audio_assets(game):
     mixer.init()
 
     game.music_tracks = {
-        'Options menu tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Options_menu_tune.ogg'),
+        'Start menu tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'States_tunes', 'start_menu_tune.ogg'),
+        'Singleplayer menu tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'States_tunes', 'singleplayer_menu_tune.ogg'),
+        'Options menu tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'States_tunes', 'options_menu_tune.ogg'),
+        'World map tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Overworld_tunes', 'world_map_tune.ogg'),
+        'Hospital tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Overworld_tunes', 'hospital_tune.ogg'),
+        'Default battle tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Battle_tunes', 'default_battle_tune.ogg'),
     }
 
-    game.options_menu_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound effects', 'scratch.mp3'))
+    game.options_menu_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'scratch.mp3'))
 
 
 #LOADING GAME MAPS
@@ -65,7 +70,6 @@ def load_assets(game):
 
     game.death_screens = import_folder(BASE_DIR, 'assets', 'death_screens')
     game.death_screens = [pygame.transform.scale(surface, (WINDOW_WIDTH, WINDOW_HEIGHT)) for surface in game.death_screens]
-
 
 #LOADING GAME FONTS
 def load_game_fonts(game):

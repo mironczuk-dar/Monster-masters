@@ -76,7 +76,7 @@ class NonPlayerCharacter(pygame.sprite.Sprite):
             s.has_noticed = True
             s.can_rotate = False
             s.player.noticed = True
-            s.player.freeze_unfreeze()
+            s.player.freeze()
             s.player.change_facing_direction(s.rect.center)
             s.timers['notice'].activate()
 

@@ -15,6 +15,7 @@ from Singleplayer.Overworld.non_player_characters import NonPlayerCharacter
 from Tools.data_loading_tools import load_data, save_data
 from Manifest.save_file_manifest import *
 from Singleplayer.monsters import Monster
+from Manifest.music_track_manifest import OVERWORLD_MUSIC_TRACKS
 
 
 class Singleplayer(BaseState):
@@ -197,7 +198,8 @@ class Singleplayer(BaseState):
         s.pending_battle_data = {
             'opponents': opponent_monsters,
             'bg': npc_data.get('biome', 'forest'),
-            'character_id': character_id
+            'character_id': character_id,
+            'music': npc_data.get('music', 'Default battle tune')
         }
 
         s.tint_mode = 'tint'
@@ -208,7 +210,7 @@ class Singleplayer(BaseState):
                 monster.health = monster.get_stat('max_health')
                 monster.energy = monster.get_stat('max_energy')
         print("Party healed!")
-        s.world.player.freeze_unfreeze()
+        s.world.player.unfreeze()
 
     def tint_window(s, delta_time):
         speed = s.tint_speed * delta_time
@@ -238,9 +240,9 @@ class Singleplayer(BaseState):
                             s.world.create_dialog(npc)
                             break
 
+                    s.game.audio_manager.play_music(OVERWORLD_MUSIC_TRACKS.get(s.world.current_map_name, 'World map tune'))
+
                 s.currently_in_battle = False
-                s.world.player.freeze_unfreeze()
-                
                 
             elif hasattr(s, 'pending_battle_data') and s.pending_battle_data:
                 data = s.pending_battle_data
@@ -252,6 +254,8 @@ class Singleplayer(BaseState):
                     s.game.bg_frames[data['bg']], 
                     s.game.battle_fonts, 'triples'
                 )
+
+                s.game.audio_manager.play_music(data['music'])
                 
                 s.currently_in_battle = True
                 s.pending_battle_data = None

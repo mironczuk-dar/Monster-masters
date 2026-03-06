@@ -35,7 +35,7 @@ class OptionsMenu:
 
         # PREVIEW SOUND
         s.test_sound = pygame.mixer.Sound(
-            join(BASE_DIR, 'audio', 'Sound effects', 'scratch.mp3')
+            join(BASE_DIR, 'audio', 'Sound_effects', 'scratch.mp3')
         )
 
         # BUILD UI

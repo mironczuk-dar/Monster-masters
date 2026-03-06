@@ -52,10 +52,13 @@ class DialogTree:
             state.nurse_heal()
         
         elif char_id in CHARACTER_DATA and char_id not in state.save_data['flags_data']['characters_defeated']:
+            # Gracz pozostaje zamrożony (freeze został wywołany na początku rozmowy),
+            # bo przechodzimy do walki.
             state.create_battle(char_id)
         
         else:
-            s.player.freeze_unfreeze()
+            # JAWNE ODBLOKOWANIE
+            s.player.unfreeze()
 
 
 class DialogSprite(pygame.sprite.Sprite):

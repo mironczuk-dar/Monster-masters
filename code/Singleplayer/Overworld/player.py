@@ -39,9 +39,12 @@ class Player(pygame.sprite.Sprite):
         s.noticed = False
 
     #METHOD FOR FREEZING THE PLAYER SO HE DOESN'T MOVE
-    def freeze_unfreeze(s):
+    def freeze(s):
         s.direction = vector(0,0)
-        s.frozen = not s.frozen
+        s.frozen = True
+
+    def unfreeze(s):
+        s.frozen = False
 
     #METHOD FOR CHANING THE PLAYERS DIRECTION
     def change_facing_direction(s, target_pos):

@@ -2085,6 +2085,7 @@
   </object>
   <object id="438" name="hospital" x="1728" y="517" width="128" height="64">
    <properties>
+    <property name="music" value="Hospital tune"/>
     <property name="place" value="world"/>
    </properties>
   </object>
