@@ -20,7 +20,8 @@ COLORS = {
 	'blue': '#66d7ee',
 	'normal': '#ffffff',
 	'dark white': '#f0f0f0',
-    'green' : (0, 180, 0)
+    'green' : (0, 180, 0),
+    'dark blue': '#00008b',
 }
 
 WORLD_LAYERS = {

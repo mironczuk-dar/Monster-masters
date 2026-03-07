@@ -4,17 +4,17 @@ NEXT THINGS TO ADD TO THE GAME
 - Change death screen to it's own state.
 - Add controller keyboard to Singleplayer menu
 - Add controlls options menu and Atomic launcher controlls
-- Clean up how the files are stored in singleplayer folder. Singleplayer/Battle and Singleplayer/Overworld
 - Unfreeze the player after winning the battle 
 - Make a proper map
 - Finish making the main game mechanics
 - Add battle type data to the characters manifest
 - Start menu button graphics
 - Music popup overlays other music popups
-- Add female playable character
 
 06.03.2026r.
 - Added sound effects to start menu
+- Added female playable character
+- Devided code in the Singleplayer folder to have battle_files folder and overworld_folder
 
 05.03.2026r.
 - Added new game icon made by KittyGang (Evans boyfriend)

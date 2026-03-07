@@ -12,7 +12,7 @@ from Manifest.abilities_manifest import ABILITIES_DATA
 #UI ELEMENTS
 from UI_elements.bar import draw_bar
 
-class MonsterIndex:
+class MonsterParty:
     def __init__(s, game, singleplayer_state, monsters, fonts):
 
         s.game = game
@@ -41,8 +41,8 @@ class MonsterIndex:
             s.max_stats['energy'] = s.max_stats.pop('max_energy')
 
         #TINT SIRFACE
-        s.tint_furface = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
-        s.tint_furface.set_alpha(200)
+        s.tint_surface = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
+        s.tint_surface.fill(COLORS['dark blue'])
 
         #DIMENTIONS
         s.main_rect = pygame.FRect(0,0, WINDOW_WIDTH*0.6, WINDOW_HEIGHT*0.9).move_to(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
@@ -57,7 +57,7 @@ class MonsterIndex:
         s.frame_index += ANIMATION_SPEED * delta_time
 
     def draw(s, window):
-        window.blit(s.tint_furface, (0,0))
+        window.blit(s.tint_surface, (0,0))
 
         s.display_list(window)
         s.display_main(window)
@@ -68,8 +68,9 @@ class MonsterIndex:
 
         active_monsters_count = len([m for m in s.monsters.values() if m is not None])
 
-        if key[controlls['options']]:
-            s.singleplayer_state.monster_index_active = False
+        if key[controlls['action_b']] or key[controlls['options']]:
+            s.singleplayer_state.monster_party_active = False
+            s.singleplayer_state.overworld_tab_active = True
 
         if key[controlls['action_a']]:
             if s.selected_index != None:

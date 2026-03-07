@@ -2,6 +2,9 @@
 import pygame
 from Singleplayer.singleplayer_settings import *
 
+#IMPORTING TOOLS
+from Tools.timer import Timer
+
 class Sprite(pygame.sprite.Sprite):
     def __init__(s, groups, pos, surface, level_depth = WORLD_LAYERS['main']):
         super().__init__(groups)
@@ -87,3 +90,15 @@ class AnimatedSprite(Sprite):
     def update(s, delta_time):
         s.frame_index += ANIMATION_SPEED * delta_time
         s.image = s.frames[int(s.frame_index % len(s.frames))]
+
+class TimedSprite(pygame.sprite.Sprite):
+    def __init__(s, groups, pos, surface, duration):
+        super().__init__(groups)
+
+        s.image = surface
+        s.rect = s.image.get_frect(center = pos)
+        s.z = BATTLE_LAYERS['overlay']
+        s.death_timer = Timer(duration, True, s.kill)
+
+    def update(s, update):
+        s.death_timer.update()

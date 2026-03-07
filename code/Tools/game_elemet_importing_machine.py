@@ -33,7 +33,6 @@ def load_audio_assets(game):
     }
     game.hospital_heal_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'overworld_sounds', 'hospital_heal_sound.wav'))
 
-
 #LOADING GAME MAPS
 def load_maps(game):
 
@@ -58,7 +57,7 @@ def load_assets(game):
     game.transition_surface = import_image(BASE_DIR, 'assets', 'transition_screens', 'transition_screen_1')
     game.transition_surface = pygame.transform.scale(game.transition_surface, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
-    game.monster_icons = import_folder_dict(BASE_DIR, 'assets', 'icons')
+    game.monster_icons = import_folder_dict(BASE_DIR, 'assets', 'monster_icons')
     game.monster_icons = scale_asset(game.monster_icons, SCALE_FACTOR)
 
     game.monster_assets = monster_asset_importer(4, 2, BASE_DIR, 'assets', 'monsters')
@@ -85,7 +84,12 @@ def load_game_fonts(game):
         'dialog' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 40)
     }
 
-    game.monster_index_fonts = {
+    game.overworld_tab_fonts = {
+        'medium' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 30),
+        'big' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 50)
+    }
+
+    game.monster_party_fonts = {
         'regular' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 33),
         'small' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 29),
         'bold' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'dogicapixelbold.otf'), 39),

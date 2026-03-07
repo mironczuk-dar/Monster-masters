@@ -6,10 +6,11 @@ from random import choice
 from settings import *
 from States.generic_state import BaseState
 from Singleplayer.Overworld.world import World
-from Singleplayer.monster_index import MonsterIndex
+from Singleplayer.monster_party import MonsterParty
 from Singleplayer.Battle.battle import Battle
 from Singleplayer.death_screen import DeathScreen
 from Singleplayer.Overworld.non_player_characters import NonPlayerCharacter
+from Singleplayer.Overworld.overworld_tab import OverworldTab
 
 #IMPORTING DATA
 from Tools.data_loading_tools import load_data, save_data
@@ -31,7 +32,6 @@ class Singleplayer(BaseState):
         s.death_screen = None
 
         #SINGLEPLAYER GAME FLAGS
-        s.monster_index_active = False
         s.currently_in_battle = False
         s.pending_death_screen = False
         s.pending_battle_data = None
@@ -40,8 +40,12 @@ class Singleplayer(BaseState):
         s.tint_setup()
         s.setup()
 
+        s.overworld_tab = OverworldTab(s.game, s)
+        s.overworld_tab_active = False
+
         #MONSTER INDEX - MONSTERDEX
-        s.monster_index = MonsterIndex(s.game, s, s.player_party, s.game.monster_index_fonts)
+        s.monster_party = MonsterParty(s.game, s, s.player_party, s.game.monster_party_fonts)
+        s.monster_party_active = False
 
         #BATTLE SYSTEM ATTRIBUTES
         s.dummy_monsters = {
@@ -133,9 +137,12 @@ class Singleplayer(BaseState):
         s.load_player_monsters()
 
     def update(s, delta_time):
-        if s.monster_index_active:
-            s.monster_index.update(delta_time)
+        if s.monster_party_active:
+            s.monster_party.update(delta_time)
             return
+
+        if s.overworld_tab_active:
+            s.overworld_tab.update(delta_time)
 
         if s.currently_in_battle:
             s.battle.update(delta_time)
@@ -149,35 +156,25 @@ class Singleplayer(BaseState):
 
         s.tint_window(delta_time)
 
-        if s.tint_mode == 'idle' and not s.currently_in_battle and not s.monster_index_active:
+        if s.tint_mode == 'idle' and not s.currently_in_battle and not s.monster_party_active:
             s.world.update(delta_time)
 
     def draw(s, window):
-        window.fill((50, 50, 50))
+        s.world.draw(window)
 
-        if s.monster_index_active:
-            s.monster_index.draw(window)
-        elif s.currently_in_battle:
-            s.battle.draw(window)
-        elif s.death_screen:
-            s.death_screen.draw(window)
-        else:
-           s.world.draw(window)
+        if s.overworld_tab_active:
+            s.overworld_tab.draw(window)
+            
+        if s.monster_party_active:
+            s.monster_party.draw(window)
 
         window.blit(s.tint_surface, s.tint_rect)
 
     def handling_events(s, events):
-
-        if s.monster_index_active:
-            s.monster_index.handling_events(events)
-            s.world.player.direction = vector(0,0)
-
-        elif s.currently_in_battle:
-            s.battle.handling_events(events)
-
-        elif s.death_screen:
-            s.death_screen.handling_events(events)
-
+        if s.monster_party_active:
+            s.monster_party.handling_events(events)
+        elif s.overworld_tab_active:
+            s.overworld_tab.handling_events(events)
         else:
             s.world.handling_events(events)
 

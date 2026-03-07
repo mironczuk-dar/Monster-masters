@@ -1,1 +1,2 @@
-This is the Licence!!
+Use the code. 
+Just don't use it to train comertial LLM's.

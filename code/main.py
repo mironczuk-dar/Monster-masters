@@ -67,7 +67,6 @@ class Game:
         s.audio_manager = AudioManager(s)
         s.creating_states()
 
-
     #METHOD FOR IMPORTING ALL ASSETS
     def import_assets(s):
         from concurrent.futures import ThreadPoolExecutor

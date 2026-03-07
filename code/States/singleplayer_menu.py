@@ -259,11 +259,10 @@ class SaveFileLog:
             x += 150
 
     def get_trainer_icon(s):
-        if s.gender == "female":
-            return s.game.overworld_frames["characters"]["player"]['down'][0]
+        if s.gender == "male":
+            return s.game.overworld_frames["characters"]["player_male"]['down'][0]
         else:
-            return s.game.overworld_frames["characters"]["player"]['down'][0]
-        
+            return s.game.overworld_frames["characters"]["player_female"]['down'][0]       
     def handling_events(s, events):
         mouse_pos = s.game.get_scaled_mouse_pos()
 

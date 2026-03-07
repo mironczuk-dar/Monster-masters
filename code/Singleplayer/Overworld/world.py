@@ -73,7 +73,8 @@ class World:
                     character.can_rotate = False
 
         if key[controlls['options']]:
-            s.singleplayer_state.monster_index_active = True
+            s.singleplayer_state.overworld_tab_active = True
+            s.singleplayer_state.overworld_tab.on_enter()
             s.player.direction = vector(0,0)
 
         s.player.handling_events(events)
@@ -179,12 +180,18 @@ class World:
                 map_data['position']['y']
             )
 
+        #PLAYERS GENDER
+        if s.singleplayer_state.save_data['trainer_data']['gender'] == 'male':
+            player_frames = s.game.overworld_frames['characters']['player_male']
+        else:
+            player_frames = s.game.overworld_frames['characters']['player_female']
+
         #CREATING THE PLAYER
         s.player = Player(
             s.game,
             s.all_sprite_groups['all'],
             final_pos,
-            s.game.overworld_frames['characters']['player'],
+            player_frames,
             facing_direction
         )
 

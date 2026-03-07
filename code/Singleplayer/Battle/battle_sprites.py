@@ -21,7 +21,6 @@ class TimedSprite(pygame.sprite.Sprite):
     def update(s, update):
         s.death_timer.update()
         
-
 class AttackSprite(pygame.sprite.Sprite):
     def __init__(s, groups, pos, frames, level_depth = BATTLE_LAYERS['overlay']):
 

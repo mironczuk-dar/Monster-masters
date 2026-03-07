@@ -3,7 +3,5 @@
     "talked_to_professor": false,
     "bridge_opened": false,
     "champion_defeated": false,
-    "characters_defeated": [
-        "o1"
-    ]
+    "characters_defeated": []
 }
