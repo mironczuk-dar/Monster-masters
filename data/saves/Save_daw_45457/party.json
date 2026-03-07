@@ -4,8 +4,8 @@
             "name": "Charmadillo",
             "level": 75,
             "exp": 0,
-            "health": 1000,
-            "energy": 860
+            "health": 2175,
+            "energy": 880
         },
         {
             "name": "Pluma",
@@ -14,7 +14,13 @@
             "health": 69,
             "energy": 78
         },
-        null,
+        {
+            "name": "Jacana",
+            "level": 14,
+            "exp": 0,
+            "health": 168,
+            "energy": 266
+        },
         null,
         null
     ]

@@ -90,16 +90,16 @@ class AudioManager:
 
     # ----- SOUND EFFECT METHODS -----
     def play_sound(s, sound):
-
         if not s.sound_on:
-            return
+            return None
         
         snd = sound
         if snd:
             snd.set_volume(s.sound_volume)
-            snd.play()
+            return snd.play() 
         else:
             print(f'[SOUND ERROR]: {snd}')
+            return None
 
     def set_sound_volume(s, volume):
         s.sound_volume = volume

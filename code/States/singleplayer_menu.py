@@ -272,6 +272,7 @@ class SaveFileLog:
         for event in events:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 if s.hover:
+                    s.game.audio_manager.play_sound(s.game.select_sound)
                     s.action()
 
     def update(s, delta_time):

@@ -34,9 +34,7 @@ class OptionsMenu:
         s.fps_options = [90, 60, 40, 30]
 
         # PREVIEW SOUND
-        s.test_sound = pygame.mixer.Sound(
-            join(BASE_DIR, 'audio', 'Sound_effects', 'scratch.mp3')
-        )
+        s.test_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'generic_sounds', 'select_sound.wav'))
 
         # BUILD UI
         s.setup()

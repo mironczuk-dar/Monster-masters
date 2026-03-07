@@ -1,7 +1,7 @@
 {
     "sound": 1,
     "music_on": true,
-    "sound_on": false,
-    "music_volume": 0.18,
-    "sound_volume": 0.105
+    "sound_on": true,
+    "music_volume": 0.19,
+    "sound_volume": 0.94
 }

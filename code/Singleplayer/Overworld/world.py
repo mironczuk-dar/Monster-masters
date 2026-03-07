@@ -11,7 +11,7 @@ from Singleplayer.Overworld.player import Player
 from Singleplayer.Overworld.non_player_characters import NonPlayerCharacter
 
 #IMPORTING SPRITES
-from Singleplayer.overworld_sprites import Sprite, MapWall, TreeSprite, SmallTreeSprite, HouseSprite, GrassPatchSprite, AnimatedSprite, PortalSprite
+from Singleplayer.Overworld.overworld_sprites import Sprite, MapWall, TreeSprite, SmallTreeSprite, HouseSprite, GrassPatchSprite, AnimatedSprite, PortalSprite
 from Singleplayer.Overworld.dialog_tree import DialogTree
 
 #IMPORTING DATA
@@ -81,6 +81,7 @@ class World:
     #METHOD FOR CREATING THE DIALOG
     def create_dialog(s, character):
         if not s.active_dialog:
+            s.game.audio_manager.play_sound(s.game.select_sound)
             s.active_dialog = DialogTree(s.game, s, s.player, character, s.all_sprite_groups, s.game.overworld_fonts['dialog'])
 
     #METHOD FOR CHECKING PLAYER / WALL COLLISIONS
@@ -271,4 +272,5 @@ class World:
         s.singleplayer_state.tint_mode = 'untint'
 
         #PLAYING THE MAP MUSIC
-        s.game.audio_manager.play_music(OVERWORLD_MUSIC_TRACKS[s.current_map_name])
+        if s.current_map_name in OVERWORLD_MUSIC_TRACKS:
+           s.game.audio_manager.play_music(OVERWORLD_MUSIC_TRACKS[s.current_map_name])

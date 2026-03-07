@@ -7,7 +7,7 @@ from os.path import join
 # IMPORTING FILES
 from States.generic_state import BaseState
 from settings import WINDOW_WIDTH, WINDOW_HEIGHT, BASE_DIR
-from UI_elements.buttons import GenericButton
+from UI_elements.buttons import GenericButton, AudioButton
 
 #IMPORTING FUNCTIONS FOR LOADING ASSETS
 from Tools.game_elemet_importing_machine import monster_asset_importer, scale_asset
@@ -53,8 +53,6 @@ class StartMenu(BaseState):
     #METHOD THAT RUNS EVERY TIME WE ENTER THE MENU
     def on_enter(s):
 
-
-
         #BACKGROUND AND MONSTER SELECTION
         bg_id = choice([1, 2, 3])
         bg_name = f'background_{bg_id}'
@@ -86,6 +84,8 @@ class StartMenu(BaseState):
                     WINDOW_WIDTH * 0.7 - m_width // 2,
                     WINDOW_HEIGHT * 0.6 - m_height // 2
                 )
+
+            s.buttons[0].sound = s.game.start_menu_monster_cries[f'{monster_name}']
             
         except Exception as e:
             print(f"Error: {e}")
@@ -135,13 +135,23 @@ class StartMenu(BaseState):
         visible_states = ["Singleplayer menu", "Options menu"]
 
         for key in visible_states:
-            btn = GenericButton(
-                s.game,
-                size,
-                (pos_x, pos_y),
-                key,
-                action=lambda k=key: s.game.state_manager.change_state(k)
-            )
+            if key == 'Singleplayer menu':
+                btn = AudioButton(
+                    s.game,
+                    size,
+                    (pos_x, pos_y),
+                    key,
+                    action = lambda k = key: s.game.state_manager.change_state(k),
+                    sound = None
+                )
+            else:
+                btn = GenericButton(
+                    s.game,
+                    size,
+                    (pos_x, pos_y),
+                    key,
+                    action = lambda k = key: s.game.state_manager.change_state(k)
+                )
             s.buttons.append(btn)
             pos_y += size[1] + 10
 

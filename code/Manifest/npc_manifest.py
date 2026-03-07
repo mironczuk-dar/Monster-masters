@@ -17,7 +17,7 @@ CHARACTER_DATA = {
 		'directions': ['left', 'down'],
 		'look_around': False,
 		'defeated': False,
-		'biome': 'sand',
+		'biome': 'ice',
         'music': 'Options menu tune'
 		},
 	'o3': {

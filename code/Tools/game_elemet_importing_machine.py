@@ -24,7 +24,14 @@ def load_audio_assets(game):
         'Default battle tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Battle_tunes', 'default_battle_tune.ogg'),
     }
 
-    game.options_menu_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'scratch.mp3'))
+    game.select_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'generic_sounds', 'select_sound.wav'))
+    game.transition_screen_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'overworld_sounds', 'transition_screen_sound.wav'))
+    game.start_menu_monster_cries = {
+        'Pluma' : pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'start_menu_sounds','pluma_cry.wav')),
+        'Friolera' : pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'start_menu_sounds','friolera_cry.wav')),
+        'Finiette' : pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'start_menu_sounds','finiette_cry.wav')),
+    }
+    game.hospital_heal_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'overworld_sounds', 'hospital_heal_sound.wav'))
 
 
 #LOADING GAME MAPS

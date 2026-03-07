@@ -4,7 +4,7 @@ import pygame
 
 #A GENERIC BUTTON CLASS
 class GenericButton():
-    def __init__(s, game, size, pos, text, text_size=40, text_colour=(0,0,0), colour=(255, 0, 0), action=None):
+    def __init__(s, game, size, pos, text, text_size = 40, text_colour = (0,0,0), colour = (255, 0, 0), action = None, sound = None):
 
         #PASSING IN THE GAME AS AN ATTIBUTE
         s.game = game
@@ -25,6 +25,10 @@ class GenericButton():
         #ADDING TEXT TO THE BUTTON IMAGE
         s.image.blit(text_surf, text_rect)
 
+        #AUDIO ATTRIBUTES
+        s.sound = sound
+
+
     def update(s, delta_time):
         pass
 
@@ -42,7 +46,45 @@ class GenericButton():
 
         if s.rect.collidepoint(mouse_pos) and mouse_press:
             if s.action:
+                if s.sound:
+                    s.game.audio_manager.play_sound(s.sound)
                 s.action()
+
+
+#A BUTTON THAT PLAYS A SOUND AND WAITS FOR IT TO FINISH BEFORE EXECUTING THE ACTION
+class AudioButton(GenericButton):
+    def __init__(s, *args, **kwargs):
+
+        #INITIALIZING THE GENERIC BUTTON
+        super().__init__(*args, **kwargs)
+        s.channel = None
+        s.is_waiting = False
+
+    #METHOD FOR UPDATING THE CLASS
+    def update(s, delta_time):
+        if s.is_waiting:
+            if s.channel is None or not s.channel.get_busy():
+                if s.action:
+                    s.action()
+                s.is_waiting = False
+                s.channel = None
+
+    def handling_events(s, events):
+        mouse_pos = s.game.get_scaled_mouse_pos()
+        mouse_press = pygame.mouse.get_just_pressed()[0]
+
+        if s.rect.collidepoint(mouse_pos):
+            s.image.set_alpha(100)
+        else:
+            s.image.set_alpha(255)
+
+        if s.rect.collidepoint(mouse_pos) and mouse_press:
+            if not s.is_waiting:
+                if s.sound:
+                    s.channel = s.game.audio_manager.play_sound(s.sound)
+                    s.is_waiting = True
+                else:
+                    if s.action: s.action()
 
 
 #A TOGGLE BUTTON

@@ -10,7 +10,11 @@ NEXT THINGS TO ADD TO THE GAME
 - Finish making the main game mechanics
 - Add battle type data to the characters manifest
 - Start menu button graphics
+- Music popup overlays other music popups
+- Add female playable character
 
+06.03.2026r.
+- Added sound effects to start menu
 
 05.03.2026r.
 - Added new game icon made by KittyGang (Evans boyfriend)

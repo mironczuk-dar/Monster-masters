@@ -34,6 +34,7 @@ class Singleplayer(BaseState):
         s.monster_index_active = False
         s.currently_in_battle = False
         s.pending_death_screen = False
+        s.pending_battle_data = None
 
         #SETTING UP SINGLEPLAYER GAME ELEMENTS
         s.tint_setup()
@@ -220,6 +221,8 @@ class Singleplayer(BaseState):
             if s.tint_rect.top >= 0:
                 s.tint_rect.top = 0
                 s.tint_mode = 'load'
+                if s.pending_battle_data:#SOME FLAG TO POINT TO THAT THERE'S A BATTLE
+                    s.game.audio_manager.play_sound(s.game.transition_screen_sound)
 
         elif s.tint_mode == 'load':
             if s.currently_in_battle and s.battle.finished:
@@ -244,7 +247,7 @@ class Singleplayer(BaseState):
 
                 s.currently_in_battle = False
                 
-            elif hasattr(s, 'pending_battle_data') and s.pending_battle_data:
+            elif s.pending_battle_data:
                 data = s.pending_battle_data
                 s.active_battle_char_id = data['character_id']
                 

@@ -33,7 +33,7 @@ class DialogTree:
         key = pygame.key.get_just_pressed()
 
         if key[controlls['action_a']] or key[controlls['action_b']]:
-
+            s.game.audio_manager.play_sound(s.game.select_sound)
             s.current_dialog.kill()
             s.dialog_index += 1
 
@@ -49,11 +49,10 @@ class DialogTree:
         state = s.world.singleplayer_state
 
         if char_id == 'Nurse':
+            s.game.audio_manager.play_sound(s.game.hospital_heal_sound)
             state.nurse_heal()
         
         elif char_id in CHARACTER_DATA and char_id not in state.save_data['flags_data']['characters_defeated']:
-            # Gracz pozostaje zamrożony (freeze został wywołany na początku rozmowy),
-            # bo przechodzimy do walki.
             state.create_battle(char_id)
         
         else:

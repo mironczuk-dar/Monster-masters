@@ -8,5 +8,4 @@ OVERWORLD_MUSIC_TRACKS = {
     'Stag Island' : 'World map tune',
     'world' : 'World map tune',
     'hospital' : 'Hospital tune',
-    'house' : 'World map tune',
 }
