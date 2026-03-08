@@ -1,6 +1,6 @@
 #IMPORTING FILES
 from pygame.math import Vector2 as vector
-from random import choice
+from random import choice, randint, random
 
 #IMPORTING FILES
 from settings import *
@@ -48,13 +48,7 @@ class Singleplayer(BaseState):
         s.monster_party_active = False
 
         #BATTLE SYSTEM ATTRIBUTES
-        s.dummy_monsters = {
-            0: Monster("Sparchu", 15, 0, 120, 70),
-            1: Monster("Friolera", 12, 0, 120, 490),
-            2: Monster("Friolera", 12, 0, 120, 65),
-            3: Monster("Friolera", 2, 0, 120, 100),
-            4: None
-        }
+        s.encounter_chance = 0.005
         s.battle = None
 
     def save(s):
@@ -143,28 +137,32 @@ class Singleplayer(BaseState):
 
         if s.overworld_tab_active:
             s.overworld_tab.update(delta_time)
+            return
 
         if s.currently_in_battle:
             s.battle.update(delta_time)
             
             if s.battle.finished and s.tint_mode == 'idle':
                 s.tint_mode = 'tint' 
-            
-        
+
         if s.world.portal_destination and s.tint_mode == 'idle':
             s.tint_mode = 'tint'
 
         s.tint_window(delta_time)
 
-        if s.tint_mode == 'idle' and not s.currently_in_battle and not s.monster_party_active:
+        if s.tint_mode == 'idle' and not s.currently_in_battle:
             s.world.update(delta_time)
+            s.check_monster()
 
     def draw(s, window):
-        s.world.draw(window)
+        if s.currently_in_battle:
+            s.battle.draw(window)
+        else:
+            s.world.draw(window)
 
         if s.overworld_tab_active:
             s.overworld_tab.draw(window)
-            
+
         if s.monster_party_active:
             s.monster_party.draw(window)
 
@@ -175,6 +173,8 @@ class Singleplayer(BaseState):
             s.monster_party.handling_events(events)
         elif s.overworld_tab_active:
             s.overworld_tab.handling_events(events)
+        elif s.currently_in_battle:
+            s.battle.handling_events(events)
         else:
             s.world.handling_events(events)
 
@@ -197,7 +197,8 @@ class Singleplayer(BaseState):
             'opponents': opponent_monsters,
             'bg': npc_data.get('biome', 'forest'),
             'character_id': character_id,
-            'music': npc_data.get('music', 'Default battle tune')
+            'music': npc_data.get('music', 'Default battle tune'),
+            'battle_type': npc_data.get('battle_type', 'single')
         }
 
         s.tint_mode = 'tint'
@@ -226,21 +227,27 @@ class Singleplayer(BaseState):
                 if s.battle.result == 'lose':
                     s.death_screen = DeathScreen(s.game, s, choice(s.game.death_screens), s.save_path)
                 
-                if s.battle.result == 'win' and hasattr(s, 'active_battle_char_id'):
-                    char_id = s.active_battle_char_id
-                    
-                    if char_id not in s.save_data['flags_data']['characters_defeated']:
-                        s.save_data['flags_data']['characters_defeated'].append(char_id)
-                    
-                    from Manifest.npc_manifest import CHARACTER_DATA
-                    for npc in s.world.all_sprite_groups['characters']:
-                        if isinstance(npc, NonPlayerCharacter) and npc.character_id == char_id:
-                            npc.defeated = True
-                            
-                            s.world.create_dialog(npc)
-                            break
+                if s.battle.result == 'win':
+                    if getattr(s, 'active_battle_char_id', None):
+                        char_id = s.active_battle_char_id
 
-                    s.game.audio_manager.play_music(OVERWORLD_MUSIC_TRACKS.get(s.world.current_map_name, 'World map tune'))
+                        if char_id not in s.save_data['flags_data']['characters_defeated']:
+                            s.save_data['flags_data']['characters_defeated'].append(char_id)
+
+                        from Manifest.npc_manifest import CHARACTER_DATA
+                        for npc in s.world.all_sprite_groups['characters']:
+                            if isinstance(npc, NonPlayerCharacter) and npc.character_id == char_id:
+                                npc.defeated = True
+                                s.world.create_dialog(npc)
+                                break
+
+                    # ZAWSZE wracamy do muzyki mapy
+                    s.game.audio_manager.play_music(
+                        OVERWORLD_MUSIC_TRACKS.get(
+                            s.world.current_map_name,
+                            'World map tune'
+                        )
+                    )
 
                 s.currently_in_battle = False
                 
@@ -252,7 +259,8 @@ class Singleplayer(BaseState):
                     s.game, s, s.player_party, 
                     data['opponents'], 
                     s.game.bg_frames[data['bg']], 
-                    s.game.battle_fonts, 'triples'
+                    s.game.battle_fonts, 
+                    data['battle_type']
                 )
 
                 s.game.audio_manager.play_music(data['music'])
@@ -301,3 +309,60 @@ class Singleplayer(BaseState):
             return
 
         s.game.state_manager.change_state("Start menu")
+
+    def check_monster(s):
+        player = s.world.player
+
+        for grass in s.world.all_sprite_groups['grass']:
+
+            if grass.hitbox.colliderect(player.hitbox):
+
+                if not s.currently_in_battle and player.direction.length() > 0:
+
+                    if random() < s.encounter_chance:
+                        s.monster_encounter(grass)
+                        break
+                
+    def generate_wild_party(s, grass, battle_type):
+        from Singleplayer.monsters import OpponentMonster
+        from random import choice, randint
+
+        min_lvl, max_lvl = grass.monster_levels
+
+        if battle_type == "single":
+            amount = 1
+        elif battle_type == "doubles":
+            amount = 2
+        elif battle_type == "triples":
+            amount = 3
+        else:
+            amount = 1
+
+        opponents = {}
+
+        for slot in range(amount):
+
+            monster_name = choice(grass.monster_selection)
+            level = randint(min_lvl, max_lvl)
+
+            opponents[slot] = OpponentMonster(monster_name, level)
+
+        for slot in range(amount, 5):
+            opponents[slot] = None
+
+        return opponents
+
+    def monster_encounter(s, grass):
+        battle_type = choice(grass.battle_types)
+
+        opponents = s.generate_wild_party(grass, battle_type)
+
+        s.pending_battle_data = {
+            'opponents': opponents,
+            'bg': grass.biome,
+            'character_id': None,
+            'music': 'Default battle tune',
+            'battle_type': battle_type
+        }
+
+        s.tint_mode = 'tint'

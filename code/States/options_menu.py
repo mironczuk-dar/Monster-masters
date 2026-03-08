@@ -9,6 +9,9 @@ from UI_elements.buttons import GenericButton, ToggleButton
 from UI_elements.slider import Slider
 from UI_elements.options_ui.FPS_preview_ball import Ball
 
+#IMPORTING DATA
+from Manifest.music_track_manifest import OVERWORLD_MUSIC_TRACKS
+
 
 # ================================
 # OPTIONS MENU
@@ -60,9 +63,7 @@ class OptionsMenu:
                 size=(180, 50),
                 pos=(110, 40),
                 text="<< Back",
-                action=lambda: s.game.state_manager.change_state(
-                    s.game.state_manager.last_state
-                )
+                action = s.go_back_to_previous_state
             )
         )
 
@@ -283,3 +284,9 @@ class OptionsMenu:
         save_data(s.game.window_data, WINDOW_DATA_PATH)
 
         s.update_fps_toggle_text()
+
+    def go_back_to_previous_state(s):
+        if s.game.state_manager.last_state == 'Singleplayer':
+            s.game.state_manager.states['Singleplayer'].overworld_tab_active = True
+            s.game.audio_manager.play_music(OVERWORLD_MUSIC_TRACKS[s.game.state_manager.states['Singleplayer'].world.current_map_name])
+        s.game.state_manager.change_state(s.game.state_manager.last_state)

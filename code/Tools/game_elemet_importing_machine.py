@@ -22,6 +22,7 @@ def load_audio_assets(game):
         'World map tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Overworld_tunes', 'world_map_tune.ogg'),
         'Hospital tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Overworld_tunes', 'hospital_tune.ogg'),
         'Default battle tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Battle_tunes', 'default_battle_tune.ogg'),
+        'Its going down now' : join(BASE_DIR, 'audio', 'Music_tracs', 'Battle_tunes', 'its_going_down_now.ogg'),
     }
 
     game.select_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'generic_sounds', 'select_sound.wav'))
@@ -32,6 +33,11 @@ def load_audio_assets(game):
         'Finiette' : pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'start_menu_sounds','finiette_cry.wav')),
     }
     game.hospital_heal_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'overworld_sounds', 'hospital_heal_sound.wav'))
+
+    game.overworld_tab_sounds = {
+        'open' : pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'overworld_tab_sounds', 'overworld_tab_open.wav')),
+        'close' : pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'overworld_tab_sounds', 'overworld_tab_close.wav')),
+    }
 
 #LOADING GAME MAPS
 def load_maps(game):

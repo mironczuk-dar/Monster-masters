@@ -73,6 +73,7 @@ class World:
                     character.can_rotate = False
 
         if key[controlls['options']]:
+            s.game.audio_manager.play_sound(s.game.overworld_tab_sounds['open'])
             s.singleplayer_state.overworld_tab_active = True
             s.singleplayer_state.overworld_tab.on_enter()
             s.player.direction = vector(0,0)
@@ -149,7 +150,6 @@ class World:
             current_map = s.game.maps[map_data['current_map']]
             s.current_map_name = map_data['current_map']
 
-
         map_width = current_map.width * TILE_SIZE
         map_height = current_map.height * TILE_SIZE
 
@@ -157,7 +157,8 @@ class World:
             'all': Camera(s.game, map_width, map_height, s.game.overworld_frames['shadow']),
             'collision': pygame.sprite.Group(),
             'characters': pygame.sprite.Group(),
-            'portals': pygame.sprite.Group()
+            'portals': pygame.sprite.Group(),
+            'grass' : pygame.sprite.Group()
         }
 
         final_pos = None
@@ -272,8 +273,27 @@ class World:
 
         #CREATING GRASS PATCHES
         if 'Grass' in [layer.name for layer in current_map.layers]:
+
             for object in current_map.get_layer_by_name('Grass'):
-                GrassPatchSprite(s.all_sprite_groups['all'], (object.x, object.y), object.image, object.properties['biome'], WORLD_LAYERS['main'])
+
+                monster_selection = object.properties.get('monsters', 'Slime').split(',')
+                battle_types = object.properties.get('battle_types', 'single').split(',')
+
+                biome = object.properties.get('biome', 'forest')
+
+                min_level = object.properties.get('min_level', 1)
+                max_level = object.properties.get('max_level', 3)
+
+                GrassPatchSprite(
+                    (s.all_sprite_groups['all'], s.all_sprite_groups['grass']),
+                    (object.x, object.y),
+                    object.image,
+                    biome,
+                    monster_selection,
+                    (min_level, max_level),
+                    battle_types,
+                    WORLD_LAYERS['main']
+                )
 
         #UNTINTING THE TINT WINDOW
         s.singleplayer_state.tint_mode = 'untint'

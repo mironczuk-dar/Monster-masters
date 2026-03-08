@@ -18,7 +18,8 @@ CHARACTER_DATA = {
 		'look_around': False,
 		'defeated': False,
 		'biome': 'ice',
-        'music': 'Options menu tune'
+        'music': 'Its going down now',
+        'battle_type' : 'triples'
 		},
 	'o3': {
 		'monsters': {0: ('Atrox', 14), 1: ('Pouch', 15), 2: ('Draem', 13), 3: ('Cindrill', 13)},

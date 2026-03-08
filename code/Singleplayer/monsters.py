@@ -67,12 +67,24 @@ class Monster:
         )
     
     def update_exp(s, amount):
-        if s.level_up - s.exp > amount:       
-            s.exp += amount
-        else:
+        s.exp += amount
+
+        while s.exp >= s.level_up:
+
+            old_max_health = s.get_stat('max_health')
+            old_max_energy = s.get_stat('max_energy')
+
+            s.exp -= s.level_up
             s.level += 1
-            s.exp = amount - (s.level_up - s.exp)
             s.level_up = s.level * 150
+
+            new_max_health = s.get_stat('max_health')
+            new_max_energy = s.get_stat('max_energy')
+
+            s.health = new_max_health * (s.health / old_max_health)
+            s.energy = new_max_energy * (s.energy / old_max_energy)
+
+            s.stat_limiter()
     
     def update(s, delta_time):
         s.update_initative(delta_time)

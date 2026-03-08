@@ -75,7 +75,8 @@ class OverworldTab:
                     s.index = (s.index + 1) % len(s.options)
                 elif event.key == controlls['action_a']: 
                     s.select_option()
-                elif event.key == controlls['options'] or event.key == pygame.K_ESCAPE:
+                elif event.key == controlls['options'] or event.key == controlls['action_b']:
+                    s.game.audio_manager.play_sound(s.game.overworld_tab_sounds['close'])
                     s.singleplayer_state.overworld_tab_active = False
 
     def select_option(s):

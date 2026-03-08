@@ -72,12 +72,16 @@ class MapWall(Sprite):
         s.hitbox = s.rect.copy()
     
 class GrassPatchSprite(Sprite):
-    def __init__(s, groups, pos, surface, biome, level_depth = WORLD_LAYERS['main']):
+    def __init__(s, groups, pos, surface, biome, monster_selection, monster_levels, battle_types, level_depth=WORLD_LAYERS['main']):
         super().__init__(groups, pos, surface, level_depth)
-        s.biome = biome
 
-    def depth_anchor(self):
-        return self.rect.bottom - 10
+        s.biome = biome
+        s.monster_selection = monster_selection
+        s.monster_levels = monster_levels
+        s.battle_types = battle_types
+
+    def depth_anchor(s):
+        return s.rect.bottom - 10
 
 class AnimatedSprite(Sprite):
     def __init__(s, groups, pos, frames, level_depth = WORLD_LAYERS['main']):

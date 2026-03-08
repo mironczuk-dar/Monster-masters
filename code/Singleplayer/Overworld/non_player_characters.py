@@ -125,7 +125,7 @@ class NonPlayerCharacter(pygame.sprite.Sprite):
     def update(s, delta_time):
         s.animate(delta_time)
 
-        if s.character_data['look_around']:
+        if s.character_data['look_around'] and s.character_id not in s.game.state_manager.states['Singleplayer'].save_data['flags_data']['characters_defeated']:
             s.move(delta_time)
             s.ray_cast()
 

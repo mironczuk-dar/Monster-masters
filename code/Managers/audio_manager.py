@@ -116,4 +116,4 @@ class AudioManager:
         s.game.audio_data['sound_on'] = s.sound_on
         save_data(s.game.audio_data, AUDIO_DATA_PATH)
 
-        s.play_sound(s.game.options_menu_sound)
+        s.play_sound(s.game.select_sound)

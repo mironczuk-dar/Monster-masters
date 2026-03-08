@@ -72,14 +72,21 @@ class Battle:
 
     #BATTLE SYSTEM METHODS
     def check_active(s):
-        for montser_sprite in s.player_sprites.sprites() + s.opponent_sprites.sprites():
-            if montser_sprite.monster.initiative >= 100:
-                montser_sprite.monster.defending = False
+        for monster_sprite in s.player_sprites.sprites() + s.opponent_sprites.sprites():
+
+            # NOWY WARUNEK
+            if monster_sprite.monster.health <= 0:
+                continue
+
+            if monster_sprite.monster.initiative >= 100:
+                monster_sprite.monster.defending = False
                 s.update_all_monsters('pause')
-                montser_sprite.monster.initiative = 0
-                montser_sprite.set_highlight(True)
-                s.current_monster = montser_sprite
-                if s.player_sprites in montser_sprite.groups():
+                monster_sprite.monster.initiative = 0
+                monster_sprite.set_highlight(True)
+
+                s.current_monster = monster_sprite
+
+                if monster_sprite in s.player_sprites:
                     s.selection_mode = 'general'
                 else:
                     s.timers['opponent delay'].activate()
@@ -240,6 +247,12 @@ class Battle:
     def check_death(s):
         for monster_sprite in s.opponent_sprites.sprites() + s.player_sprites.sprites():
             if monster_sprite.monster.health <= 0 and not monster_sprite.timers['kill'].active:
+                if monster_sprite in s.opponent_sprites:
+                    exp_reward = monster_sprite.monster.level * 50
+
+                    for player_sprite in s.player_sprites:
+                        if player_sprite.monster.health > 0:
+                            player_sprite.monster.update_exp(exp_reward)
 
                 new_monster_data = None
 
