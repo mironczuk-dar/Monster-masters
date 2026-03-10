@@ -1,3 +1,12 @@
+STARTER_LIST = [
+	"Finsta",
+	"Plumette",
+	"Sparchu",
+	"Pouch",
+	"Larvea",
+	"Jacana",
+]
+
 MONSTER_DATA = {
 	'Plumette': {
 		'stats': {'element': 'plant', 'max_health': 15, 'max_energy': 17, 'attack': 4, 'defense': 8, 'recovery': 1, 'speed': 1},

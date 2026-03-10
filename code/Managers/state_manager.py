@@ -50,6 +50,10 @@ class StateManager:
             s.states[s.current_state].handling_events(events)
 
     def update(s, delta_time):
+
+        for i, popup in enumerate(s.music_popups):
+            popup.stack_index = i
+
         s.music_popups.update(delta_time)
 
         if s.transitioning:

@@ -1,0 +1,15 @@
+{
+    "slots": [
+        {
+            "name": "Plumette",
+            "level": 5,
+            "exp": 0,
+            "health": 75,
+            "energy": 85
+        },
+        null,
+        null,
+        null,
+        null
+    ]
+}

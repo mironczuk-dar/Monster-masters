@@ -33,6 +33,7 @@ class Battle:
         s.monster_data = {'player' : players_monsters, 'opponent' : opponents_monsters}
 
         #BATTLE TYPE ATTRIBUTES
+        s.is_trainer_battle = s.singleplayer_state.active_battle_char_id is not None
         s.battle_type = battle_type
         s.battle_limits = {'single': 1, 'doubles': 2, 'triples': 3}
         s.max_monsters = s.battle_limits.get(s.battle_type, 1)
@@ -64,7 +65,8 @@ class Battle:
 
         #TIMERS
         s.timers = {
-            'opponent delay' : Timer(600, False, s.opponent_attack)
+            'opponent delay' : Timer(600, False, s.opponent_attack),
+            'end battle delay' : Timer(1000, False, lambda: setattr(s, 'finished', True))
         }
 
         #SETTING UP THE BATTLE
@@ -104,22 +106,25 @@ class Battle:
 
     def check_end_of_battle(s):
         player_alive = any(m is not None and m.health > 0 for m in s.players_monsters.values())
-
         opponent_alive = any(m is not None and m.health > 0 for m in s.opponents_monsters.values())
+
         if not opponent_alive:
             opponent_alive = any(ms.monster.health > 0 for ms in s.opponent_sprites)
 
         if not player_alive:
-            s.finished = True
-            s.result = 'lose'
+            if not s.timers['end battle delay'].active:
+                s.result = 'lose'
+                s.timers['end battle delay'].activate()
             return
 
         if not opponent_alive:
             for monster in s.players_monsters.values():
                 if monster is not None:
                     monster.initiative = 0
-            s.finished = True
-            s.result = 'win'
+
+            if not s.timers['end battle delay'].active:
+                s.result = 'win'
+                s.timers['end battle delay'].activate()
             return
 
     #UI METHODS
@@ -133,12 +138,29 @@ class Battle:
                 s.draw_switch(window)
 
     def draw_general_options(s, window):
-        for index, (option, data_dict) in enumerate(BATTLE_CHOICES['full'].items()):
+        options = BATTLE_CHOICES['full']
+
+        if s.is_trainer_battle:
+            options = {
+                key: value 
+                for key, value in options.items() 
+                if key != 'catch'
+            }
+
+        for index, (option, data_dict) in enumerate(options.items()):
+
+            # zabezpieczenie indeksu (bo zmienia się ilość opcji)
             if index == s.indexes['general']:
                 surface = s.game.battle_icons_outline[data_dict['icon']]
             else:
-                surface = pygame.transform.scale_by(s.game.battle_icons[data_dict['icon']], 0.6)
-            rect = surface.get_frect(center = s.current_monster.rect.midright + data_dict['pos'])
+                surface = pygame.transform.scale_by(
+                    s.game.battle_icons[data_dict['icon']], 
+                    0.6
+                )
+
+            rect = surface.get_frect(
+                center=s.current_monster.rect.midright + data_dict['pos']
+            )
             window.blit(surface, rect)
 
     def draw_attacks(s, window):
@@ -355,7 +377,12 @@ class Battle:
             # 1. Dynamiczne ustalanie limitera
             limiter = 0
             if s.selection_mode == 'general':
-                limiter = len(BATTLE_CHOICES['full'])
+                options_count = len(BATTLE_CHOICES['full'])
+
+                if s.is_trainer_battle:
+                    options_count -= 1  # usuwamy Catch
+
+                limiter = options_count
             elif s.selection_mode == 'attacks':
                 limiter = len(s.current_monster.monster.get_abilities(all=False))
             elif s.selection_mode == 'switch':
@@ -467,8 +494,9 @@ class Battle:
                         s.indexes['switch'] = 0
 
                     elif s.indexes['general'] == 3: # Catch
-                        s.selection_mode = 'target'
-                        s.selection_side = 'opponent'
+                        if not s.is_trainer_battle:
+                            s.selection_mode = 'target'
+                            s.selection_side = 'opponent'
 
                 elif s.selection_mode == 'switch':
                     print(s.available_monsters)

@@ -67,6 +67,7 @@ def load_assets(game):
     game.monster_icons = scale_asset(game.monster_icons, SCALE_FACTOR)
 
     game.monster_assets = monster_asset_importer(4, 2, BASE_DIR, 'assets', 'monsters')
+
     game.monster_assets = scale_asset(game.monster_assets, SCALE_FACTOR)
     game.monster_outlines = outline_creator(game.monster_assets, 8)
 

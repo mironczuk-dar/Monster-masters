@@ -1,15 +1,37 @@
-NEXT THINGS TO ADD TO THE GAME
-- Actually make the FUCKING GAME!!!
 
+--- CHANGES TO BE MADE BEFORE BETA VERSION 1.0.0 ---
+- Create a Notafication manager for all popups insed of having them in the state manager.
+- Create extras menu with all extra content | concept art, in game music, monster-dex, etc.
+- Add and make more monsters
+
+--- CHANGES TO BE MADE BEFORE ALPHA VERSION 1.0.0 ---
+- Make a pc in the pokemon center
 - Change death screen to it's own state.
 - Add controller keyboard to Singleplayer menu
 - Add controlls options menu and Atomic launcher controlls
 - Make a proper map
 - Finish making the main game mechanics
 - Start menu button graphics
-- Music popup overlays other music popups
+- Finish evolution class
+- Add trainer Id to overworldTab
+- Make a monster dex for overworldTab and game in general
+- Add more game audio
+- Clean up the assets folder
+- Make the options menu
+- Make the new save file wizard look nicer
+
+##############################################################################################################
+
+09.03.2026r.
+- Reworked the entire "new save file wizard", now has keyboard support, opp and starter choice
+- You can navigate singleplayer menu with the keyboard
+- You can navigate start menu with the keyboard
+- Made the singleplayer menu animated and look much nicer
 
 08.03.2026r.
+- Music popups no longer overlay other music popups
+- Added a timer after killing all opponent monster to wait a bit fot the tint
+- You can no longer catch NPC monsters
 - Fixed bug with updating the dead monsters in battle, which soft locked the game
 - Added random encounter battles in grass
 

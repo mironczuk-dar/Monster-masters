@@ -219,7 +219,7 @@ class Singleplayer(BaseState):
             if s.tint_rect.top >= 0:
                 s.tint_rect.top = 0
                 s.tint_mode = 'load'
-                if s.pending_battle_data:#SOME FLAG TO POINT TO THAT THERE'S A BATTLE
+                if s.pending_battle_data:
                     s.game.audio_manager.play_sound(s.game.transition_screen_sound)
 
         elif s.tint_mode == 'load':
@@ -241,7 +241,6 @@ class Singleplayer(BaseState):
                                 s.world.create_dialog(npc)
                                 break
 
-                    # ZAWSZE wracamy do muzyki mapy
                     s.game.audio_manager.play_music(
                         OVERWORLD_MUSIC_TRACKS.get(
                             s.world.current_map_name,
@@ -260,7 +259,7 @@ class Singleplayer(BaseState):
                     data['opponents'], 
                     s.game.bg_frames[data['bg']], 
                     s.game.battle_fonts, 
-                    data['battle_type']
+                    data['battle_type'],
                 )
 
                 s.game.audio_manager.play_music(data['music'])

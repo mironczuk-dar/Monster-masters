@@ -10,25 +10,22 @@ class PopUp(pygame.sprite.Sprite):
     #CONSTRUCTOR
     def __init__(s, game, width, height, duration=7, pos="bottom-right", slide_speed=10):
 
-        #SPRITE INHERITANCE
         super().__init__()
-
-        #PASSING IN GAME AS AN ATTRIBUTE
         s.game = game
 
-        #TIMING ATTRIBUTES
         s.timer = 0
         s.duration = duration
         s.slide_speed = slide_speed
         s.slide_in_to = True
 
-        #POPUP SIZE AND SURFACE
         s.width, s.height = width, height
         s.image = pygame.Surface((s.width, s.height), pygame.SRCALPHA)
         s.rect = s.image.get_rect()
 
-        #DETERMENING START AND TARGET POSITION BASED ON POS
         s.pos = pos
+        s.stack_index = 0
+        s.stack_spacing = 10
+
         s._set_positions(pos)
 
     #METHOD FOR CONFIGURING START AND TARGET POSITIONS FROM POPUP ANIMATION
@@ -39,11 +36,12 @@ class PopUp(pygame.sprite.Sprite):
         if pos == "bottom-right":
             s.rect.bottomright = (WINDOW_WIDTH + s.width, WINDOW_HEIGHT - margin_y)
             s.target_x = WINDOW_WIDTH - s.width - margin_x
+            s.base_y = WINDOW_HEIGHT - margin_y - s.height
+
         elif pos == "bottom-left":
             s.rect.bottomleft = (-s.width, WINDOW_HEIGHT - margin_y)
             s.target_x = margin_x
-        else:
-            raise ValueError(f"Unsupported popup position: {pos}")
+            s.base_y = WINDOW_HEIGHT - margin_y - s.height
 
     #METHOD FOR UPDATING
     def update(s, delta_time):
@@ -70,6 +68,12 @@ class PopUp(pygame.sprite.Sprite):
         #SWITCHING TO SLIDING OUT AFTER TIMER DURATION
         if s.timer >= s.duration:
             s.slide_in_to = False
+
+        #CALCULATING POSITION IN STACK
+        target_y = s.base_y - s.stack_index * (s.height + s.stack_spacing)
+
+        #VERTICAL SLIDE TO TARGET Y
+        s.rect.y += (target_y - s.rect.y) * 0.15
 
     #METHOD FOR DRAWING
     def draw(s, surface):

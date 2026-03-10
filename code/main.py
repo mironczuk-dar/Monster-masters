@@ -16,7 +16,7 @@ from Managers.audio_manager import AudioManager
 from States.start_menu import StartMenu
 from States.options_menu import OptionsMenu
 from States.singleplayer_menu import SingleplayerMenu
-from States.new_save_wizzard import NewSaveWizard
+from States.new_save_wizard import NewSaveWizard
 
 #IMPROTING FUNCTIONS FOR LOADING ASSETS
 from Tools.game_elemet_importing_machine import (

@@ -5,7 +5,7 @@ from os.path import join
 # IMPORTING FILES
 from settings import *
 from Tools.data_loading_tools import save_data
-from UI_elements.buttons import GenericButton, ToggleButton
+from UI_elements.buttons import GenericButton, GenericToggleButton
 from UI_elements.slider import Slider
 from UI_elements.options_ui.FPS_preview_ball import Ball
 
@@ -68,7 +68,7 @@ class OptionsMenu:
         )
 
         # ----- SHOW FPS TOGGLE -----
-        s.show_fps_toggle = ToggleButton(
+        s.show_fps_toggle = GenericToggleButton(
             s.game,
             size=(180, 50),
             pos=(320, 40),
@@ -159,7 +159,7 @@ class OptionsMenu:
         s.sliders.append(s.sound_slider)
 
         # MUSIC TOGGLE
-        music_toggle = ToggleButton(
+        music_toggle = GenericToggleButton(
             s.game,
             size=(180, 50),
             pos=(right_x, y_start + 40),
@@ -171,7 +171,7 @@ class OptionsMenu:
         s.toggles.append(music_toggle)
 
         # SOUND TOGGLE
-        sound_toggle = ToggleButton(
+        sound_toggle = GenericToggleButton(
             s.game,
             size=(180, 50),
             pos=(right_x, y_start + 130),
