@@ -6,49 +6,66 @@ import pygame
 class GenericButton():
     def __init__(s, game, size, pos, text, text_size = 40, text_colour = (0,0,0), colour = (255, 0, 0), action = None, sound = None):
 
-        #PASSING IN THE GAME AS AN ATTIBUTE
         s.game = game
         s.action = action
+        s.sound = sound
 
-        #CREATING BUTTON SURFACE
+        s.is_selected = False
+
         s.image = pygame.Surface(size, pygame.SRCALPHA)
         s.image.fill(colour)
+        s.base_image = s.image.copy()
+
         s.rect = s.image.get_rect(center=pos)
 
-        #RENDERING BUTTON TEXT
         s.font = pygame.font.Font(None, text_size)
         text_surf = s.font.render(text, True, text_colour)
-        
-        #SETTING CENTER OF TEXT
-        text_rect = text_surf.get_rect(center=(size[0] // 2, size[1] // 2))
-        
-        #ADDING TEXT TO THE BUTTON IMAGE
-        s.image.blit(text_surf, text_rect)
 
-        #AUDIO ATTRIBUTES
-        s.sound = sound
+        text_rect = text_surf.get_rect(center=(size[0] // 2, size[1] // 2))
+        s.image.blit(text_surf, text_rect)
+        s.base_image.blit(text_surf, text_rect)
+
+
+    # =========================
+    # KEYBOARD ACTIVATION
+    # =========================
+    def activate(s):
+
+        if s.sound:
+            s.game.audio_manager.play_sound(s.sound)
+
+        if s.action:
+            s.action()
 
 
     def update(s, delta_time):
         pass
 
+
     def draw(s, window):
-        window.blit(s.image, s.rect)
+
+        img = s.base_image.copy()
+
+        if s.is_selected:
+            pygame.draw.rect(img,(255,230,120),img.get_rect(),4)
+
+        window.blit(img, s.rect)
+
 
     def handling_events(s, events):
+
         mouse_pos = s.game.get_scaled_mouse_pos()
         mouse_press = pygame.mouse.get_just_pressed()[0]
 
-        if s.rect.collidepoint(mouse_pos):
-            s.image.set_alpha(100)
+        hovered = s.rect.collidepoint(mouse_pos)
+
+        if hovered:
+            s.image.set_alpha(120)
         else:
             s.image.set_alpha(255)
 
-        if s.rect.collidepoint(mouse_pos) and mouse_press:
-            if s.action:
-                if s.sound:
-                    s.game.audio_manager.play_sound(s.sound)
-                s.action()
+        if hovered and mouse_press:
+            s.activate()
 
 #A BUTTON THAT HAS AN IMAGE
 class ImageAudioButton(GenericButton):
@@ -155,75 +172,85 @@ class AudioButton(GenericButton):
 
 #A TOGGLE BUTTON
 class GenericToggleButton:
-    def __init__(s, game, size, pos, text, text_size=40, active_colour=(0, 255, 0), inactive_colour=(255, 0, 0), action=None):
-        
-        #PASSING IN GAME AS AN ATTRIBUTE
-        s.game = game
+    def __init__(s, game, size, pos, text, text_size=40, active_colour=(0,255,0), inactive_colour=(255,0,0), action=None):
 
-        #TOGGLE BUTTON ATTRIBUTES
+        s.game = game
         s.size = size
         s.pos = pos
         s.text = text
         s.text_size = text_size
         s.action = action
 
-        #COLOURS FOR BOTH STATES
         s.active_colour = active_colour
         s.inactive_colour = inactive_colour
-        
-        #BUTTON STATE
+
         s.is_on = False
-        
-        #BUTTON FONT
+        s.is_selected = False
+
         s.font = pygame.font.Font(None, s.text_size)
 
-        #SETTING THE FIST APPERANCE
         s.update_appearance()
 
-    #METHOD FOR SETTING UP/CHANGING THE APPERACE
+
     def update_appearance(s):
+
         s.image = pygame.Surface(s.size, pygame.SRCALPHA)
+
         current_colour = s.active_colour if s.is_on else s.inactive_colour
         s.image.fill(current_colour)
-        
+
         s.rect = s.image.get_rect(center=s.pos)
-        
-        #RENDERING THE TEXT
-        text_surf = s.font.render(s.text, True, (0, 0, 0))
-        text_rect = text_surf.get_rect(center=(s.size[0] // 2, s.size[1] // 2))
+
+        text_surf = s.font.render(s.text, True, (0,0,0))
+        text_rect = text_surf.get_rect(center=(s.size[0]//2, s.size[1]//2))
+
         s.image.blit(text_surf, text_rect)
 
-    #METHOD FOR DRAWING THE TOGGLE BUTTON
-    def draw(s, window):
-        window.blit(s.image, s.rect)
 
-    #METHOD FOR UPDATING THE TOGGLE BUTTON
+    def activate(s):
+        s.toggle()
+
+
+    def draw(s, window):
+
+        img = s.image.copy()
+
+        if s.is_selected:
+            pygame.draw.rect(img,(255,230,120),img.get_rect(),4)
+
+        window.blit(img, s.rect)
+
+
     def update(s, delta_time):
-        """Empty to skip AttributeError."""
         pass
 
-    #METHOD FOR HANDLING THE EVENTS
+
     def handling_events(s, events):
+
         mouse_pos = s.game.get_scaled_mouse_pos()
-        
-        #HOVERING EFECT
-        if s.rect.collidepoint(mouse_pos):
+
+        hovered = s.rect.collidepoint(mouse_pos)
+
+        if hovered:
             s.image.set_alpha(180)
         else:
             s.image.set_alpha(255)
 
         for event in events:
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1: # Lewy przycisk myszy
-                    if s.rect.collidepoint(mouse_pos):
-                        s.toggle()
 
-    #METHOD FOR TOGGLING THE BUTTON
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1 and hovered:
+                    s.toggle()
+
+
     def toggle(s):
+
         s.is_on = not s.is_on
-        s.update_appearance() # Zmieniamy kolor
+
+        s.update_appearance()
+
         if s.action:
-            s.action() # Wywołujemy funkcję (np. toggle_remove_mode)
+            s.action()
 
 class ImageToggleButton:
     def __init__(s, game, pos, idle_img, hover_img, active_img, text="", font_path=None, text_size=40, action=None):

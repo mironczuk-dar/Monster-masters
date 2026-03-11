@@ -25,6 +25,7 @@ class AudioManager:
         s.music_volume = s.game.audio_data.get('music_volume', 1.0)
 
         # ----- SOUND EFFECTS -----
+        s.test_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'generic_sounds', 'select_sound.wav'))
         s.sound_on = s.game.audio_data.get('sound_on', True)
         s.sound_volume = s.game.audio_data.get('sound_volume', 1.0)
 
