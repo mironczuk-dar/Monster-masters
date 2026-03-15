@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="523">
+ <tileset firstgid="1" source="../../tilesets/world.tsx"/>
+ <tileset firstgid="211" source="../../tilesets/objects.tsx"/>
+ <tileset firstgid="242" source="../../tilesets/indoor.tsx"/>
+ <tileset firstgid="332" source="../../tilesets/Grass.tsx"/>
+ <layer id="1" name="Terrain" width="35" height="20">
+  <data encoding="csv">
+72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,12,12,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,72,12,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,1,12,12,3,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,1,12,3,72,72,72,72,72,72,72,72,72,72,72,72,72,72,11,12,12,13,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,11,12,81,2,2,2,2,2,2,2,2,2,2,2,2,2,2,12,12,12,81,2,2,2,2,2,3,1073742067,1073742067,
+0,0,0,72,72,72,21,22,22,22,22,22,63,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,1610612997,285,
+0,0,0,72,72,72,72,72,72,72,72,72,11,61,22,22,22,22,22,22,22,22,22,22,63,12,12,12,12,12,12,12,12,1610612996,285,
+0,0,0,72,72,72,72,72,72,72,72,72,11,13,72,72,72,72,72,72,72,72,72,72,21,22,22,22,22,22,22,22,23,243,243,
+0,0,0,72,72,72,72,72,72,72,72,72,11,13,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,72,72,72,72,72,72,11,13,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,72,12,72,72,72,72,11,13,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,1,12,2,2,2,2,83,13,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,21,22,22,22,22,22,22,23,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+0,0,0,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72
+</data>
+ </layer>
+ <objectgroup id="4" name="Player">
+  <object id="398" name="Passage1" x="2048" y="640">
+   <properties>
+    <property name="direction" value="left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="472" name="Location1_house1" x="600" y="534">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="473" name="Location1_house2" x="600" y="1043">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="474" name="Location1_hospital" x="1600" y="520">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="522" name="Grass gym" x="1180" y="1030">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="Walls">
+  <object id="117" x="0" y="-64" width="2304" height="64"/>
+  <object id="118" x="2240" y="0" width="64" height="1344"/>
+  <object id="119" x="-64" y="1280" width="2304" height="64"/>
+  <object id="120" x="-64" y="-64" width="64" height="1344"/>
+  <object id="280" x="0" y="192" width="192" height="960"/>
+  <object id="393" x="2176" y="512" width="64" height="256"/>
+  <object id="394" x="2112" y="512" width="64" height="64"/>
+  <object id="395" x="2112" y="704" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup id="7" name="Grass">
+  <object id="351" gid="332" x="1856" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="352" gid="332" x="1856" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="353" gid="332" x="1920" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="354" gid="332" x="1920" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="355" gid="332" x="1984" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="356" gid="332" x="1984" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="357" gid="332" x="1856" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="358" gid="332" x="1856" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="359" gid="332" x="1920" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="362" gid="332" x="1856" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="363" gid="332" x="1920" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="364" gid="332" x="1920" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="365" gid="332" x="1920" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="366" gid="332" x="1984" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="367" gid="332" x="1856" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="368" gid="332" x="1984" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="399" gid="332" x="2048" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="400" gid="332" x="2048" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="401" gid="332" x="2112" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="402" gid="332" x="2112" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="403" gid="332" x="2048" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="404" gid="332" x="1984" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="405" gid="332" x="1920" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="406" gid="332" x="1792" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="408" gid="332" x="1792" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="409" gid="332" x="1792" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="410" gid="332" x="1920" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="412" gid="332" x="2048" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="413" gid="332" x="2112" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="414" gid="332" x="2048" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="415" gid="332" x="2112" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="416" gid="332" x="1920" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="420" gid="332" x="2048" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="421" gid="332" x="1536" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="422" gid="332" x="1600" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="423" gid="332" x="1536" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="426" gid="332" x="1664" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="427" gid="332" x="1728" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="428" gid="332" x="1664" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="429" gid="332" x="1600" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="430" gid="332" x="1536" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="431" gid="332" x="1728" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="433" gid="332" x="1792" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="434" gid="332" x="1856" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="435" gid="332" x="1856" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="436" gid="332" x="1728" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="437" gid="332" x="1600" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="438" gid="332" x="1600" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="439" gid="332" x="1536" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="440" gid="332" x="1472" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="446" gid="332" x="1856" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="447" gid="332" x="1472" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="448" gid="332" x="1472" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="449" gid="332" x="1792" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="450" gid="332" x="1664" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="451" gid="332" x="1984" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="452" gid="332" x="1920" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="454" gid="332" x="1984" y="320" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="455" gid="332" x="1984" y="384" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="458" gid="332" x="1920" y="256" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="459" gid="332" x="1920" y="320" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="460" gid="332" x="1856" y="320" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="461" gid="332" x="1856" y="384" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="462" gid="332" x="2048" y="384" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="489" gid="333" x="1984" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="490" gid="333" x="2048" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="491" gid="333" x="2048" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="494" gid="333" x="1664" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="496" gid="333" x="2112" y="192" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="497" gid="333" x="2112" y="256" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="498" gid="333" x="2048" y="192" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="501" gid="332" x="1728" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="502" gid="332" x="1792" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="503" gid="332" x="1664" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="504" gid="332" x="1600" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="505" gid="332" x="1728" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="506" gid="332" x="1664" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="507" gid="332" x="1792" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="508" gid="332" x="1728" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="509" gid="332" x="1728" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="510" gid="332" x="1664" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="10"/>
+    <property name="min_level" type="int" value="2"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="511" gid="332" x="1408" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="512" gid="332" x="1408" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="15"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Atrox,Cleaf"/>
+   </properties>
+  </object>
+  <object id="513" gid="333" x="1600" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="514" gid="333" x="1792" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="515" gid="333" x="1856" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="516" gid="333" x="1984" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="517" gid="333" x="1984" y="256" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+  <object id="518" gid="333" x="1984" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Ivieron,Jacana,Plumette"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="8" name="Portals">
+  <object id="397" name="Passage1" x="2112" y="576" width="64" height="128">
+   <properties>
+    <property name="place" value="Location1"/>
+   </properties>
+  </object>
+  <object id="470" name="Location1_house1" x="448" y="394" width="64" height="64">
+   <properties>
+    <property name="place" value="Location1"/>
+   </properties>
+  </object>
+  <object id="471" name="Location1_house2" x="448" y="905" width="64" height="64">
+   <properties>
+    <property name="place" value="Location1"/>
+   </properties>
+  </object>
+  <object id="475" name="Location1_hospital" x="1536" y="329" width="128" height="64">
+   <properties>
+    <property name="music" value="Hospital tune"/>
+    <property name="place" value="Location1"/>
+   </properties>
+  </object>
+  <object id="521" name="Grass gym" x="1152" y="896" width="64" height="74">
+   <properties>
+    <property name="music" value="Gym tune"/>
+    <property name="place" value="location1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="9" name="Characters"/>
+ <objectgroup id="10" name="Water">
+  <object id="279" x="0" y="256" width="128" height="832"/>
+ </objectgroup>
+ <objectgroup id="11" name="Trees">
+  <object id="15" gid="227" x="0" y="64" width="128" height="192"/>
+  <object id="16" gid="227" x="192" y="64" width="128" height="192"/>
+  <object id="17" gid="227" x="384" y="64" width="128" height="192"/>
+  <object id="18" gid="227" x="704" y="64" width="128" height="192"/>
+  <object id="19" gid="227" x="960" y="64" width="128" height="192"/>
+  <object id="20" gid="227" x="1216" y="64" width="128" height="192"/>
+  <object id="21" gid="227" x="1472" y="64" width="128" height="192"/>
+  <object id="22" gid="227" x="1600" y="64" width="128" height="192"/>
+  <object id="23" gid="227" x="1856" y="64" width="128" height="192"/>
+  <object id="24" gid="227" x="1984" y="64" width="128" height="192"/>
+  <object id="25" gid="226" x="64" y="64" width="128" height="192"/>
+  <object id="26" gid="226" x="256" y="64" width="128" height="192"/>
+  <object id="27" gid="226" x="576" y="64" width="128" height="192"/>
+  <object id="28" gid="226" x="512" y="64" width="128" height="192"/>
+  <object id="29" gid="226" x="448" y="64" width="128" height="192"/>
+  <object id="30" gid="226" x="768" y="64" width="128" height="192"/>
+  <object id="31" gid="226" x="1024" y="64" width="128" height="192"/>
+  <object id="32" gid="226" x="1344" y="64" width="128" height="192"/>
+  <object id="33" gid="226" x="1728" y="64" width="128" height="192"/>
+  <object id="34" gid="226" x="1536" y="64" width="128" height="192"/>
+  <object id="35" gid="226" x="1920" y="64" width="128" height="192"/>
+  <object id="36" gid="226" x="2048" y="64" width="128" height="192"/>
+  <object id="37" gid="226" x="2112" y="64" width="128" height="192"/>
+  <object id="38" gid="227" x="1792" y="64" width="128" height="192"/>
+  <object id="39" gid="227" x="1664" y="64" width="128" height="192"/>
+  <object id="42" gid="227" x="1408" y="64" width="128" height="192"/>
+  <object id="43" gid="227" x="1280" y="64" width="128" height="192"/>
+  <object id="44" gid="227" x="1152" y="64" width="128" height="192"/>
+  <object id="45" gid="227" x="1088" y="64" width="128" height="192"/>
+  <object id="46" gid="227" x="960" y="64" width="128" height="192"/>
+  <object id="47" gid="227" x="832" y="64" width="128" height="192"/>
+  <object id="48" gid="227" x="896" y="64" width="128" height="192"/>
+  <object id="49" gid="227" x="640" y="64" width="128" height="192"/>
+  <object id="50" gid="227" x="320" y="64" width="128" height="192"/>
+  <object id="51" gid="227" x="128" y="64" width="128" height="192"/>
+  <object id="52" gid="227" x="0" y="64" width="128" height="192"/>
+  <object id="53" gid="227" x="-64" y="64" width="128" height="192"/>
+  <object id="57" gid="227" x="0" y="1344" width="128" height="192"/>
+  <object id="58" gid="227" x="128" y="1344" width="128" height="192"/>
+  <object id="59" gid="227" x="256" y="1344" width="128" height="192"/>
+  <object id="60" gid="227" x="384" y="1344" width="128" height="192"/>
+  <object id="63" gid="227" x="512" y="1344" width="128" height="192"/>
+  <object id="64" gid="227" x="576" y="1344" width="128" height="192"/>
+  <object id="65" gid="227" x="704" y="1344" width="128" height="192"/>
+  <object id="66" gid="227" x="832" y="1344" width="128" height="192"/>
+  <object id="70" gid="227" x="960" y="1344" width="128" height="192"/>
+  <object id="71" gid="227" x="1024" y="1344" width="128" height="192"/>
+  <object id="72" gid="227" x="1152" y="1344" width="128" height="192"/>
+  <object id="73" gid="227" x="1152" y="1344" width="128" height="192"/>
+  <object id="74" gid="227" x="1280" y="1344" width="128" height="192"/>
+  <object id="75" gid="227" x="1472" y="1344" width="128" height="192"/>
+  <object id="77" gid="227" x="1664" y="1344" width="128" height="192"/>
+  <object id="78" gid="227" x="1792" y="1344" width="128" height="192"/>
+  <object id="79" gid="227" x="1856" y="1344" width="128" height="192"/>
+  <object id="80" gid="227" x="1984" y="1344" width="128" height="192"/>
+  <object id="81" gid="227" x="2048" y="1344" width="128" height="192"/>
+  <object id="82" gid="227" x="2112" y="1344" width="128" height="192"/>
+  <object id="83" gid="226" x="2176" y="1344" width="128" height="192"/>
+  <object id="84" gid="226" x="2048" y="1344" width="128" height="192"/>
+  <object id="85" gid="226" x="1984" y="1344" width="128" height="192"/>
+  <object id="86" gid="226" x="1920" y="1344" width="128" height="192"/>
+  <object id="91" gid="226" x="1600" y="1344" width="128" height="192"/>
+  <object id="93" gid="226" x="1408" y="1344" width="128" height="192"/>
+  <object id="97" gid="226" x="1088" y="1344" width="128" height="192"/>
+  <object id="99" gid="226" x="896" y="1344" width="128" height="192"/>
+  <object id="100" gid="226" x="832" y="1344" width="128" height="192"/>
+  <object id="101" gid="226" x="704" y="1344" width="128" height="192"/>
+  <object id="102" gid="226" x="640" y="1344" width="128" height="192"/>
+  <object id="103" gid="226" x="512" y="1344" width="128" height="192"/>
+  <object id="104" gid="226" x="448" y="1344" width="128" height="192"/>
+  <object id="105" gid="226" x="384" y="1344" width="128" height="192"/>
+  <object id="106" gid="226" x="256" y="1344" width="128" height="192"/>
+  <object id="107" gid="226" x="192" y="1344" width="128" height="192"/>
+  <object id="108" gid="226" x="64" y="1344" width="128" height="192"/>
+  <object id="109" gid="226" x="0" y="1344" width="128" height="192"/>
+  <object id="110" gid="226" x="320" y="1344" width="128" height="192"/>
+  <object id="111" gid="226" x="768" y="1344" width="128" height="192"/>
+  <object id="113" gid="226" x="1536" y="1344" width="128" height="192"/>
+  <object id="114" gid="226" x="1728" y="1344" width="128" height="192"/>
+  <object id="115" gid="226" x="1344" y="1344" width="128" height="192"/>
+  <object id="116" gid="226" x="1216" y="1344" width="128" height="192"/>
+  <object id="121" gid="226" x="2112" y="1280" width="128" height="192"/>
+  <object id="122" gid="226" x="2048" y="1280" width="128" height="192"/>
+  <object id="123" gid="226" x="1984" y="1280" width="128" height="192"/>
+  <object id="129" gid="227" x="1920" y="1280" width="128" height="192"/>
+  <object id="130" gid="227" x="1856" y="1280" width="128" height="192"/>
+  <object id="131" gid="227" x="1664" y="1280" width="128" height="192"/>
+  <object id="132" gid="227" x="1472" y="1280" width="128" height="192"/>
+  <object id="133" gid="227" x="1344" y="1280" width="128" height="192"/>
+  <object id="134" gid="227" x="1216" y="1280" width="128" height="192"/>
+  <object id="135" gid="227" x="1088" y="1280" width="128" height="192"/>
+  <object id="136" gid="227" x="960" y="1280" width="128" height="192"/>
+  <object id="137" gid="227" x="896" y="1280" width="128" height="192"/>
+  <object id="138" gid="227" x="768" y="1280" width="128" height="192"/>
+  <object id="139" gid="227" x="704" y="1280" width="128" height="192"/>
+  <object id="140" gid="227" x="512" y="1280" width="128" height="192"/>
+  <object id="141" gid="227" x="448" y="1280" width="128" height="192"/>
+  <object id="142" gid="227" x="320" y="1280" width="128" height="192"/>
+  <object id="143" gid="227" x="256" y="1280" width="128" height="192"/>
+  <object id="144" gid="227" x="192" y="1280" width="128" height="192"/>
+  <object id="145" gid="226" x="1792" y="1280" width="128" height="192"/>
+  <object id="146" gid="226" x="1728" y="1280" width="128" height="192"/>
+  <object id="147" gid="226" x="1600" y="1280" width="128" height="192"/>
+  <object id="148" gid="226" x="1536" y="1280" width="128" height="192"/>
+  <object id="149" gid="226" x="1472" y="1280" width="128" height="192"/>
+  <object id="150" gid="226" x="1344" y="1280" width="128" height="192"/>
+  <object id="151" gid="226" x="1280" y="1280" width="128" height="192"/>
+  <object id="152" gid="226" x="1152" y="1280" width="128" height="192"/>
+  <object id="153" gid="226" x="1088" y="1280" width="128" height="192"/>
+  <object id="154" gid="226" x="1024" y="1280" width="128" height="192"/>
+  <object id="155" gid="226" x="960" y="1280" width="128" height="192"/>
+  <object id="156" gid="226" x="832" y="1280" width="128" height="192"/>
+  <object id="157" gid="226" x="832" y="1280" width="128" height="192"/>
+  <object id="158" gid="226" x="704" y="1280" width="128" height="192"/>
+  <object id="159" gid="226" x="640" y="1280" width="128" height="192"/>
+  <object id="160" gid="226" x="576" y="1280" width="128" height="192"/>
+  <object id="161" gid="226" x="384" y="1280" width="128" height="192"/>
+  <object id="162" gid="226" x="192" y="1280" width="128" height="192"/>
+  <object id="194" gid="227" x="-64" y="128" width="128" height="192"/>
+  <object id="195" gid="227" x="64" y="128" width="128" height="192"/>
+  <object id="196" gid="227" x="192" y="128" width="128" height="192"/>
+  <object id="197" gid="227" x="320" y="128" width="128" height="192"/>
+  <object id="198" gid="227" x="448" y="128" width="128" height="192"/>
+  <object id="199" gid="227" x="576" y="128" width="128" height="192"/>
+  <object id="202" gid="227" x="704" y="128" width="128" height="192"/>
+  <object id="203" gid="227" x="832" y="128" width="128" height="192"/>
+  <object id="204" gid="227" x="960" y="128" width="128" height="192"/>
+  <object id="205" gid="227" x="1088" y="128" width="128" height="192"/>
+  <object id="206" gid="227" x="1280" y="128" width="128" height="192"/>
+  <object id="207" gid="227" x="2112" y="128" width="128" height="192"/>
+  <object id="208" gid="227" x="1984" y="128" width="128" height="192"/>
+  <object id="209" gid="227" x="1856" y="128" width="128" height="192"/>
+  <object id="210" gid="227" x="1792" y="128" width="128" height="192"/>
+  <object id="211" gid="227" x="1664" y="128" width="128" height="192"/>
+  <object id="212" gid="227" x="1536" y="128" width="128" height="192"/>
+  <object id="213" gid="227" x="1408" y="128" width="128" height="192"/>
+  <object id="214" gid="226" x="2048" y="128" width="128" height="192"/>
+  <object id="215" gid="226" x="1920" y="128" width="128" height="192"/>
+  <object id="216" gid="226" x="2176" y="128" width="128" height="192"/>
+  <object id="217" gid="226" x="2176" y="64" width="128" height="192"/>
+  <object id="218" gid="226" x="1728" y="128" width="128" height="192"/>
+  <object id="219" gid="226" x="1600" y="128" width="128" height="192"/>
+  <object id="220" gid="226" x="1472" y="128" width="128" height="192"/>
+  <object id="221" gid="226" x="1344" y="128" width="128" height="192"/>
+  <object id="222" gid="226" x="1216" y="128" width="128" height="192"/>
+  <object id="225" gid="226" x="1152" y="128" width="128" height="192"/>
+  <object id="226" gid="226" x="1024" y="128" width="128" height="192"/>
+  <object id="227" gid="226" x="896" y="128" width="128" height="192"/>
+  <object id="228" gid="226" x="768" y="128" width="128" height="192"/>
+  <object id="229" gid="226" x="640" y="128" width="128" height="192"/>
+  <object id="230" gid="226" x="512" y="128" width="128" height="192"/>
+  <object id="231" gid="226" x="384" y="128" width="128" height="192"/>
+  <object id="232" gid="226" x="256" y="128" width="128" height="192"/>
+  <object id="233" gid="226" x="128" y="128" width="128" height="192"/>
+  <object id="234" gid="226" x="0" y="128" width="128" height="192"/>
+  <object id="369" gid="227" x="2176" y="896" width="128" height="192"/>
+  <object id="370" gid="227" x="2176" y="1024" width="128" height="192"/>
+  <object id="371" gid="227" x="2176" y="1152" width="128" height="192"/>
+  <object id="372" gid="226" x="2176" y="960" width="128" height="192"/>
+  <object id="373" gid="226" x="2176" y="1088" width="128" height="192"/>
+  <object id="374" gid="226" x="2176" y="1216" width="128" height="192"/>
+  <object id="375" gid="226" x="2176" y="1280" width="128" height="192"/>
+  <object id="376" gid="226" x="2176" y="192" width="128" height="192"/>
+  <object id="377" gid="226" x="2176" y="320" width="128" height="192"/>
+  <object id="378" gid="226" x="2176" y="448" width="128" height="192"/>
+  <object id="379" gid="227" x="2176" y="512" width="128" height="192"/>
+  <object id="380" gid="227" x="2176" y="384" width="128" height="192"/>
+  <object id="381" gid="227" x="2176" y="256" width="128" height="192"/>
+ </objectgroup>
+ <objectgroup id="6" name="Objects">
+  <object id="300" gid="236" x="920" y="284" width="60" height="60"/>
+  <object id="318" gid="219" x="1191" y="144" width="64" height="128"/>
+  <object id="321" gid="236" x="1263" y="289" width="60" height="60"/>
+  <object id="323" gid="237" x="695" y="739" width="56" height="60"/>
+  <object id="324" gid="237" x="707" y="755" width="56" height="60"/>
+  <object id="337" gid="218" x="1182.67" y="480" width="64" height="104"/>
+  <object id="338" gid="218" x="868" y="484" width="64" height="104"/>
+  <object id="339" gid="237" x="1256" y="271.333" width="56" height="60"/>
+  <object id="340" gid="2147483885" x="1276" y="272.667" width="56" height="60"/>
+  <object id="343" gid="219" x="1440" y="1213.33" width="64" height="128"/>
+  <object id="441" gid="236" x="1792" y="960" width="60" height="60"/>
+  <object id="442" gid="236" x="1920" y="1088" width="60" height="60"/>
+  <object id="443" gid="237" x="1728" y="1088" width="56" height="60"/>
+  <object id="444" gid="237" x="1536" y="896" width="56" height="60"/>
+  <object id="445" gid="237" x="1472" y="1088" width="56" height="60"/>
+  <object id="463" gid="236" x="1920" y="384" width="60" height="60"/>
+  <object id="468" gid="237" x="2048" y="320" width="56" height="60"/>
+  <object id="479" gid="217" x="908" y="136" width="64" height="192"/>
+  <object id="481" gid="236" x="832" y="1088" width="60" height="60"/>
+  <object id="482" gid="236" x="192" y="576" width="60" height="60"/>
+  <object id="485" gid="236" x="192" y="640" width="60" height="60"/>
+  <object id="486" gid="237" x="194.667" y="604.667" width="56" height="60"/>
+  <object id="487" gid="237" x="188" y="588.667" width="56" height="60"/>
+  <object id="488" gid="237" x="184" y="618" width="56" height="60"/>
+  <object id="519" gid="237" x="1728" y="832" width="56" height="60"/>
+ </objectgroup>
+ <objectgroup id="12" name="Trees_small">
+  <object id="163" gid="228" x="0" y="1280" width="64" height="128"/>
+  <object id="166" gid="228" x="64" y="1280" width="64" height="128"/>
+  <object id="168" gid="228" x="128" y="1280" width="64" height="128"/>
+  <object id="329" gid="228" x="320" y="832" width="64" height="128"/>
+  <object id="330" gid="228" x="320" y="896" width="64" height="128"/>
+  <object id="331" gid="228" x="320" y="960" width="64" height="128"/>
+  <object id="333" gid="228" x="350.667" y="953.333" width="64" height="128"/>
+  <object id="335" gid="228" x="345.333" y="853.333" width="64" height="128"/>
+  <object id="336" gid="228" x="349.333" y="900" width="64" height="128"/>
+  <object id="382" gid="228" x="2112" y="1152" width="64" height="128"/>
+  <object id="383" gid="228" x="2048" y="1216" width="64" height="128"/>
+  <object id="384" gid="228" x="2048" y="1152" width="64" height="128"/>
+  <object id="385" gid="228" x="2112" y="1216" width="64" height="128"/>
+  <object id="386" gid="228" x="2078.67" y="1185.33" width="64" height="128"/>
+  <object id="387" gid="227" x="2208" y="820" width="128" height="192"/>
+  <object id="388" gid="227" x="2213.33" y="738.667" width="128" height="192"/>
+  <object id="389" gid="227" x="2212" y="614.667" width="128" height="192"/>
+  <object id="390" gid="226" x="2198.67" y="776" width="128" height="192"/>
+  <object id="391" gid="226" x="2196" y="657.333" width="128" height="192"/>
+  <object id="392" gid="226" x="2194.67" y="577.333" width="128" height="192"/>
+ </objectgroup>
+ <objectgroup id="3" name="Coast">
+  <object id="174" x="0" y="192" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="175" x="64" y="192" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="176" x="128" y="192" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="177" x="128" y="256" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="178" x="128" y="320" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="179" x="128" y="384" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="180" x="128" y="448" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="182" x="128" y="512" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="183" x="128" y="576" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="184" x="128" y="640" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="185" x="128" y="704" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="186" x="128" y="768" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="187" x="128" y="832" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="188" x="128" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="189" x="128" y="960" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="190" x="128" y="1024" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="276" x="0" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="277" x="64" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="278" x="128" y="1088" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="2" name="Buildings">
+  <object id="289" gid="232" x="384" y="960" width="320" height="320"/>
+  <object id="290" gid="211" x="384" y="448" width="320" height="320"/>
+  <object id="292" gid="229" x="1408" y="384" width="384" height="384"/>
+  <object id="520" gid="224" x="960" y="960" width="448" height="448"/>
+ </objectgroup>
+</map>

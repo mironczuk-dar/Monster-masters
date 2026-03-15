@@ -21,8 +21,10 @@ def load_audio_assets(game):
         'Options menu tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'States_tunes', 'options_menu_tune.ogg'),
         'World map tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Overworld_tunes', 'world_map_tune.ogg'),
         'Hospital tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Overworld_tunes', 'hospital_tune.ogg'),
+        'Gym tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Overworld_tunes', 'gym_tune.ogg'),
+        'Gym leader tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Battle_tunes', 'gym_leader_battle_tune.ogg'),
         'Default battle tune' : join(BASE_DIR, 'audio', 'Music_tracs', 'Battle_tunes', 'default_battle_tune.ogg'),
-        'Its going down now' : join(BASE_DIR, 'audio', 'Music_tracs', 'Battle_tunes', 'its_going_down_now.ogg'),
+        'Death menu tune' : None
     }
 
     game.select_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'generic_sounds', 'select_sound.wav'))
@@ -39,14 +41,27 @@ def load_audio_assets(game):
         'close' : pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'overworld_tab_sounds', 'overworld_tab_close.wav')),
     }
 
+    game.death_state_sound = pygame.mixer.Sound(join(BASE_DIR, 'audio', 'Sound_effects', 'death_state_sounds', 'game_over_sound.wav'))
+
 #LOADING GAME MAPS
 def load_maps(game):
 
     game.maps = {
-        'house' : load_pygame(join(BASE_DIR, 'data', 'maps', 'house.tmx')),
-        'world' : load_pygame(join(BASE_DIR, 'data', 'maps', 'world.tmx')),
-        'hospital' : load_pygame(join(BASE_DIR, 'data', 'maps', 'hospital.tmx')),
-        'Stag Island' : load_pygame(join(BASE_DIR, 'data', 'maps', 'stag_island.tmx')),
+        #LOCATION 1
+        'Location1' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location1', 'location1.tmx')),
+        'Grass gym' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location1', 'grass_gym.tmx')),
+        'Location1_house1' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location1', 'location1_house1.tmx')),
+        'Location1_house2' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location1', 'location1_house2.tmx')),
+        'Location1_hospital' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location1', 'location1_hospital.tmx')),
+
+        #PASSAGES
+        'Passage1' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Passages', 'Passage1.tmx')),
+
+        #LOCATION 2
+        'Location2' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location2', 'location2.tmx')),
+        'Fire gym' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location2', 'fire_gym.tmx')),
+        'Location2_hospital' : load_pygame(join(BASE_DIR, 'data', 'maps', 'Location2', 'location2_hospital.tmx')),
+
     }
 
 #LOADING LEVEL ASSETS
@@ -107,6 +122,13 @@ def load_game_fonts(game):
         'small' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 25),
         'bold' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'dogicapixelbold.otf'), 39),
         'stats' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 20),
+    }
+
+    game.death_state_fonts = {
+        'regular' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 33),
+        'big' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 42),
+        'medium' : pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 32),
+        'small' :   pygame.font.Font(join(BASE_DIR, 'assets', 'fonts', 'PixeloidSans.ttf'), 28)
     }
 
     game.save_file_log_fonts = {

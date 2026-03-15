@@ -109,7 +109,7 @@ class AudioManager:
 
         # Play preview sound only if the timer is inactive
         if not s.preview_sound_timer.active:
-            s.play_sound(s.game.state_manager.states['Options menu'].test_sound)
+            s.play_sound(s.test_sound)
             s.preview_sound_timer.activate()
 
     def toggle_sound(s):

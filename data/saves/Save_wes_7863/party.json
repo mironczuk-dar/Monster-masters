@@ -1,0 +1,21 @@
+{
+    "slots": [
+        {
+            "name": "Pluma",
+            "level": 85,
+            "exp": 4800,
+            "health": 1955,
+            "energy": 2110
+        },
+        {
+            "name": "Jacana",
+            "level": 18,
+            "exp": 0,
+            "health": 216,
+            "energy": 342
+        },
+        null,
+        null,
+        null
+    ]
+}

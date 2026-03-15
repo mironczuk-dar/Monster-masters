@@ -37,7 +37,7 @@ class World:
 
     #METHOD FOR DRAWING THE WORLD
     def draw(s, window):
-        window.fill("#44C6C1")
+        window.fill((0,0,0))
         s.all_sprite_groups['all'].draw(window, s.player)
 
     #METHOD FOR UPDATING THE WORLD

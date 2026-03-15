@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="9" height="12" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="39">
+ <tileset firstgid="1" source="../../tilesets/world.tsx"/>
+ <tileset firstgid="211" source="../../tilesets/objects.tsx"/>
+ <tileset firstgid="242" source="../../tilesets/indoor.tsx"/>
+ <layer id="1" name="Terrain" width="9" height="12">
+  <data encoding="csv">
+247,248,248,248,248,248,248,248,249,
+277,258,258,270,271,258,258,258,259,
+277,268,268,280,281,268,268,268,269,
+277,278,278,278,278,278,278,278,279,
+277,288,288,288,288,288,288,288,289,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+297,298,260,261,298,298,298,298,299
+</data>
+ </layer>
+ <layer id="10" name="Terrain top" width="9" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,326,326,326,326,326,306,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,316,326,326,306,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="Player">
+  <object id="1" name="Location1" x="192" y="641">
+   <properties>
+    <property name="direction" value="up"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="9" name="Walls">
+  <object id="20" x="256" y="704" width="256" height="64"/>
+  <object id="21" x="64" y="704" width="64" height="64"/>
+  <object id="22" x="0" y="192" width="64" height="512"/>
+  <object id="24" x="512" y="192" width="64" height="512"/>
+  <object id="27" x="128" y="320" width="256" height="64"/>
+  <object id="35" x="64" y="128" width="448" height="128"/>
+ </objectgroup>
+ <objectgroup id="12" name="Trees_small">
+  <object id="30" gid="2147483863" x="448" y="256" width="64" height="128"/>
+  <object id="37" gid="215" x="64" y="704" width="64" height="128"/>
+ </objectgroup>
+ <objectgroup id="3" name="Objects">
+  <object id="36" gid="235" x="280" y="713.333" width="232" height="80"/>
+ </objectgroup>
+ <objectgroup id="11" name="Portals">
+  <object id="25" name="Location1" x="128" y="703" width="128" height="65">
+   <properties>
+    <property name="place" value="Location1_house1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

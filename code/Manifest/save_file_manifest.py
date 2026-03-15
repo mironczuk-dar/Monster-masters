@@ -38,10 +38,10 @@ DEFAULT_PC = {
 }
 
 DEFAULT_WORLD = {
-    "current_map": "world",
+    "current_map": "Location1",
     "position": {
-        "x": 608,
-        "y": 714,
+        "x": 818,
+        "y": 600,
         "facing_direction": "down"
     }
 }

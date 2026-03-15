@@ -18,7 +18,7 @@ CHARACTER_DATA = {
 		'look_around': False,
 		'defeated': False,
 		'biome': 'ice',
-        'music': 'Its going down now',
+        'music': 'Gym leader tune',
         'battle_type' : 'triples'
 		},
 	'o3': {
@@ -119,7 +119,8 @@ CHARACTER_DATA = {
 		'directions': ['right'],
 		'look_around': False,
 		'defeated': False,
-		'biome': 'forest'
+		'biome': 'forest',
+        'music': 'Gym leader tune',
 		},
 	'w1': {
 		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},

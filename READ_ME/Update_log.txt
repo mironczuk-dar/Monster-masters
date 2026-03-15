@@ -6,21 +6,24 @@
 
 --- CHANGES TO BE MADE BEFORE ALPHA VERSION 1.0.0 ---
 - Make a pc in the pokemon center
-- Change death screen to it's own state.
-- Add controller keyboard to Singleplayer menu
 - Add controlls options menu and Atomic launcher controlls
 - Make a proper map
 - Finish making the main game mechanics
-- Start menu button graphics
 - Finish evolution class
 - Add trainer Id to overworldTab
 - Make a monster dex for overworldTab and game in general
 - Add more game audio
 - Clean up the assets folder
-- Make the options menu
-- Make the new save file wizard look nicer
+- If monsters are close to the same speed the battle should go faster
+- Deffending in a battle should give your monster back energy
+- Correct the opponents in the maps
 
 ##############################################################################################################
+
+14.03.2026r.
+- Added new maps to the game, ready for demo
+- Finished options menu
+- Changed DeathScreen in to it's own state for efficency and simplisity
 
 09.03.2026r.
 - Reworked the entire "new save file wizard", now has keyboard support, opp and starter choice

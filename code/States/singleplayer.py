@@ -8,7 +8,7 @@ from States.generic_state import BaseState
 from Singleplayer.Overworld.world import World
 from Singleplayer.monster_party import MonsterParty
 from Singleplayer.Battle.battle import Battle
-from Singleplayer.death_screen import DeathScreen
+from States.death_state import DeathState
 from Singleplayer.Overworld.non_player_characters import NonPlayerCharacter
 from Singleplayer.Overworld.overworld_tab import OverworldTab
 
@@ -29,11 +29,9 @@ class Singleplayer(BaseState):
 
         #SINGLEPLAYER GAME ELEMENTS
         s.world = World(s.game, s)
-        s.death_screen = None
 
         #SINGLEPLAYER GAME FLAGS
         s.currently_in_battle = False
-        s.pending_death_screen = False
         s.pending_battle_data = None
 
         #SETTING UP SINGLEPLAYER GAME ELEMENTS
@@ -131,6 +129,7 @@ class Singleplayer(BaseState):
         s.load_player_monsters()
 
     def update(s, delta_time):
+
         if s.monster_party_active:
             s.monster_party.update(delta_time)
             return
@@ -155,6 +154,7 @@ class Singleplayer(BaseState):
             s.check_monster()
 
     def draw(s, window):
+
         if s.currently_in_battle:
             s.battle.draw(window)
         else:
@@ -169,6 +169,7 @@ class Singleplayer(BaseState):
         window.blit(s.tint_surface, s.tint_rect)
 
     def handling_events(s, events):
+
         if s.monster_party_active:
             s.monster_party.handling_events(events)
         elif s.overworld_tab_active:
@@ -224,8 +225,11 @@ class Singleplayer(BaseState):
 
         elif s.tint_mode == 'load':
             if s.currently_in_battle and s.battle.finished:
+
                 if s.battle.result == 'lose':
-                    s.death_screen = DeathScreen(s.game, s, choice(s.game.death_screens), s.save_path)
+
+                    s.game.state_manager.add_state("Death", DeathState(s.game, s.save_path))
+                    s.game.state_manager.change_state("Death")
                 
                 if s.battle.result == 'win':
                     if getattr(s, 'active_battle_char_id', None):
@@ -273,8 +277,6 @@ class Singleplayer(BaseState):
                 
             s.tint_mode = 'untint'
                 
-            s.tint_mode = 'untint'
-
         elif s.tint_mode == 'untint':
             s.tint_rect.y -= speed
             if s.tint_rect.top <= -WINDOW_HEIGHT:

@@ -1,0 +1,1950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="25" tilewidth="64" tileheight="64" infinite="0" nextlayerid="15" nextobjectid="606">
+ <tileset firstgid="1" source="../../tilesets/world.tsx"/>
+ <tileset firstgid="211" source="../../tilesets/objects.tsx"/>
+ <tileset firstgid="242" source="../../tilesets/indoor.tsx"/>
+ <tileset firstgid="332" source="../../tilesets/Grass.tsx"/>
+ <layer id="1" name="Terrain" width="40" height="25">
+  <data encoding="csv">
+75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,
+85,85,85,85,85,85,85,85,85,85,85,85,69,75,75,67,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,
+102,102,102,102,102,102,75,75,75,75,75,75,84,85,85,86,75,75,75,75,75,75,75,75,75,75,75,75,102,102,102,102,102,102,102,102,102,102,102,102,
+85,85,85,85,85,85,85,85,85,85,69,102,102,102,102,102,102,67,85,85,85,85,85,85,85,85,85,85,69,22,63,102,102,102,102,102,102,102,102,102,
+102,102,102,102,102,102,102,102,102,102,84,69,102,102,102,102,102,76,102,102,102,102,102,102,102,102,61,23,14,72,11,102,102,102,102,102,102,102,102,102,
+293,102,102,102,102,102,102,102,102,102,102,74,102,102,102,102,75,76,102,102,102,102,102,102,102,102,71,72,24,9,21,63,102,102,102,102,102,102,102,102,
+3758096640,102,102,102,102,102,102,102,102,102,102,74,102,102,102,102,67,86,102,102,102,102,102,102,102,102,13,72,72,14,72,21,63,102,102,102,102,102,102,102,
+3758096639,102,102,102,102,102,102,102,102,102,102,84,85,102,102,67,86,102,102,102,102,102,102,102,102,102,81,3,72,24,8,9,11,12,102,102,102,102,102,102,
+1073742117,102,102,102,102,102,102,102,102,102,102,102,84,85,85,86,102,102,102,102,12,12,102,102,102,102,102,71,72,72,72,24,85,85,85,118,118,118,69,75,
+102,102,102,102,102,102,102,102,102,102,102,102,102,75,75,102,102,0,0,0,12,12,12,12,102,102,102,81,3,1,2,83,102,102,102,102,102,102,79,102,
+102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,0,0,0,0,0,12,12,61,63,12,102,102,81,83,102,102,102,102,102,102,102,102,79,102,
+102,102,102,102,12,12,102,102,102,102,102,102,102,102,102,102,0,0,0,0,0,0,61,23,21,63,102,102,102,102,102,102,102,102,102,102,102,102,79,102,
+102,102,102,102,12,12,12,12,12,12,64,65,65,66,102,102,0,0,0,0,0,0,81,3,72,21,63,102,102,102,102,102,102,102,102,102,102,12,79,102,
+65,66,12,12,12,12,12,12,12,12,74,61,62,76,102,102,0,0,0,0,0,0,12,81,82,82,83,102,102,102,102,102,102,102,102,102,64,88,88,102,
+65,66,66,12,12,12,12,12,12,12,74,71,72,16,63,12,0,0,0,0,0,0,12,12,12,12,102,102,102,102,102,102,102,102,102,61,14,21,63,102,
+102,65,66,66,12,12,12,12,12,12,84,85,25,26,73,12,12,12,12,102,102,102,102,102,61,63,102,102,102,102,102,102,102,102,61,23,24,9,21,22,
+65,66,65,66,66,102,102,12,12,12,12,81,82,3,73,12,12,12,12,102,102,102,61,63,13,11,102,102,102,102,102,102,102,102,13,72,72,24,9,72,
+102,65,66,65,66,66,102,102,12,12,12,12,12,81,83,12,12,12,12,102,102,61,23,11,13,21,63,102,102,102,102,102,102,102,13,72,72,72,24,9,
+85,85,86,67,86,76,75,102,102,102,102,102,102,102,102,61,22,22,22,22,22,23,7,58,58,9,21,22,22,63,102,102,12,12,81,2,3,42,42,14,
+85,85,85,86,75,76,75,61,22,63,102,102,102,61,22,23,72,72,7,25,25,25,26,11,13,24,25,25,9,21,63,12,12,102,12,12,13,42,42,24,
+85,85,85,85,85,86,61,23,72,21,63,102,61,23,72,72,72,7,26,21,22,23,21,63,13,72,21,63,84,9,21,22,22,22,22,22,23,72,72,72,
+22,22,23,72,72,21,23,72,72,72,21,22,23,72,72,7,25,86,3,72,0,0,0,245,245,0,0,21,63,84,25,25,25,25,25,25,25,25,25,25,
+25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,86,61,22,23,0,0,0,0,245,245,0,0,0,21,22,22,22,22,63,61,23,72,72,72,1,
+22,23,72,72,21,23,1,2,2,2,3,21,23,72,21,22,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,23,72,72,72,72,21,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="14" name="Terrain top" width="40" height="25">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,302,304,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,312,314,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,322,324,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="Player">
+  <object id="196" name="Passage1" x="128" y="448">
+   <properties>
+    <property name="direction" value="right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="338" name="Location2_hospital" x="1536" y="544">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="590" name="Fire gym" x="2330.98" y="646.212">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="Grass">
+  <object id="198" gid="332" x="256" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="199" gid="332" x="192" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="200" gid="332" x="256" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="201" gid="332" x="256" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="202" gid="332" x="192" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="203" gid="332" x="192" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="204" gid="332" x="192" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="205" gid="332" x="256" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="206" gid="332" x="256" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="207" gid="332" x="320" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="208" gid="332" x="320" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="209" gid="332" x="384" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="210" gid="332" x="384" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="211" gid="332" x="384" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="213" gid="332" x="320" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="214" gid="332" x="384" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="215" gid="332" x="448" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="216" gid="332" x="512" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="217" gid="332" x="512" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="218" gid="332" x="512" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="219" gid="332" x="448" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="220" gid="332" x="448" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="221" gid="332" x="448" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="222" gid="332" x="512" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="223" gid="332" x="512" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="224" gid="332" x="448" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="225" gid="332" x="320" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="226" gid="332" x="448" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="227" gid="332" x="512" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="228" gid="332" x="512" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="229" gid="332" x="576" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="230" gid="332" x="832" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="231" gid="332" x="832" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="232" gid="332" x="832" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="233" gid="332" x="768" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="234" gid="332" x="768" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="235" gid="332" x="768" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="237" gid="332" x="704" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="239" gid="332" x="704" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="240" gid="332" x="640" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="241" gid="332" x="640" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="242" gid="332" x="640" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="243" gid="332" x="704" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="244" gid="332" x="640" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="245" gid="332" x="576" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="246" gid="332" x="640" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="247" gid="332" x="896" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="248" gid="332" x="896" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="249" gid="332" x="960" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="251" gid="332" x="1024" y="640" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="252" gid="332" x="1024" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="253" gid="332" x="1152" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="254" gid="332" x="1216" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="255" gid="332" x="1216" y="512" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="256" gid="332" x="1280" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="257" gid="332" x="1216" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="258" gid="332" x="1152" y="448" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="415" gid="332" x="256" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="416" gid="332" x="256" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="417" gid="332" x="192" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="418" gid="332" x="320" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="419" gid="332" x="64" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="420" gid="332" x="128" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="421" gid="332" x="128" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="422" gid="332" x="192" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="423" gid="332" x="192" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="424" gid="332" x="192" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="425" gid="332" x="256" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="426" gid="332" x="320" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="427" gid="332" x="320" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="428" gid="332" x="256" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="429" gid="332" x="384" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="430" gid="332" x="448" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="431" gid="332" x="448" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="432" gid="332" x="576" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="433" gid="332" x="384" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="434" gid="332" x="384" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="435" gid="332" x="512" y="768" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="436" gid="332" x="512" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="437" gid="332" x="576" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="438" gid="332" x="576" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="439" gid="332" x="512" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="440" gid="332" x="640" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="441" gid="332" x="832" y="1344" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="442" gid="332" x="832" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="443" gid="332" x="768" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="444" gid="332" x="704" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="445" gid="332" x="576" y="1344" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="446" gid="332" x="512" y="1344" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="447" gid="332" x="384" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="448" gid="332" x="384" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="449" gid="332" x="512" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="450" gid="332" x="704" y="1344" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="451" gid="332" x="704" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="452" gid="332" x="704" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="453" gid="332" x="704" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="454" gid="332" x="640" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="455" gid="332" x="640" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="456" gid="332" x="640" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="457" gid="332" x="704" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="458" gid="332" x="640" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="459" gid="332" x="704" y="1408" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="460" gid="332" x="768" y="1408" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="461" gid="332" x="768" y="1344" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="462" gid="332" x="768" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Sparchu"/>
+   </properties>
+  </object>
+  <object id="463" gid="332" x="2112" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="464" gid="332" x="2048" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="465" gid="332" x="2048" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="466" gid="332" x="2112" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="467" gid="332" x="1920" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="468" gid="332" x="1920" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="469" gid="332" x="1920" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="470" gid="332" x="1984" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="471" gid="332" x="2048" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="472" gid="332" x="1984" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="473" gid="332" x="2112" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="474" gid="332" x="2176" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="475" gid="332" x="2176" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="476" gid="332" x="2048" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="477" gid="332" x="1984" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="478" gid="332" x="2112" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="479" gid="332" x="2112" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="480" gid="332" x="2112" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="487" gid="332" x="1920" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="488" gid="332" x="1856" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="489" gid="332" x="1856" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="490" gid="332" x="1856" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="491" gid="332" x="1984" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="492" gid="332" x="2048" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="493" gid="332" x="2112" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="494" gid="332" x="2176" y="1216" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="495" gid="332" x="2176" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="496" gid="332" x="2176" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="497" gid="332" x="1984" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="498" gid="332" x="1984" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="499" gid="332" x="1920" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="500" gid="332" x="2048" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="501" gid="332" x="2048" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="502" gid="332" x="2240" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="503" gid="332" x="2240" y="832" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="504" gid="332" x="2240" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="505" gid="332" x="2176" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="506" gid="332" x="2176" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="507" gid="332" x="2240" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="508" gid="332" x="2304" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="509" gid="332" x="2304" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="510" gid="332" x="2304" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="511" gid="332" x="2176" y="1280" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="512" gid="332" x="2112" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="513" gid="332" x="2048" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="514" gid="332" x="2112" y="960" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="515" gid="332" x="2048" y="896" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="516" gid="332" x="2048" y="1024" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="517" gid="332" x="1984" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="518" gid="332" x="2176" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="30"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Cindrill,Pouch"/>
+   </properties>
+  </object>
+  <object id="572" gid="332" x="1152" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="25"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="573" gid="332" x="1152" y="1152" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="25"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="574" gid="332" x="1216" y="1088" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="25"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="575" gid="332" x="768" y="704" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="10"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="576" gid="332" x="1088" y="576" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="15"/>
+    <property name="monsters" value="Jacana,Pouch"/>
+   </properties>
+  </object>
+  <object id="577" gid="332" x="384" y="384" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="20"/>
+    <property name="min_level" type="int" value="5"/>
+    <property name="monsters" value="Jacana,Pouch,Draem"/>
+   </properties>
+  </object>
+  <object id="581" gid="333" x="2496" y="1536" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="35"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Gulfin,Finiette"/>
+   </properties>
+  </object>
+  <object id="582" gid="333" x="2432" y="1536" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="35"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Gulfin,Finiette"/>
+   </properties>
+  </object>
+  <object id="583" gid="333" x="2368" y="1536" width="64" height="64">
+   <properties>
+    <property name="biome" value="forest"/>
+    <property name="max_level" type="int" value="35"/>
+    <property name="min_level" type="int" value="20"/>
+    <property name="monsters" value="Gulfin,Finiette"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="Walls">
+  <object id="5" x="0" y="64" width="832" height="64"/>
+  <object id="6" x="960" y="64" width="1600" height="64"/>
+  <object id="7" x="768" y="128" width="256" height="64"/>
+  <object id="8" x="0" y="192" width="704" height="64"/>
+  <object id="9" x="1088" y="192" width="768" height="64"/>
+  <object id="10" x="1792" y="256" width="64" height="64"/>
+  <object id="11" x="1792" y="320" width="128" height="64"/>
+  <object id="12" x="1856" y="384" width="64" height="128"/>
+  <object id="13" x="1920" y="448" width="128" height="64"/>
+  <object id="16" x="768" y="512" width="256" height="64"/>
+  <object id="17" x="1088" y="256" width="64" height="128"/>
+  <object id="21" x="640" y="256" width="128" height="64"/>
+  <object id="22" x="704" y="320" width="64" height="192"/>
+  <object id="23" x="768" y="448" width="64" height="64"/>
+  <object id="24" x="960" y="448" width="128" height="64"/>
+  <object id="25" x="1024" y="384" width="128" height="64"/>
+  <object id="30" x="-64" y="0" width="64" height="1664"/>
+  <object id="31" x="0" y="1600" width="2624" height="64"/>
+  <object id="32" x="2560" y="0" width="64" height="1600"/>
+  <object id="34" x="-64" y="-64" width="2688" height="64"/>
+  <object id="112" x="640" y="768" width="256" height="256"/>
+  <object id="113" x="0" y="1408" width="1024" height="64"/>
+  <object id="114" x="960" y="1344" width="192" height="64"/>
+  <object id="115" x="1088" y="1280" width="128" height="64"/>
+  <object id="116" x="1152" y="1216" width="320" height="64"/>
+  <object id="117" x="1408" y="1152" width="64" height="64"/>
+  <object id="118" x="1600" y="1152" width="64" height="128"/>
+  <object id="119" x="1664" y="1216" width="192" height="64"/>
+  <object id="120" x="1792" y="1280" width="128" height="64"/>
+  <object id="121" x="1856" y="1344" width="704" height="64"/>
+  <object id="122" x="2496" y="1088" width="64" height="192"/>
+  <object id="123" x="2432" y="1024" width="64" height="128"/>
+  <object id="124" x="2368" y="960" width="64" height="128"/>
+  <object id="125" x="2304" y="832" width="64" height="192"/>
+  <object id="127" x="2304" y="832" width="192" height="15.3333"/>
+  <object id="133" x="2432" y="512" width="64" height="320"/>
+  <object id="135" x="0" y="1536" width="2560" height="64"/>
+  <object id="194" x="0" y="320" width="64" height="64"/>
+  <object id="195" x="0" y="512" width="64" height="64"/>
+  <object id="520" x="0" y="1088" width="384" height="256"/>
+  <object id="524" x="0" y="832" width="128" height="64"/>
+  <object id="526" x="1856" y="512" width="384" height="128"/>
+  <object id="594" x="1280" y="1344" width="202" height="64"/>
+  <object id="595" x="1216" y="1408" width="266" height="64"/>
+  <object id="596" x="1088" y="1472" width="394" height="64"/>
+  <object id="597" x="1590" y="1344" width="138" height="64"/>
+  <object id="598" x="1590" y="1408" width="202" height="64"/>
+  <object id="599" x="1590" y="1472" width="522" height="64"/>
+  <object id="600" x="1024" y="640" width="320" height="320"/>
+  <object id="601" x="1344" y="704" width="64" height="256"/>
+  <object id="602" x="1088" y="576" width="192" height="64"/>
+  <object id="603" x="128" y="896" width="64" height="64"/>
+  <object id="604" x="192" y="960" width="64" height="64"/>
+  <object id="605" x="256" y="1024" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup id="5" name="Portals">
+  <object id="193" name="Passage1" x="0" y="384" width="64" height="128">
+   <properties>
+    <property name="place" value="Location2"/>
+   </properties>
+  </object>
+  <object id="197" name="Location2_hospital" x="1472" y="395" width="128" height="64">
+   <properties>
+    <property name="place" value="Location2"/>
+   </properties>
+  </object>
+  <object id="589" name="Fire gym" x="2304" y="384" width="64" height="84">
+   <properties>
+    <property name="place" value="Location2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="Characters">
+  <object id="584" name="o1" x="542.667" y="324">
+   <properties>
+    <property name="change_direction" type="bool" value="true"/>
+    <property name="direction" value="down"/>
+    <property name="model" value="straw"/>
+    <property name="range" type="int" value="500"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="585" name="o1" x="862.667" y="1025.33">
+   <properties>
+    <property name="change_direction" type="bool" value="true"/>
+    <property name="direction" value="down"/>
+    <property name="model" value="blond"/>
+    <property name="range" type="int" value="400"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="8" name="Water">
+  <object id="102" x="1280" y="1472" width="448" height="64"/>
+  <object id="103" x="1344" y="1408" width="320" height="64"/>
+  <object id="168" x="1088" y="704" width="192" height="192"/>
+  <object id="169" x="1280" y="768" width="64" height="128"/>
+  <object id="170" x="1152" y="640" width="64" height="64"/>
+  <object id="519" x="1152" y="1536" width="896" height="64"/>
+ </objectgroup>
+ <objectgroup id="9" name="Trees">
+  <object id="105" gid="213" x="704" y="832" width="128" height="192"/>
+  <object id="107" gid="214" x="728" y="966" width="128" height="192"/>
+  <object id="324" gid="213" x="832" y="320" width="128" height="192"/>
+  <object id="325" gid="214" x="768" y="320" width="128" height="192"/>
+  <object id="387" gid="214" x="2048" y="192" width="128" height="192"/>
+  <object id="388" gid="214" x="960" y="896" width="128" height="192"/>
+  <object id="389" gid="214" x="1280" y="704" width="128" height="192"/>
+  <object id="390" gid="213" x="960" y="704" width="128" height="192"/>
+  <object id="554" gid="213" x="576" y="320" width="128" height="192"/>
+  <object id="555" gid="214" x="320" y="320" width="128" height="192"/>
+  <object id="562" gid="213" x="0" y="1152" width="128" height="192"/>
+  <object id="563" gid="213" x="1216" y="320" width="128" height="192"/>
+  <object id="564" gid="214" x="1698" y="320" width="128" height="192"/>
+  <object id="568" gid="214" x="2432" y="1472" width="128" height="192"/>
+  <object id="570" gid="213" x="2304" y="1472" width="128" height="192"/>
+ </objectgroup>
+ <objectgroup id="10" name="Objects">
+  <object id="259" gid="240" x="576" y="576" width="60" height="60"/>
+  <object id="260" gid="240" x="384" y="448" width="60" height="60"/>
+  <object id="262" gid="240" x="448" y="1088" width="60" height="60"/>
+  <object id="264" gid="241" x="1024" y="1152" width="56" height="60"/>
+  <object id="266" gid="241" x="1536" y="768" width="56" height="60"/>
+  <object id="267" gid="241" x="1920" y="832" width="56" height="60"/>
+  <object id="268" gid="241" x="2240" y="1216" width="56" height="60"/>
+  <object id="269" gid="240" x="2048" y="256" width="60" height="60"/>
+  <object id="271" gid="240" x="1728" y="960" width="60" height="60"/>
+  <object id="272" gid="241" x="320" y="768" width="56" height="60"/>
+  <object id="339" gid="240" x="128" y="1088" width="60" height="60"/>
+  <object id="341" gid="241" x="0" y="960" width="56" height="60"/>
+  <object id="383" gid="240" x="128" y="64" width="60" height="60"/>
+  <object id="384" gid="241" x="64" y="192" width="56" height="60"/>
+  <object id="385" gid="241" x="704" y="64" width="56" height="60"/>
+  <object id="386" gid="241" x="1920" y="64" width="56" height="60"/>
+  <object id="404" gid="235" x="1984" y="640" width="232" height="80"/>
+  <object id="552" gid="241" x="704" y="896" width="56" height="60"/>
+  <object id="571" gid="240" x="2401" y="1472" width="60" height="60"/>
+  <object id="587" gid="241" x="576" y="896" width="56" height="60"/>
+  <object id="588" gid="241" x="1856" y="640" width="56" height="60"/>
+ </objectgroup>
+ <objectgroup id="11" name="Trees_small">
+  <object id="343" gid="215" x="256" y="1280" width="64" height="128"/>
+  <object id="344" gid="215" x="0" y="896" width="64" height="128"/>
+  <object id="532" gid="215" x="786.667" y="352" width="64" height="128"/>
+  <object id="533" gid="215" x="817.333" y="378.667" width="64" height="128"/>
+  <object id="534" gid="215" x="848" y="364" width="64" height="128"/>
+  <object id="540" gid="215" x="1950.67" y="582.667" width="64" height="128"/>
+  <object id="543" gid="215" x="1908" y="584" width="64" height="128"/>
+  <object id="544" gid="215" x="1882.67" y="552" width="64" height="128"/>
+  <object id="545" gid="215" x="2470.67" y="70.6667" width="64" height="128"/>
+  <object id="546" gid="215" x="2509.33" y="94.6667" width="64" height="128"/>
+  <object id="547" gid="215" x="2496" y="448" width="64" height="128"/>
+  <object id="549" gid="215" x="2432" y="896" width="64" height="128"/>
+  <object id="550" gid="215" x="2432" y="1216" width="64" height="128"/>
+  <object id="556" gid="215" x="674.667" y="361.333" width="64" height="128"/>
+  <object id="557" gid="215" x="633.333" y="340" width="64" height="128"/>
+  <object id="558" gid="215" x="388" y="322.667" width="64" height="128"/>
+  <object id="559" gid="215" x="322.667" y="300" width="64" height="128"/>
+  <object id="565" gid="215" x="1758.67" y="360" width="64" height="128"/>
+ </objectgroup>
+ <objectgroup id="12" name="Coast">
+  <object id="40" x="0" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="41" x="64" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="42" x="128" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="43" x="192" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="44" x="256" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="45" x="320" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="46" x="384" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="47" x="448" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="48" x="512" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="49" x="576" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="50" x="640" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="52" x="704" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="53" x="768" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="54" x="832" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="55" x="896" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="56" x="960" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="57" x="1024" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="58" x="1088" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="59" x="1152" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="60" x="1216" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="61" x="1280" y="1408" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="62" x="1344" y="1344" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="63" x="1408" y="1344" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="66" x="1600" y="1344" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="68" x="2048" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="69" x="2112" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="70" x="2176" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="71" x="2240" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="72" x="2304" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="73" x="2368" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="74" x="2432" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="75" x="2496" y="1536" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="77" x="1088" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="80" x="1216" y="1408" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="82" x="1280" y="1344" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="83" x="1664" y="1344" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="84" x="1728" y="1408" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="85" x="1792" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="86" x="1856" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="87" x="1920" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="88" x="1984" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="89" x="1664" y="1408" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="90" x="1728" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="grass_i"/>
+   </properties>
+  </object>
+  <object id="96" x="2048" y="1472" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="grass"/>
+   </properties>
+  </object>
+  <object id="144" x="1088" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="145" x="1152" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="146" x="1216" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="147" x="1280" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="bottom"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="148" x="1344" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="149" x="1344" y="832" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="150" x="1344" y="768" width="64" height="64">
+   <properties>
+    <property name="side" value="right"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="151" x="1344" y="704" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="152" x="1280" y="640" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="153" x="1088" y="640" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomright"/>
+    <property name="terrain" value="sand_i"/>
+   </properties>
+  </object>
+  <object id="154" x="1152" y="576" width="64" height="64">
+   <properties>
+    <property name="side" value="top"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="155" x="1216" y="576" width="64" height="64">
+   <properties>
+    <property name="side" value="topright"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="156" x="1024" y="704" width="64" height="64">
+   <properties>
+    <property name="side" value="left"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="157" x="1024" y="768" width="64" height="64">
+   <properties>
+    <property name="side" value="left"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="158" x="1024" y="832" width="64" height="64">
+   <properties>
+    <property name="side" value="left"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="159" x="1024" y="896" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="162" x="1024" y="640" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+  <object id="163" x="1216" y="640" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="sand_i"/>
+   </properties>
+  </object>
+  <object id="166" x="1280" y="704" width="64" height="64">
+   <properties>
+    <property name="side" value="bottomleft"/>
+    <property name="terrain" value="sand_i"/>
+   </properties>
+  </object>
+  <object id="167" x="1088" y="576" width="64" height="64">
+   <properties>
+    <property name="side" value="topleft"/>
+    <property name="terrain" value="sand"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="13" name="Buildings">
+  <object id="26" gid="223" x="2112" y="448" width="448" height="448"/>
+  <object id="27" gid="229" x="1344" y="448" width="384" height="384"/>
+ </objectgroup>
+</map>

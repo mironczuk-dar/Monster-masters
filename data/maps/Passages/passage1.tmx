@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="8" nextobjectid="114">
+ <tileset firstgid="1" source="../../tilesets/world.tsx"/>
+ <tileset firstgid="211" source="../../tilesets/objects.tsx"/>
+ <tileset firstgid="242" source="../../tilesets/indoor.tsx"/>
+ <layer id="1" name="Terrain" width="20" height="10">
+  <data encoding="csv">
+247,248,248,248,248,248,248,248,248,248,248,248,248,248,248,248,248,248,248,249,
+277,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,269,
+277,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,269,
+277,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,269,
+2684354820,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1073742092,1610612997,
+2684354821,268,268,268,268,268,268,268,268,268,268,268,268,268,268,268,268,268,268,1610612996,
+277,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,269,
+277,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,269,
+277,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,288,269,
+297,298,298,298,298,298,298,298,298,298,298,298,298,298,298,298,298,298,298,299
+</data>
+ </layer>
+ <layer id="7" name="Terrain top" width="20" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,305,0,0,0,0,0,304,0,0,0,0,0,0,0,
+0,0,0,0,0,0,2147483965,0,0,0,0,0,314,0,0,0,0,0,0,0,
+0,0,0,0,0,0,2147483975,326,306,0,313,323,324,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="Objects">
+  <object id="1" gid="215" x="1152" y="128" width="64" height="128"/>
+  <object id="3" gid="215" x="448" y="128" width="64" height="128"/>
+  <object id="5" gid="215" x="320" y="128" width="64" height="128"/>
+  <object id="6" gid="215" x="64" y="128" width="64" height="128"/>
+  <object id="26" gid="215" x="704" y="128" width="64" height="128"/>
+  <object id="27" gid="215" x="832" y="128" width="64" height="128"/>
+  <object id="92" gid="235" x="832" y="576" width="232" height="80"/>
+  <object id="93" gid="235" x="256" y="576" width="232" height="80"/>
+  <object id="95" gid="239" x="64" y="192" width="56" height="60"/>
+  <object id="96" gid="239" x="1088" y="128" width="56" height="60"/>
+  <object id="97" gid="239" x="1152" y="192" width="56" height="60"/>
+  <object id="100" gid="238" x="1152" y="576" width="60" height="60"/>
+  <object id="103" gid="238" x="64" y="576" width="60" height="60"/>
+  <object id="104" gid="239" x="64" y="512" width="56" height="60"/>
+  <object id="105" gid="239" x="128" y="576" width="56" height="60"/>
+ </objectgroup>
+ <objectgroup id="3" name="Characters">
+  <object id="112" name="o1" x="768" y="448">
+   <properties>
+    <property name="change_direction" type="bool" value="true"/>
+    <property name="direction" value="down"/>
+    <property name="model" value="young_guy"/>
+    <property name="range" type="int" value="400"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="113" name="o2" x="606.667" y="180">
+   <properties>
+    <property name="change_direction" type="bool" value="false"/>
+    <property name="direction" value="down"/>
+    <property name="model" value="young_girl"/>
+    <property name="range" type="int" value="400"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="Player">
+  <object id="30" name="Location1" x="128" y="320">
+   <properties>
+    <property name="direction" value="right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="31" name="Location2" x="1152" y="320">
+   <properties>
+    <property name="direction" value="left"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="Walls" visible="0">
+  <object id="44" x="-64" y="384" width="128" height="320"/>
+  <object id="45" x="1216" y="384" width="128" height="320"/>
+  <object id="46" x="64" y="576" width="1152" height="128"/>
+  <object id="47" x="-64" y="-64" width="128" height="320"/>
+  <object id="48" x="1216" y="-64" width="128" height="320"/>
+  <object id="49" x="64" y="-64" width="1152" height="128"/>
+  <object id="50" x="-64" y="256" width="64" height="128"/>
+  <object id="51" x="1280" y="256" width="64" height="128"/>
+  <object id="109" x="384" y="64" width="448" height="128"/>
+  <object id="110" x="640" y="192" width="192" height="64"/>
+  <object id="111" x="384" y="192" width="192" height="64"/>
+ </objectgroup>
+ <objectgroup id="5" name="Portals">
+  <object id="18" name="Location1" x="0" y="255.89" width="64" height="128">
+   <properties>
+    <property name="place" value="Passage1"/>
+   </properties>
+  </object>
+  <object id="29" name="Location2" x="1216" y="256" width="64" height="128">
+   <properties>
+    <property name="place" value="Passage1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

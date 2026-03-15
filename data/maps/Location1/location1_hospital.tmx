@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="9" height="12" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="35">
+ <tileset firstgid="1" source="../../tilesets/world.tsx"/>
+ <tileset firstgid="211" source="../../tilesets/objects.tsx"/>
+ <tileset firstgid="242" source="../../tilesets/indoor.tsx"/>
+ <layer id="1" name="Terrain" width="9" height="12">
+  <data encoding="csv">
+247,248,248,248,248,248,248,248,249,
+277,258,258,270,271,258,258,258,259,
+277,268,268,280,281,268,268,268,269,
+277,278,278,278,278,278,278,278,279,
+277,288,288,288,288,288,288,288,289,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+277,288,288,288,288,288,288,288,279,
+297,298,260,261,298,298,298,298,299
+</data>
+ </layer>
+ <layer id="10" name="Terrain top" width="9" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,307,0,0,
+0,0,0,0,0,0,317,0,0,
+0,0,0,0,0,0,317,0,0,
+0,0,0,0,0,0,317,0,0,
+0,326,326,306,0,316,327,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="Characters">
+  <object id="12" name="Nurse" x="287" y="431">
+   <properties>
+    <property name="direction" value="down"/>
+    <property name="model" value="purple_girl"/>
+    <property name="range" value="0"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="11" name="Player">
+  <object id="1" name="Location1" x="192" y="600">
+   <properties>
+    <property name="direction" value="up"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="9" name="Walls" visible="0">
+  <object id="19" x="256" y="704" width="320" height="64"/>
+  <object id="20" x="0" y="704" width="128" height="64"/>
+  <object id="21" x="0" y="0" width="64" height="704"/>
+  <object id="24" x="512" y="0" width="64" height="704"/>
+  <object id="25" x="64" y="0" width="384" height="448"/>
+  <object id="26" x="448" y="0" width="64" height="256"/>
+ </objectgroup>
+ <objectgroup id="12" name="Trees_small">
+  <object id="32" gid="215" x="448" y="256" width="64" height="128"/>
+ </objectgroup>
+ <objectgroup id="3" name="Objects">
+  <object id="29" gid="235" x="283" y="710" width="232" height="80"/>
+ </objectgroup>
+ <objectgroup id="5" name="Portals">
+  <object id="18" name="Location1" x="128" y="704" width="128" height="64">
+   <properties>
+    <property name="place" value="Location1_hospital"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
