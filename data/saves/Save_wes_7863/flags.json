@@ -4,6 +4,7 @@
     "bridge_opened": false,
     "champion_defeated": false,
     "characters_defeated": [
-        "o1"
+        "o1",
+        "o2"
     ]
 }

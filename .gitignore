@@ -1,5 +1,8 @@
-Monster masters/data/*
-!Monster masters/data/maps/
+# Ignore everything in the data folder
+data/*
+
+# ...except the maps directory and its contents
+!data/maps/
 
 # Python
 __pycache__/
